@@ -6386,6 +6386,7 @@ img {
   table td a {
     word-break: break-all;
     color: #2a2a2a;
+    display: inline-block;
   }
   table th {
     background-color: #ddd8cc;
@@ -9600,39 +9601,43 @@ img {
   }
   .fileDownload li {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     position: relative;
     padding: 0.5em 0 0.5em 1.5em;
     border-bottom: solid 1px #eee;
+    font-size: 1.125rem;
   }
   .fileDownload li:before {
     content: "·";
-    font-size: 2em;
+    font-size: 1em;
     font-weight: bold;
     width: 1em;
     height: 1em;
     position: absolute;
-    top: 0.2em;
-    left: 0.1em;
+    top: 1em;
+    left: 0.5em;
     color: #666;
   }
   .fileDownload li .fileName {
     line-height: 1.8em;
     margin: 0.2em 0.5em 0.2em 0;
-    color: #222;
+    color: #4f1d2e;
+    flex: 1 1 auto;
+    margin: 0.1em;
   }
-  .fileDownload li .fileName ~ span {
+  .fileDownload li span {
     flex: 0 0 auto;
-    margin: 0.2em;
-    font-size: 0.875em;
-    line-height: 1.5em;
     vertical-align: middle;
-    color: #666;
   }
-  .fileDownload li .fileName ~ span a {
+  .fileDownload li span a {
     color: #fff;
     display: inline-block;
-    margin-right: 8px;
+    margin: 0;
+  }
+  .fileDownload li span img {
+    width: 42px;
+    height: 42px;
   }
   .fileDownload li span.file_doc a {
     color: #fff;
@@ -9968,11 +9973,12 @@ img {
     display: block;
     text-align: center;
   }
-  .spinfoBlock ul.infobtn li a:hover, .spinfoBlock ul.infobtn li a:focus {
+  .spinfoBlock ul.infobtn li a:hover {
     background: #8f0836;
   }
   .spinfoBlock .img-container {
     flex: 0 0 218px;
+    position: relative;
   }
   .spinfoBlock .img-container img {
     transition: 0.3s;
@@ -9981,6 +9987,7 @@ img {
     max-width: 100%;
     max-height: 100%;
     box-shadow: 5px 8px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
   }
   @media screen and (max-width: 767px) {
     .spinfoBlock .img-container {
@@ -9999,7 +10006,7 @@ img {
     font-weight: bold;
     text-align: center;
     padding: 0.2em 1em;
-    margin: 1em 0;
+    margin: 1.2em 0 0;
     display: inline-block;
     border-radius: 1em;
     float: right;
@@ -10066,11 +10073,13 @@ img {
   }
   .spinfoBlock2 h3 {
     color: #5f0524;
+    margin: 1em 0.5rem;
   }
   .spinfoBlock2 p {
     font-size: 1rem;
     line-height: 1.8;
     font-weight: 400;
+    margin: 1em 0.5em;
   }
   .spinfoBlock2 p .more2 {
     background: #d1c8c4;
@@ -10363,7 +10372,7 @@ img {
     background: url("../images/theme_bg1.png") no-repeat center top;
     background-size: 100% auto;
     position: absolute;
-    top: -150px;
+    top: -130px;
     left: 0;
   }
   .theme1:after {
@@ -10374,6 +10383,31 @@ img {
     position: absolute;
     top: 130px;
     left: 0;
+  }
+  .theme2:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: url("../images/theme_bg1.png") no-repeat center top;
+    background-size: 100% auto;
+    position: absolute;
+    top: -130px;
+    left: 0;
+  }
+  .theme2:after {
+    content: "";
+    width: 100%;
+    height: 300px;
+    background: rgba(78, 34, 35, 0.75);
+    position: absolute;
+    top: 130px;
+    left: 0;
+  }
+  .theme2 .spinfoBlock ul.infobtn li a {
+    background: #8f0836;
+  }
+  .theme2 .spinfoBlock ul.infobtn li a:hover {
+    background: #5f0524;
   }
 }
 .colorA a:hover {

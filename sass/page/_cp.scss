@@ -127,41 +127,44 @@ h2.title {
 
   li {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     position: relative;
     padding: 0.5em 0 0.5em 1.5em;
     border-bottom: solid 1px #eee;
+    font-size: rem(18);
 
     &:before {
       content: '·';
-      font-size: 2em;
+      font-size: 1em;
       font-weight: bold;
       width: 1em;
       height: 1em;
       position: absolute;
-      top: 0.2em;
-      left: 0.1em;
+      top: 1em;
+      left: 0.5em;
       color: #666;
     }
 
     .fileName {
       line-height: 1.8em;
       margin: 0.2em 0.5em 0.2em 0;
-      color: #222;
+      color: #4f1d2e;
+      flex: 1 1 auto;
+      margin: 0.1em;
+    }
+    span {
+      flex: 0 0 auto;
+      vertical-align: middle;
 
-      ~ span {
-        flex: 0 0 auto;
-        margin: 0.2em;
-        font-size: 0.875em;
-        line-height: 1.5em;
-        vertical-align: middle;
-        color: #666;
-
-        a {
-          color: #fff;
-          display: inline-block;
-          margin-right: 8px;
-        }
+      a {
+        color: #fff;
+        display: inline-block;
+        margin: 0;
+      }
+      img {
+        width: 42px;
+        height: 42px;
       }
     }
 
