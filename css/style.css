@@ -2112,7 +2112,7 @@ img {
   body:before {
     position: absolute;
     content: "";
-    width: 30vw;
+    width: 32vw;
     height: 20px;
     top: 0;
     left: 0;
@@ -2127,10 +2127,10 @@ img {
   body:after {
     position: absolute;
     content: "";
-    width: 70vw;
+    width: 68vw;
     height: 20px;
     top: 0;
-    left: 30vw;
+    left: 32vw;
     background: #8f0836;
     z-index: 999;
   }
@@ -10360,6 +10360,7 @@ img {
     color: #6a6866;
     border-left: none;
     border-right: none;
+    vertical-align: top;
   }
   .spinfoBlock4 table td {
     border-left: none;

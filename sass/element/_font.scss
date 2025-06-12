@@ -19,7 +19,7 @@ body {
   &:before {
     position: absolute;
     content: '';
-    width: 30vw;
+    width: 32vw;
     height: 20px;
     top: 0;
     left: 0;
@@ -33,10 +33,10 @@ body {
   &:after {
     position: absolute;
     content: '';
-    width: 70vw;
+    width: 68vw;
     height: 20px;
     top: 0;
-    left: 30vw;
+    left: 32vw;
     background: $colorPrimary;
     z-index: 999;
     @include screen('mobile') {
