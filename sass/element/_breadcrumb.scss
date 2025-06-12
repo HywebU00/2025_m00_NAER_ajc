@@ -1,0 +1,34 @@
+.breadcrumb {
+  // border-bottom: 1px solid #eee;
+  padding: 0.1em 0em 0.1em;
+  font-size: rem(16);
+  margin: 0px auto 5px;
+  color: $colorPrimary;
+  ul {
+    @include liReset;
+    display: flex;
+    flex-flow: row wrap;
+    &:before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border: 4px solid #3d3124;
+      border-radius: 50%;
+      margin: 0.3em 0.5em 0.2em 0px;
+      vertical-align: middle;
+      background: #fff;
+    }
+    li {
+      margin: 0px 0.1em 0.1em 0px;
+      & + li {
+        &:before {
+          @extend %slash;
+        }
+      }
+    }
+  }
+  a {
+    @include aSetting(#3d3124);
+  }
+}

@@ -1,0 +1,26 @@
+// https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_image.scss
+// @mixin imgResponsive($display: block) {
+//   display: $display;
+//   max-width: 100%; // Part 1: Set a maximum relative to the parent
+//   height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+// }
+
+img {
+  max-width: 100%;
+}
+
+//https://css-tricks.com/snippets/sass/maintain-aspectRatio-mixin/
+@mixin aspectRatio($width, $height, $objectFit: contain) {
+  overflow: hidden;
+  position: relative;
+  img {
+    width: 100%;
+    aspect-ratio: #{$width} / #{$height};
+    display: block;
+    object-fit: $objectFit;
+    object-position: 50% 50%;
+  }
+}
+
+// 範例
+// @include aspectRatio(4,3,contain);                   // 圖片比例，4:3 contain照片完整顯示 cover裁切

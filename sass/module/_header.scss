@@ -1,0 +1,325 @@
+// mobile btn for extend
+// menu
+
+@mixin mobileCtrlBtn {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  top: 0px;
+  display: none;
+  font-size: 0em;
+  padding: 15px;
+  margin: 0;
+  min-width: auto;
+  min-height: auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  z-index: 100;
+
+  @include screen('mobile') {
+    display: block;
+  }
+}
+
+.sidebarCtrlBtn {
+  display: none;
+  left: 0px;
+  @include mobileCtrlBtn;
+  top: 25px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 2px;
+    background: $colorPrimary;
+    box-shadow: $colorPrimary 0 6px 0 0, $colorPrimary 0 -6px 0 0;
+    transition: 0.2s linear;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: $colorPrimary;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.2s linear;
+  }
+
+  // &:hover {
+  //   &::before {
+  //     transform: translate(-50%, -50%) rotate(45deg);
+  //     box-shadow: none;
+  //   }
+  //   &::after {
+  //     opacity: 1;
+  //     transform: translate(-50%, -50%) rotate(-45deg);
+  //   }
+  // }
+}
+
+// search
+.searchCtrlBtn {
+  display: none;
+  right: 0px;
+  font-size: 0em;
+  z-index: 9;
+  @include mobileCtrlBtn;
+
+  &:before {
+    width: 40px;
+    height: 40px;
+    background: url(../images/basic/icon_search.svg) no-repeat center center;
+    background-size: 28px;
+    opacity: 0.6;
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block;
+  }
+}
+
+//header
+.header {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  transition: 0.3s ease-out;
+  height: 120px;
+  // box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+  @include screen('mobile') {
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    &:after {
+      content: '';
+      width: 100%;
+      height: 20px;
+      background: url('../images/m_t_header_bg.png') no-repeat left top;
+      z-index: 9999;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    // box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    pointer-events: none;
+    z-index: -1;
+
+    @include screen('mobile') {
+      height: 90px;
+      background: url('../images/body_bg.jpg') repeat left top;
+    }
+  }
+
+  & > .container {
+    max-width: $containerMax;
+    overflow: visible;
+    position: relative;
+
+    @include screen('mobile') {
+      padding: 0;
+    }
+  }
+
+  h1 {
+    float: left;
+    width: 276px;
+    height: 75px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 99999;
+    position: relative;
+
+    @include screen('mobile') {
+      float: none;
+    }
+
+    a {
+      display: inline-block;
+      padding: 45px 0;
+      @include screen('mobile') {
+        padding: 30px 0;
+      }
+    }
+
+    img {
+      display: block;
+      max-width: 300px;
+      max-height: 75px;
+    }
+
+    @include screen('mobile') {
+      padding: 2px 0 2px 50px;
+      width: 100%;
+      text-align: center;
+      height: 90px;
+
+      img {
+        width: auto !important;
+        height: auto;
+        max-height: 54px;
+        min-height: 50px;
+        min-width: 200px;
+        margin: 0px auto;
+        transform: scale(0.8);
+      }
+    }
+  }
+
+  // 導覽列
+  .navigation {
+    box-sizing: border-box;
+    // display: flex;
+    position: absolute;
+    right: 0;
+    z-index: 99999;
+    align-items: center;
+
+    @include screen('mobile') {
+      display: none;
+    }
+
+    .navList {
+      // flex: 1 1 auto;
+      margin: 45px 0.5em 25px 0;
+      @include screen('tablet') {
+        margin: 70px 0.5em 20px auto;
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+        font-size: 0.875em;
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      li {
+        flex: 0 0 auto;
+
+        a {
+          display: block;
+          padding: 0;
+          margin: 0 0.2em;
+          text-decoration: none;
+          // @include aSetting($colorWord);
+          background: darken($colorPrimary, 10%);
+          text-indent: -9999px;
+          color: transparent;
+          width: 44px;
+          aspect-ratio: 1/1;
+          position: relative;
+          border-radius: 50%;
+          &:hover,
+          &:focus {
+            background: darken($colorPrimary, 0);
+          }
+          &::before {
+            width: 100%;
+            aspect-ratio: 1/1;
+            content: '';
+            text-indent: 0;
+            color: #fff;
+            position: absolute;
+            text-align: center;
+            inset: 0;
+            line-height: 44px;
+            z-index: 2;
+            display: block;
+            font-size: 1.125em;
+          }
+        }
+        &.gohome a {
+          &::before {
+            content: 'H';
+          }
+        }
+        &.gositemap a {
+          &::before {
+            content: '';
+            background: url('../images/nav_icon01.png') no-repeat center center;
+            background-size: 1.35em auto;
+          }
+        }
+        &.goqa a {
+          &::before {
+            content: '';
+            background: url('../images/nav_icon02.png') no-repeat center center;
+            background-size: 1.35em auto;
+          }
+        }
+        &.goeng a {
+          &::before {
+            content: 'En';
+          }
+        }
+      }
+    }
+
+    //右邊區塊
+    .submenuBox {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background: linear-gradient(135deg, #005d9d 0%, #98d1a7 100%);
+      position: relative;
+
+      & > div {
+        + div::after {
+          content: '';
+          width: 1px;
+          height: 17px;
+          background: #fff;
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+.header.typeB {
+  h1 {
+    position: absolute;
+    top: 20px;
+    z-index: 50;
+
+    @include screen('mobile') {
+      position: relative;
+      top: auto;
+    }
+  }
+
+  .navigation {
+    margin-bottom: 40px;
+  }
+}

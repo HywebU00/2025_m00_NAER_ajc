@@ -1,0 +1,365 @@
+//submenu animation
+@keyframes showMenu {
+  0% {
+    transform: translateX(30px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+// pc版 條列menu
+.mainMenu {
+  box-sizing: border-box;
+  // position: relative;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  clear: both;
+  @include screen('tablet') {
+    top: 0;
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999;
+    background: $colorPrimary;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    & > ul {
+      width: 100%;
+      max-width: $containerMax;
+      margin: 0 auto;
+      li {
+        a {
+          padding: 0 1em;
+          color: #fff;
+          &:hover,
+          &:focus {
+            color: #efede9;
+          }
+        }
+        ul {
+          li {
+            a {
+              padding: 0.6em 1.2em;
+              color: #fff;
+              background: rgba(0, 0, 0, 0.8);
+              border-radius: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include screen('mobile') {
+    display: none;
+  }
+
+  // 預設選單 ul
+  & > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include screen('tablet') {
+      justify-content: flex-end;
+    }
+
+    // 第一層選單樣式
+    & > li {
+      flex: 0 1 auto;
+
+      & > a {
+        display: block;
+        padding: 25px 1em 10px;
+        min-height: 2.5em;
+        font-weight: bold;
+        line-height: 2.5em;
+        white-space: nowrap;
+        color: $colorWord;
+        box-sizing: border-box;
+        font-size: 1.125em;
+        &:hover {
+          color: #fff;
+          background: $colorPrimary;
+          border-bottom-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+        }
+
+        // &:focus-visible {
+        //   box-shadow: 0 0 0 2px inset $aHover;
+        // }
+      }
+      &.active > a {
+        color: #fff;
+        background: $colorPrimary;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        ul {
+          display: none;
+          opacity: 1;
+        }
+      }
+
+      &.hasChild {
+        & > a {
+          &:after {
+            content: '';
+            width: 4px;
+            height: 4px;
+            display: inline-block;
+            margin-left: 0.5em;
+            vertical-align: middle;
+            // border: 2px solid lighten($colorWord, 40);
+            border: 2px solid #fff;
+            transform: rotate(135deg);
+            border-bottom: none;
+            border-left: none;
+            margin-bottom: 0.2em;
+          }
+          &:hover {
+            &:after {
+              content: '';
+              width: 6px;
+              height: 6px;
+              display: inline-block;
+              margin-left: 0.5em;
+              vertical-align: middle;
+              transform: rotate(135deg);
+              border-bottom: none;
+              border-left: none;
+              margin-bottom: 0.2em;
+              border-color: #fff;
+              box-sizing: border-box;
+            }
+          }
+          &:focus {
+            &:after {
+              content: '';
+              width: 6px;
+              height: 6px;
+              display: inline-block;
+              margin-left: 0.5em;
+              vertical-align: middle;
+              transform: rotate(135deg);
+              border-bottom: none;
+              border-left: none;
+              margin-bottom: 0.2em;
+              border-color: #fff;
+              box-sizing: border-box;
+            }
+          }
+        }
+      }
+
+      // &.active,
+      // &:hover,
+      // &:focus {
+      //   & > a {
+      //     color: #fff;
+      //     background: $colorPrimary;
+      //     border-bottom-left-radius: 15px;
+      //     border-bottom-right-radius: 15px;
+
+      //     // &:after {
+      //     //   // border: 2px solid $aHover;
+      //     //   border-bottom: none;
+      //     //   border-left: none;
+      //     // }
+      //   }
+      // }
+    }
+  }
+
+  ul {
+    li {
+      position: relative;
+
+      a {
+        display: block;
+        // outline: none;
+        text-decoration: none;
+      }
+
+      ul {
+        display: none;
+        overflow: visible;
+        width: 99%;
+        padding: 0;
+        z-index: 90;
+        position: absolute;
+        top: auto;
+        left: 0;
+        opacity: 0;
+        list-style: none;
+        text-align: left;
+        font-size: 1em;
+
+        // transition: 0.3s $cubic;
+        // 第二層選單樣式
+        li {
+          a {
+            padding: 0.6em 1.2em;
+            margin: 3px 0;
+            display: block;
+            color: #fff;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+
+            // &:focus-visible,
+            &:hover {
+              color: #fff;
+              background: $aHover;
+            }
+          }
+
+          &.active > a {
+            color: #fff;
+            background: $aHover;
+          }
+        }
+
+        li.hasChild {
+          & > ul {
+            z-index: 999;
+          }
+
+          & > a {
+            padding-right: 2em;
+
+            // &:focus-visible,
+            &:hover {
+              background: $colorPrimary;
+            }
+
+            &:after {
+              content: '';
+              position: absolute;
+              right: 15px;
+              top: 50%;
+              width: 6px;
+              height: 6px;
+              border: 2px solid #fff;
+              transform: rotate(45deg) translateY(-50%);
+              border-width: 2px 2px 0 0;
+            }
+          }
+        }
+
+        ul {
+          top: 0;
+          left: 100%;
+          animation: none;
+          font-size: 1em;
+        }
+      }
+
+      &.active {
+        & > ul {
+          opacity: 1;
+          display: block;
+        }
+      }
+    }
+  }
+
+  & > ul {
+    & > li {
+      &.active {
+        & > ul {
+          animation: showMenu 0.3s $cubic;
+        }
+      }
+
+      &.leftSlider {
+        ul ul {
+          left: auto;
+          right: 100%;
+        }
+      }
+    }
+  }
+}
+
+.menuArrowDown,
+.menuArrowUp {
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: fixed;
+  bottom: 5px;
+  z-index: 999;
+  opacity: 0;
+  transition: all 0.3s linear;
+
+  &.active {
+    opacity: 1;
+  }
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 6px;
+    display: block;
+    background: #fff;
+  }
+}
+
+.menuArrowDown::before {
+  transform: rotate(45deg);
+  left: 4px;
+}
+
+.menuArrowDown::after {
+  transform: rotate(-45deg);
+  right: 4px;
+}
+
+.menuArrowUp::before {
+  transform: rotate(45deg);
+  right: 4px;
+}
+
+.menuArrowUp::after {
+  transform: rotate(-45deg);
+  left: 4px;
+}
+
+.mainMenu li.leftSlider {
+  li a {
+    padding-right: 1.2em;
+    padding-left: 2em;
+  }
+
+  li.hasChild a {
+    &::after {
+      right: auto;
+      left: 10px;
+      border-width: 0 0 2px 2px;
+    }
+  }
+}

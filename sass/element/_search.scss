@@ -1,0 +1,561 @@
+//search
+.header .container {
+  & > .webSearchBtn {
+    display: none;
+
+    @include screen('mobile') {
+      display: block;
+    }
+  }
+
+  .navigation {
+    .webSearchBtn {
+      display: block;
+
+      @include screen('mobile') {
+        display: none;
+      }
+    }
+  }
+}
+
+.webSearchBtn {
+  position: relative;
+  text-indent: -9999px;
+  color: transparent;
+  width: 60px;
+  aspect-ratio: 1/1;
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  z-index: 90;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: auto;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    aspect-ratio: 1/1;
+    display: block;
+    mask: url('../images/icon/icon_search2.svg') center no-repeat;
+    mask-size: 40%;
+    background: #fff;
+  }
+}
+
+[for='topSearch'] {
+  position: absolute;
+  width: 0;
+  overflow: hidden;
+}
+
+.webSearch {
+  vertical-align: top;
+  font-size: 0.938em;
+  margin: 1em 0.5em;
+  box-sizing: border-box;
+
+  &:not(.typeB) {
+    @include screen('mobileMin') {
+      display: block !important;
+    }
+
+    .webSearchBtn {
+      display: none;
+    }
+  }
+
+  @include screen('mobile') {
+    width: 100% !important;
+  }
+
+  .content {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  &.active {
+    display: flex;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px;
+    background: #444;
+
+    label {
+      display: none;
+    }
+
+    .formGrp {
+      display: flex;
+      flex-grow: 1;
+
+      input {
+        flex-grow: 1;
+      }
+    }
+
+    .keywordHot ul a {
+      color: #fff;
+    }
+  }
+
+  label {
+    font-size: 0em;
+  }
+
+  .formGrp {
+    flex: 0 0 auto;
+    margin: 0 0 0.5em;
+
+    input {
+      margin: 0 0.5em 0 0;
+      padding: 0.25em 0.5em;
+      box-shadow: none;
+      width: auto;
+
+      &[type='submit'] {
+        min-width: auto;
+        padding: 0.2em 0.8em;
+      }
+
+      // &:focus-visible {
+      //   box-shadow: 0 0px 0px 2px $aFocus;
+      // }
+    }
+
+    button,
+    .btn,
+    .btnSearch {
+      min-width: auto;
+      padding: 0.2em 0.8em;
+      margin: 0;
+
+      // &:focus-visible,
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .btnGrp {
+    flex: 0 0 auto;
+    padding: 0 0 0 0.5em;
+    margin: 0 0 0.5em;
+
+    button,
+    .btn,
+    .btnSearch {
+      min-width: auto;
+      padding: 0.2em 0.8em;
+      margin: 0;
+
+      // &:focus-visible,
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .keywordHot {
+    flex: 1 1 100%;
+
+    ul {
+      font-size: 0.813em;
+      line-height: 1.65em;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+      list-style-type: none;
+
+      li {
+        margin: 0;
+        padding: 0 0.5em;
+        flex: 0 0 auto;
+      }
+
+      a {
+        @include aSetting($colorWord);
+      }
+    }
+  }
+
+  @include screen('mobile') {
+    display: none;
+    width: 100% !important;
+    left: 0;
+    right: 0;
+    margin: 0;
+
+    .content {
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      background: #444;
+    }
+
+    .formGrp {
+      display: flex;
+      flex-grow: 1;
+
+      input {
+        flex-grow: 1;
+        margin: 0;
+        margin-right: 8px;
+      }
+    }
+
+    .keywordHot {
+      ul {
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+// mobileSearch
+.webSearchBg {
+  position: fixed;
+  inset: 0;
+  z-index: 91;
+  background: rgba(#fff, 0.8);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.3s linear;
+
+  &.active {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.mobileSearch {
+  width: 100%;
+  max-width: 100%;
+  min-width: auto;
+  padding: 0.8em 0.3em;
+  display: block;
+  height: auto;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 98;
+  background: #333;
+  transform: translateY(-100%);
+  opacity: 0;
+  margin: 0;
+  transition: all 0.3s linear;
+
+  &.active {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  label {
+    font-size: 0em;
+    line-height: 0;
+  }
+
+  .formGrp {
+    display: flex;
+    align-items: center;
+
+    label {
+      display: none;
+      flex: 0 0 0%;
+    }
+
+    input {
+      margin: 0.5em;
+      padding: 0.5em;
+      flex: 1 1 50%;
+      max-width: 70%;
+
+      &[type='submit'] {
+        flex: 0 1 15%;
+        margin: 0.5em;
+      }
+    }
+
+    .btn,
+    .btnSearch {
+      min-width: auto;
+      padding: 0.5em 0.8em;
+      margin: 0;
+      flex: 1 1 20%;
+      max-width: 25%;
+
+      // &:focus-visible,
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .btnGrp {
+    flex: 1 1 auto;
+    padding: 0.25em 0.5em;
+    border-bottom: solid 1px #444;
+    box-sizing: border-box;
+    text-align: right;
+
+    .btn {
+      width: auto;
+      padding: 0.2em 0.5em;
+      margin: 0;
+      background: transparent;
+      font-size: 0.875rem;
+      color: #ddd;
+      border: none;
+
+      // &:focus-visible,
+      &:hover {
+        color: lighten($aHover, 10);
+      }
+    }
+  }
+
+  .keywordHot {
+    flex: 1 1 100%;
+
+    ul {
+      font-size: 0.875em;
+      line-height: 1.65em;
+      margin: 0;
+      padding: 0.5em 0 0 0.5em;
+      display: flex;
+      justify-content: flex-start;
+      list-style-type: none;
+
+      li {
+        margin: 0;
+        padding: 0.5em;
+        flex: 0 0 auto;
+      }
+
+      a {
+        color: #fff;
+
+        // &:focus-visible,
+        &:hover {
+          color: lighten($aHover, 10);
+        }
+      }
+    }
+  }
+}
+
+.webSearch.typeB {
+  position: absolute;
+  top: 90px;
+  right: 15px;
+  display: none;
+  width: 40%;
+  margin: 0;
+  z-index: 100;
+
+  @include screen('mobile') {
+    top: 60px;
+    right: 0;
+  }
+
+  .content {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    background: #444;
+  }
+
+  .formGrp {
+    display: flex;
+    flex-grow: 1;
+
+    input {
+      flex-grow: 1;
+      margin: 0;
+      margin-right: 8px;
+    }
+  }
+
+  .keywordHot ul a {
+    color: #fff;
+  }
+
+  @include screen('tablet') {
+    &.active {
+      display: block;
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+.mobileSearchBtn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  color: transparent;
+  width: 60px;
+  aspect-ratio: 1/1;
+  padding: 0;
+  margin: 0;
+  border: none;
+  display: none;
+
+  @include screen('mobile') {
+    display: block;
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: auto;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    aspect-ratio: 1/1;
+    display: block;
+    mask: url('../images/icon/icon_search2.svg') center no-repeat;
+    mask-size: 40%;
+    background: $colorPrimary;
+  }
+}
+
+//mpSearch
+.mpSearch {
+  vertical-align: top;
+  font-size: 1em;
+  margin: 1em 0.5em;
+  box-sizing: border-box;
+  z-index: 90;
+  position: relative;
+
+  .content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #fff;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(248, 244, 242, 1) 100%);
+    border-radius: 15px;
+    box-shadow: 0 0 3em -1.5em rgba(0, 0, 0, 0.5);
+    padding: 1.5em 2em;
+    width: 800px;
+    margin: -60px auto 0;
+    @include screen('tablet') {
+      width: 90%;
+      margin: 20px auto 0;
+      padding: 1.5em;
+    }
+  }
+
+  label {
+    font-size: 0em;
+  }
+
+  .formGrp {
+    flex: 0 0 auto;
+    margin: 0 0 0.5em;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    select {
+      flex: 0 0 8em;
+      margin-right: 0.5em;
+      border: 1px solid #f0f0f0;
+      background: #f0f0f0 url(../images/d_arrow.png) no-repeat right 1em center;
+      background-size: 15px auto;
+      border-radius: 2em;
+      padding: 0.5em 1.85em 0.5em 1em;
+    }
+    input {
+      flex: 1 1 calc(100% - 8em);
+      border: 1px solid #f0f0f0;
+      background: #f0f0f0;
+      border-radius: 2em;
+      padding: 0.5em 1em 0.5em;
+    }
+
+    button,
+    .btn,
+    .btnSearch {
+      min-width: auto;
+      padding: 0 1.125em !important;
+      margin: 0;
+      border-radius: 2em;
+      line-height: 1em !important;
+      font-size: 0.938rem;
+      flex: 0 0 8em;
+      height: 2.5em;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+    @include screen('mobile') {
+      flex-direction: column;
+      align-items: stretch;
+
+      select {
+        flex: 1 1 auto;
+        margin-right: 0;
+        margin-bottom: 0.5em;
+      }
+
+      input {
+        flex: 1 1 auto;
+        margin-right: 0;
+        margin-bottom: 0.5em;
+      }
+
+      button,
+      .btn,
+      .btnSearch {
+        flex: 1 1 auto;
+        width: 100%;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  .keywordHot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 0.938em;
+    .title {
+      color: #666;
+      margin: 0.5em 0.2em;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      list-style-type: none;
+      flex-wrap: wrap;
+
+      li {
+        margin: 0.5em 0.2em;
+        padding: 0;
+        flex: 0 0 auto;
+      }
+
+      a {
+        @include aSetting(#666);
+        border: solid 1px #b8b8b8;
+        border-radius: 2em;
+        padding: 0.4em 1em;
+      }
+    }
+  }
+}

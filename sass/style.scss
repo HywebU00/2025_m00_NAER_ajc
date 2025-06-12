@@ -1,0 +1,65 @@
+@charset "utf-8";
+@import '_variable'; //變數
+@import 'common/_mixin'; //客製MIXIN
+
+// 套件預設css必須放在layer外面
+@import '../vendor/swiper/swiper-bundle.min.css'; //swiper初始套件
+@import '../vendor/fancybox/fancybox.css'; //fancybox初始套件
+@import '../vendor/animate/animate.css'; //animate.css初始套件
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap');
+// 目前設定這layer中的權重最低
+@layer webScss {
+  // 共通 common
+  @import 'common/_normalize'; //reset
+  @import 'common/_demogrid'; //格線 - demo
+  @import 'common/_gridflex'; //格線 - flex
+  @import 'common/_typegraphy'; //CP文字排版
+  @import 'common/_accessibility'; //無障礙關閉js設定
+  // 元件 element
+  @import 'element/_font'; //文字設定
+  @import 'element/_language'; //語言選單
+  @import 'element/_search'; //搜尋選單
+  @import 'element/_btn'; //按鈕設定
+  @import 'element/_breadcrumb'; //麵包屑
+  @import 'element/_divider'; //分隔線
+  @import 'element/_icon'; //圖示
+  @import 'element/_category'; //資料大類
+  @import 'element/_tag'; //文章標籤
+  @import 'element/_element'; //小元素
+  @import 'element/_tooltip'; //cp頁說明功能
+  // 模組 module
+  @import 'module/_header'; //header
+  @import 'module/_menu'; //menu
+  @import 'module/_megamenu'; //megaMenu
+  @import 'module/_fixedsidebar'; //固定側邊欄
+  @import 'module/_footer'; //footer
+  @import 'module/_fatfooter'; //fatFooter
+  @import 'module/_form'; //表單
+  @import 'module/_table'; //表格
+  @import 'module/_list'; //表單樣式
+  @import 'module/_link'; //連結樣式
+  @import 'module/_tabs'; //頁籤
+  @import 'module/_thumbnail'; //縮圖
+  @import 'module/_functionpanel'; //內頁功能面板
+  @import 'module/_marquee'; //跑馬燈
+  @import 'module/_paginations'; //分頁
+  @import 'module/_notice'; //提示
+  @import 'module/_accordion.scss'; //收合式選單
+  @import 'page/_sitemap'; //Sitemap
+  @import 'page/_leftblock'; //左欄leftBlock
+  @import 'page/_template'; //版型初始設定
+  @import 'module/_menusidebar'; //menuSidebar
+}
+
+@layer secScss {
+  @import 'element/_image'; //圖片
+  @import 'common/_hack'; //瀏覽器修正
+  // 下方scss權重較高
+  @import 'module/_swiper'; //swiper
+  @import 'page/_mp'; //首頁
+  @import 'page/_cp'; //CP
+  @import 'page/_sp'; //SP
+}
+
+@import 'page/_color';
+@import 'common/_print'; //列印樣式

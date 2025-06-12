@@ -1,0 +1,464 @@
+[class^='i_'] {
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    vertical-align: middle;
+  }
+}
+
+@mixin hyUiIcon($iconImg) {
+  &:before {
+    background: url(../images/icon/#{$iconImg}.svg) center center no-repeat;
+    background-size: contain;
+    margin-top: -0.1em;
+    margin-bottom: 0.1em;
+  }
+}
+
+//notice 這邊想想怕i直接接會比較不清楚，是否還是要繼續保留_可以再找別人討論看看
+// 依英文字母排序
+///////////////////////////////////////////////////////////////////////////  彩色 icon
+// ---------------- C ----------------
+.i_calendarColor {
+  @include hyUiIcon('icon_calendar_color');
+}
+
+///////////////////////////////////////////////////////////////////////////  黑色 icon
+// ---------------- A ----------------
+.i_add_dark {
+  @include hyUiIcon('icon_add_dark');
+}
+
+.i_apple_dark {
+  @include hyUiIcon('icon_apple_dark');
+}
+
+.i_arrowLeft_dark {
+  @include hyUiIcon('icon_arrow_left_dark');
+}
+
+.i_arrowRight_dark {
+  @include hyUiIcon('icon_arrow_right_dark');
+}
+
+.i_arrowUp_dark {
+  @include hyUiIcon('icon_arrow_up_dark');
+}
+
+.i_arrowDown_dark {
+  @include hyUiIcon('icon_arrow_down_dark');
+}
+
+// ---------------- B ----------------
+.i_bookmark_dark {
+  @include hyUiIcon('icon_bookmark_dark');
+}
+
+// ---------------- C ----------------
+.i_calendar_dark {
+  @include hyUiIcon('icon_calendar_dark');
+}
+
+.i_chat_dark {
+  @include hyUiIcon('icon_chat_dark');
+}
+
+.i_check_dark {
+  @include hyUiIcon('icon_check_dark');
+}
+
+.i_clock_dark {
+  @include hyUiIcon('icon_clock_dark');
+}
+
+.i_close_dark {
+  @include hyUiIcon('icon_close_dark');
+}
+
+.i_copy_dark {
+  @include hyUiIcon('icon_copy_dark');
+}
+
+// ---------------- D ----------------
+.i_dot_dark {
+  @include hyUiIcon('icon_dot_dark');
+}
+
+// ---------------- E ----------------
+.i_edit_dark {
+  @include hyUiIcon('icon_edit_dark');
+}
+
+// ---------------- F ----------------
+.i_facebook_dark {
+  @include hyUiIcon('icon_facebook_dark');
+}
+
+// ---------------- G ----------------
+.i_global_dark {
+  @include hyUiIcon('icon_global_dark');
+}
+
+.i_googleplus_dark {
+  @include hyUiIcon('icon_googleplus_dark');
+}
+
+.i_grid_dark {
+  @include hyUiIcon('icon_grid_dark');
+}
+
+// ---------------- H ----------------
+.i_heart_dark {
+  @include hyUiIcon('icon_heart_dark');
+}
+
+.i_home_dark {
+  @include hyUiIcon('icon_home_dark');
+}
+
+// ---------------- I ----------------
+.i_info_dark {
+  @include hyUiIcon('icon_info_dark');
+}
+
+// ---------------- J ----------------
+// ---------------- K ----------------
+
+// ---------------- L ----------------
+.i_layout_dark {
+  @include hyUiIcon('icon_layout_dark');
+}
+
+.i_link_dark {
+  @include hyUiIcon('icon_link_dark');
+}
+
+.i_linkedin_dark {
+  @include hyUiIcon('icon_linkedin_dark');
+}
+
+.i_lock_dark {
+  @include hyUiIcon('icon_lock_dark');
+}
+
+// ---------------- M ----------------
+.i_mail_dark {
+  @include hyUiIcon('icon_mail_dark');
+}
+
+.i_man_dark {
+  @include hyUiIcon('icon_man_dark');
+}
+
+.i_minus_dark {
+  @include hyUiIcon('icon_minus_dark');
+}
+
+.i_move_dark {
+  @include hyUiIcon('icon_move_dark');
+}
+
+// ---------------- N ----------------
+// ---------------- O ----------------
+.i_order_dark {
+  @include hyUiIcon('icon_order_dark');
+}
+
+// ---------------- P ----------------
+.i_photo_dark {
+  @include hyUiIcon('icon_photo_dark');
+}
+
+.i_pick_dark {
+  @include hyUiIcon('icon_pick_dark');
+}
+
+.i_play_dark {
+  @include hyUiIcon('icon_play_dark');
+}
+
+// ---------------- Q ----------------
+
+// ---------------- R ----------------
+.i_reflash_dark {
+  @include hyUiIcon('icon_reflash_dark');
+}
+
+.i_rss_dark {
+  @include hyUiIcon('icon_rss_dark');
+}
+
+// ---------------- S ----------------
+.i_search_dark {
+  @include hyUiIcon('icon_search_dark');
+}
+
+.i_setting_dark {
+  @include hyUiIcon('icon_setting_dark');
+}
+
+.i_sort_dark {
+  @include hyUiIcon('icon_sort_dark');
+}
+
+.i_star_dark {
+  @include hyUiIcon('icon_star_dark');
+}
+
+// ---------------- T ----------------
+.i_top_dark {
+  @include hyUiIcon('icon_top_dark');
+}
+
+.i_trash_dark {
+  @include hyUiIcon('icon_trash_dark');
+}
+
+.i_twitter_dark {
+  @include hyUiIcon('icon_x_dark');
+}
+
+// ---------------- U ----------------
+// ---------------- V ----------------
+.i_video_dark {
+  @include hyUiIcon('icon_video_dark');
+}
+
+.i_view_dark {
+  @include hyUiIcon('icon_view_dark');
+}
+
+.i_vimeo_dark {
+  @include hyUiIcon('icon_vimeo_dark');
+}
+
+// ---------------- W ----------------
+// ---------------- X ----------------
+// ---------------- Y ----------------
+.i_youtube_dark {
+  @include hyUiIcon('icon_youtube_dark');
+}
+
+// ---------------- Z ----------------
+
+///////////////////////////////////////////////////////////////////////////  白色icon
+// ---------------- A ----------------
+.i_add {
+  @include hyUiIcon('icon_add');
+}
+
+.i_apple {
+  @include hyUiIcon('icon_apple');
+}
+
+.i_arrowLeft {
+  @include hyUiIcon('icon_arrow_left');
+}
+
+.i_arrowRight {
+  @include hyUiIcon('icon_arrow_right');
+}
+
+.i_arrowUp {
+  @include hyUiIcon('icon_arrowUp');
+}
+
+.i_arrowDown {
+  @include hyUiIcon('icon_arrowDown');
+}
+
+// ---------------- B ----------------
+.i_bookmark {
+  @include hyUiIcon('icon_bookmark');
+}
+
+// ---------------- C ----------------
+.i_calendar {
+  @include hyUiIcon('icon_calendar');
+}
+
+.i_calendar_color {
+  @include hyUiIcon('icon_calendar_color');
+}
+
+.i_chat {
+  @include hyUiIcon('icon_chat');
+}
+
+.i_check {
+  @include hyUiIcon('icon_check');
+}
+
+.i_clock {
+  @include hyUiIcon('icon_clock');
+}
+
+.i_close {
+  @include hyUiIcon('icon_close');
+}
+
+.i_copy {
+  @include hyUiIcon('icon_copy');
+}
+
+// ---------------- D ----------------
+.i_dot {
+  @include hyUiIcon('icon_dot');
+}
+
+// ---------------- E ----------------
+.i_edit {
+  @include hyUiIcon('icon_edit');
+}
+
+// ---------------- F ----------------
+.i_facebook {
+  @include hyUiIcon('icon_facebook');
+}
+
+// ---------------- G ----------------
+.i_global {
+  @include hyUiIcon('icon_global');
+}
+
+.i_googleplus {
+  @include hyUiIcon('icon_googleplus');
+}
+
+.i_grid {
+  @include hyUiIcon('icon_grid');
+}
+
+// ---------------- H ----------------
+.i_heart {
+  @include hyUiIcon('icon_heart');
+}
+
+.i_home {
+  @include hyUiIcon('icon_home');
+}
+
+// ---------------- I ----------------
+.i_info {
+  @include hyUiIcon('icon_info');
+}
+
+// ---------------- J ----------------
+// ---------------- K ----------------
+
+// ---------------- L ----------------
+.i_layout {
+  @include hyUiIcon('icon_layout');
+}
+
+.i_link {
+  @include hyUiIcon('icon_link');
+}
+
+.i_linkedin {
+  @include hyUiIcon('icon_linkedin');
+}
+
+.i_lock {
+  @include hyUiIcon('icon_lock');
+}
+
+// ---------------- M ----------------
+.i_mail {
+  @include hyUiIcon('icon_mail');
+}
+
+.i_man {
+  @include hyUiIcon('icon_man');
+}
+
+.i_minus {
+  @include hyUiIcon('icon_minus');
+}
+
+.i_move {
+  @include hyUiIcon('icon_move');
+}
+
+// ---------------- N ----------------
+// ---------------- O ----------------
+.i_order {
+  @include hyUiIcon('icon_order');
+}
+
+// ---------------- P ----------------
+.i_photo {
+  @include hyUiIcon('icon_photo');
+}
+
+.i_pick {
+  @include hyUiIcon('icon_pick');
+}
+
+.i_play {
+  @include hyUiIcon('icon_play');
+}
+
+// ---------------- Q ----------------
+
+// ---------------- R ----------------
+.i_reflash {
+  @include hyUiIcon('icon_reflash');
+}
+
+.i_rss {
+  @include hyUiIcon('icon_rss');
+}
+
+// ---------------- S ----------------
+.i_search {
+  @include hyUiIcon('icon_search');
+}
+
+.i_setting {
+  @include hyUiIcon('icon_setting');
+}
+
+.i_sort {
+  @include hyUiIcon('icon_sort');
+}
+
+.i_star {
+  @include hyUiIcon('icon_star');
+}
+
+// ---------------- T ----------------
+.i_top {
+  @include hyUiIcon('icon_top');
+}
+
+.i_trash {
+  @include hyUiIcon('icon_trash');
+}
+
+.i_twitter {
+  @include hyUiIcon('icon_x');
+}
+
+// ---------------- U ----------------
+// ---------------- V ----------------
+.i_video {
+  @include hyUiIcon('icon_video');
+}
+
+.i_view {
+  @include hyUiIcon('icon_view');
+}
+
+.i_vimeo {
+  @include hyUiIcon('icon_vimeo');
+}
+
+// ---------------- W ----------------
+// ---------------- X ----------------
+// ---------------- Y ----------------
+.i_youtube {
+  @include hyUiIcon('icon_youtube');
+}

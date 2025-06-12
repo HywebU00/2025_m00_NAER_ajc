@@ -1,0 +1,587 @@
+//--------------------------------------------------------多色設定------//
+// 同版面，多色快速調整 sass map實作
+// 參數可再自行新增
+$colorStyleConfig: (
+  colorA: ( // class 名稱
+    colorPrimary: #298729,
+    colorSecondary: #22be22,
+    aHover: mix(#298729, #000, 90%),
+    aFocus: mix(#298729, #fff, 90%),
+    formFocus: #298729,
+    form-btn: #298729,
+  ),
+  colorB: ( // class 名稱
+    colorPrimary: #c32727,
+    colorSecondary: red,
+    aHover: mix(#00a4f9, #000, 90%),
+    aFocus: mix(#00a4f9, #fff, 90%),
+    formFocus: #00a4f9,
+    form-btn: #00a4f9,
+  ),
+);
+
+// color: map-get($value, colorPrimary);
+
+@each $item, $value in $colorStyleConfig {
+  .#{$item} {
+
+    //_font
+    a {
+
+      // color: map-get($value, colorPrimary);
+      &:hover {
+        color: map-get($value, colorPrimary);
+      }
+    }
+
+    .fontSize {
+      ul {
+        li {
+
+          button,
+          a {
+
+            &:hover,
+            &:focus,
+            &.active {
+              background: map-get($value, aHover);
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    //_accessibility
+    a.goCenter {
+      background: map-get($value, colorPrimary);
+
+      // &:focus-visible,
+      &:hover {
+        background: lighten(map-get($value, colorPrimary), 10);
+      }
+    }
+
+    // no-js
+    .no-js {
+      noscript {
+        border-color: map-get($value, colorPrimary);
+
+        a {
+          color: map-get($value, colorPrimary);
+
+          // &:focus-visible,
+          &:hover {
+            color: map-get($value, aHover);
+          }
+        }
+      }
+    }
+
+    //_hack
+    .gs-result .gs-title,
+    .gs-result .gs-title * {
+      color: map-get($value, colorPrimary) !important;
+    }
+
+    .gs-webResult div.gs-visibleUrl {
+      color: $colorSecondary !important;
+    }
+
+    .gsc-search-button-v2,
+    .gsc-search-button-v2:hover,
+    .gsc-search-button-v2:focus-visible {
+      background-color: map-get($value, colorPrimary) !important;
+    }
+
+    //_typegraphy
+    blockquote {
+      border-color: map-get($value, colorPrimary);
+    }
+
+    //_btn
+    .btnSubmit {
+      background: map-get($value, colorPrimary);
+      border-color: map-get($value, colorPrimary);
+    }
+
+    .btnSearch {
+      background: map-get($value, colorPrimary);
+      border-color: map-get($value, colorPrimary);
+    }
+
+    .btnPrimary {
+      background: map-get($value, colorPrimary);
+      color: #fff;
+      border-color: map-get($value, colorPrimary);
+
+      // &:focus-visible,
+      &:hover {
+        background: darken(map-get($value, colorPrimary), 10);
+        border-color: map-get($value, colorPrimary);
+      }
+    }
+
+    .btnSecondary {
+      color: darken(map-get($value, colorPrimary), 15);
+      border-color: map-get($value, colorPrimary);
+
+      // &:focus-visible,
+      &:hover {
+        color: darken(map-get($value, colorPrimary), 30);
+        background: lighten(map-get($value, colorPrimary), 5);
+        border-color: lighten(map-get($value, colorPrimary), 5);
+      }
+    }
+
+    //_category
+    .category {
+      a {
+
+        &:hover,
+        &:focus,
+        &.active {
+          color: #fff;
+          background: lighten(map-get($value, colorPrimary), 5);
+          border-color: lighten(map-get($value, colorPrimary), 5);
+        }
+      }
+    }
+
+    //_functionpanel
+    div.function {
+      ul {
+        li {
+
+          button,
+          a {
+            color: #fff;
+
+            // &:focus-visible,
+            &:hover {
+              background: darken(map-get($value, aHover), 0);
+              border-color: darken(map-get($value, aHover), 0);
+            }
+          }
+        }
+      }
+    }
+
+
+    //_language
+    .language {
+      ul {
+        li {
+          a {
+            color: #fff;
+
+            // &:focus-visible,
+            &:hover {
+              background: map-get($value, colorPrimary);
+              border-inline: map-get($value, aHover) 2px solid;
+            }
+          }
+        }
+      }
+    }
+
+    //_fatFooter
+    .fatFooter {
+      .btnFatFooter {
+        background: map-get($value, colorPrimary);
+
+        // &:focus-visible,
+        &:hover {
+          background: darken(map-get($value, colorPrimary), 10);
+        }
+      }
+
+      nav > ul > li > a {
+        color: map-get($value, colorPrimary);
+      }
+    }
+
+    //_footer
+    footer {
+      a {
+        color: map-get($value, colorPrimary);
+
+        // &:focus-visible,
+        &:hover {
+          color: darken(map-get($value, colorPrimary), 10);
+        }
+      }
+
+      .footerLink {
+        li {
+          a {
+            color: #fff;
+            background: map-get($value, colorPrimary);
+
+            // &:focus-visible,
+            &:hover {
+              background: darken(map-get($value, colorPrimary), 10);
+            }
+          }
+        }
+      }
+
+      .update,
+      .counter {
+        em {
+          color: map-get($value, colorPrimary);
+        }
+      }
+
+      // .footerIcon {
+      //   a {
+
+      //     &:focus-visible{
+      //       &:after {
+      //         box-shadow: 0px 0px 0px 1px map-get($value, aHover) inset;
+      //       }
+      //     }
+      //   }
+      // }
+    }
+
+    //_header
+    .sidebarCtrlBtn {
+      &::before {
+        background: map-get($value, colorPrimary);
+        box-shadow: map-get($value, colorPrimary) 0 6px 0 0, map-get($value, colorPrimary) 0 -6px 0 0;
+      }
+
+      &::after {
+        background: map-get($value, colorPrimary);
+      }
+
+      &:hover {
+        &::before {
+          box-shadow: none;
+        }
+      }
+    }
+
+    // .webSearch .keywordHot ul a,
+    // .header .navigation .navList li a {
+    //   color: $colorWord;
+    //   &:hover {
+    //     color: map-get($value, aHover);
+    //   }
+    // }
+    //_list
+    .lp {
+      .list {
+
+        & > ul,
+        ol {
+          border-top: 2px solid map-get($value, colorPrimary);
+
+          & > li {
+            & > a {
+              &:hover {
+                color: map-get($value, aHover);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    //_menu
+    .mainMenu {
+
+      // 預設選單 ul
+      & > ul {
+
+        // 第一層選單樣式
+        & > li {
+          & > a {
+            color: $colorWord;
+
+            // &:focus-visible {
+            //   box-shadow: 0 0 0 2px inset map-get($value, aHover);
+            // }
+          }
+
+          &.active,
+          &:hover {
+            & > a {
+              color: map-get($value, aHover);
+
+              &:after {
+                border-color: map-get($value, aHover);
+              }
+            }
+          }
+        }
+      }
+
+      ul {
+        li {
+          ul {
+
+            // 第二層選單樣式
+            li {
+              a {
+                color: #fff;
+
+                // &:focus-visible,
+                &:hover {
+                  color: #fff;
+                  background: map-get($value, aHover);
+                }
+              }
+            }
+
+            li.hasChild {
+              & > a {
+
+                // &:focus-visible,
+                &:hover {
+                  background: map-get($value, colorPrimary);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    //_modal
+    .modal {
+      h2 {
+        border-color: map-get($value, colorPrimary);
+      }
+    }
+
+    //_paginations
+    .pagination {
+      span {
+        color: map-get($value, colorPrimary);
+      }
+
+      .page {
+        li {
+          a {
+
+            // &:focus-visible,
+            &:hover {
+              color: #fff;
+              background: map-get($value, colorPrimary);
+              border-color: map-get($value, colorPrimary);
+            }
+          }
+
+          &.active {
+            a {
+              background: map-get($value, formFocus);
+              border-color: darken(map-get($value, formFocus), 5);
+            }
+          }
+        }
+      }
+    }
+
+    //_swiper
+    .cpSlider .swiper {
+      h3 {
+        border-color: map-get($value, colorPrimary);
+      }
+    }
+
+    //_tabs
+    .tabSet {
+      margin: 30px auto;
+
+      .tabItems {
+        button {
+          // &:focus-visible {
+          //   box-shadow: 0 0px 0px 2px map-get($value, aFocus) inset;
+          // }
+
+          &.active {
+            background: map-get($value, colorPrimary);
+          }
+        }
+      }
+    }
+
+    // .tabContent {
+    //   a:focus-visible {
+    //     box-shadow: 0 0px 0px 2px map-get($value, aFocus) inset;
+
+    //     @include screen('mobile') {
+    //       box-shadow: none;
+    //     }
+    //   }
+    // }
+
+    //_cp
+    .cp {
+      a {
+        color: map-get($value, colorPrimary);
+
+        // &:focus-visible,
+        &:hover {
+          color: darken(map-get($value, colorPrimary), 5);
+        }
+      }
+
+      .publishInfo {
+        border-color: map-get($value, colorPrimary);
+      }
+    }
+
+    .fileDownload {
+      h3 {
+        border-color: map-get($value, colorPrimary);
+      }
+    }
+
+    .webLink {
+      h3 {
+        border-color: map-get($value, colorPrimary);
+      }
+
+      li a {
+        color: #000;
+      }
+    }
+
+    //_tooltip
+    em[tooltip] {
+      color: map-get($value, colorPrimary);
+    }
+
+    //_leftblock
+    // .leftBlock {
+    //   .banner {
+    //     .item {
+    //       a {
+    //         &:focus-visible {
+    //           &:after {
+    //             box-shadow: 0px 0px 0px 2px lighten(map-get($value, colorPrimary), 5) inset;
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
+    //_mp
+    a.more {
+      color: map-get($value, colorPrimary);
+      border-color: map-get($value, colorPrimary);
+
+      &:before {
+        background: map-get($value, colorPrimary);
+      }
+    }
+
+    // .adSlider {
+    //   .imgContainer {
+    //     &:focus-visible {
+    //       &:before {
+    //         box-shadow: 0 0px 0px 3px map-get($value, colorPrimary) inset;
+    //       }
+    //     }
+    //   }
+    // }
+
+    //_sitemap
+    .cascading {
+      li {
+        a {
+          border-color: map-get($value, colorPrimary);
+
+          // &:focus-visible,
+          &:hover {
+            color: map-get($value, colorPrimary);
+          }
+        }
+      }
+    }
+
+    //_link
+    .submenu {
+      li {
+        a {
+
+          // &:focus-visible,
+          &:hover {
+            border-color: map-get($value, aHover);
+            color: map-get($value, aHover);
+          }
+        }
+      }
+    }
+
+    //_form
+    // button:focus-visible,
+    // input[type='text']:focus-visible,
+    // input[type='reset']:focus-visible,
+    // input[type='file']:focus-visible,
+    // input[type='tel']:focus-visible,
+    // input[type='email']:focus-visible,
+    // input[type='password']:focus-visible,
+    // textarea:focus-visible,
+    // select:focus-visible {
+    //   border-color: lighten(map-get($value, colorPrimary), 5);
+    //   box-shadow: 0px 0px 0px 2px lighten(map-get($value, colorPrimary), 5);
+    // }
+    // input[type='checkbox']:focus-visible,
+    input[type='checkbox']:checked,
+    // input[type='radio']:focus-visible,
+    input[type='radio']:checked {
+      border-color: map-get($value, colorPrimary);
+      background-color: map-get($value, colorPrimary);
+      // outline: none;
+    }
+
+    input[type='radio']:checked {
+      box-shadow: #fff 0 0 0 3px inset, map-get($value, colorPrimary) 0 0 0 2px;
+    }
+
+    // 手風琴
+    .accordion ul li {
+      .accordionList {
+        color: #fff;
+        background-color: map-get($value, colorPrimary);
+      }
+
+      .accordionContent {
+        a {
+          color: map-get($value, colorPrimary);
+
+          &:hover {
+            color: darken(map-get($value, colorPrimary), 20);
+          }
+        }
+      }
+    }
+
+    // tab
+    .tabContent {
+      a {
+        color: $colorWord;
+
+        &:hover {
+          color: darken(map-get($value, colorPrimary), 20);
+        }
+      }
+    }
+
+    //bread
+    .breadcrumb {
+      a {
+        color: $colorWord;
+
+        &:hover {
+          color: darken(map-get($value, colorPrimary), 20);
+        }
+      }
+    }
+  }
+}

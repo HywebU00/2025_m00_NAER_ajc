@@ -1,0 +1,450 @@
+// 父層啟動flex： @extend %flexSet;
+// 父層啟動flex： @include %flexSet;
+// @for $i from 1 through 12 {}
+
+// 啟動display:flex
+%flexSet {
+  display: flex;
+  flex-flow: row wrap;
+  // 預設均分
+  justify-content: space-between;
+}
+
+@mixin flexSet {
+  display: flex;
+  flex-flow: row wrap;
+  // 預設均分
+  justify-content: space-between;
+}
+$mGutter: 4px;
+////////////////////////////////////////////////////
+////////////////// 均分 equal         //////////////
+////////////////// xs - lg min-weidth //////////////
+////////////////////////////////////////////////////
+
+// 均分計算公式
+@mixin equalFormula($col, $mGutter) {
+  // 啟動計算公式 ------
+  // 欄數（$col）、欄距（$mGutter）
+  flex-basis: calc(100% / #{$col} - #{$mGutter});
+  max-width: calc(100% / #{$col} - #{$mGutter});
+
+  @if $col == 2 {
+    &:last-child {
+      @for $i from 1 through 12 {
+        &:nth-child(12n -#{$i}) {
+          margin-right: 0;
+        }
+      }
+    }
+  } @else if $col == 1 {
+    &:last-child {
+      margin-right: 0;
+    }
+  } @else {
+    @for $i from 1 through ($col - 1) {
+      &:last-child {
+        &:nth-child(#{$col}n) {
+          margin-right: 0;
+        }
+        &:nth-child(#{$col}n - #{$i}) {
+          margin-right: calc((100% / #{$col} - #{$mGutter}) *#{$i} + (#{$mGutter}*#{$col}) *#{$i} / (#{$col} - 1));
+        }
+      }
+    }
+  }
+}
+/////////////////////// step 1、父層啟動 flex
+.demo {
+  .flexSet {
+    .col {
+      background: #485b8a;
+      color: #fff;
+    }
+  }
+  .flexEqual_3,
+  .flexEqual-5,
+  .flexEqual_7,
+  .flexEqual_9,
+  .flexEqual_11 {
+    .flexSet {
+      .col {
+        background: #00b0c6;
+      }
+    }
+  }
+}
+.flexSet {
+  // 啟動flex
+  // 位置：sass/sass/common/mixins/_extend.scss
+  @extend %flexSet;
+
+  // sampl樣式設定
+  .col {
+    // background: #485b8a;
+    // color: #fff;
+    margin: 4px 0;
+    p {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+// 極小尺寸
+// $screenXs-flex: 320px !default;
+// 預設情況：最多4欄
+@mixin flexXsEqual($col, $mGutter) {
+  @media (min-width: $screenXs-flex) {
+    @include equalFormula($col, $mGutter);
+  }
+}
+
+// 手機
+// $screenSm: 768px !default;
+// 預設情況：1-12欄
+@mixin flexSmEqual($col, $mGutter) {
+  @media (min-width: $screenSm) {
+    @include equalFormula($col, $mGutter);
+  }
+}
+
+// 平板
+// $screenMd: 992px !default;
+// 預設情況：1-12欄
+@mixin flexMdEqual($col, $mGutter) {
+  @media (min-width: $screenMd) {
+    @include equalFormula($col, $mGutter);
+  }
+}
+
+// 電腦
+// $screenLg: 1400px !default;
+// 預設情況：1-12欄
+@mixin flexLgEqual($col, $mGutter) {
+  @media (min-width: $screenLg) {
+    @include equalFormula($col, $mGutter);
+  }
+}
+
+// 範例：
+// 子層 - 自訂欄寬
+// .col{
+//   @include flexXsEqual(1, 0px, $padding);
+//   @include flexSmEqual(2, $margin, $padding);
+//   @include flexMdEqual(3, $margin, $padding);
+//   @include flexLgEqual(3, $margin, $padding);
+// }
+
+/////////////////////////////////////////////
+////////////////// 自訂欄寬 //////////////////
+/////////////////////////////////////////////
+
+// 極小尺寸
+@mixin gutterFormula($col, $mGutter) {
+  // 啟動計算公式 ------
+  // 佔欄數（$col）、欄距（$mGutter）
+  // width ＝ 100% / 12 * 佔幾欄 - 欄距
+  flex-basis: calc(100% / 12 * #{$col} - #{$mGutter});
+  max-width: calc(100% / 12 * #{$col} - #{$mGutter});
+}
+// $screenXs-flex: 320px !default;
+@mixin flexXs($col, $mGutter) {
+  @media (min-width: $screenXs-flex) {
+    @include gutterFormula($col, $mGutter);
+  }
+}
+
+// 手機
+// $screenSm: 768px !default;
+@mixin flexSm($col, $mGutter) {
+  @media (min-width: $screenSm) {
+    @include gutterFormula($col, $mGutter);
+  }
+}
+
+// 平板
+// $screenMd: 992px !default;
+@mixin flexMd($col, $mGutter) {
+  @media (min-width: $screenMd) {
+    @include gutterFormula($col, $mGutter);
+  }
+}
+
+// 電腦
+// $screenLg: 1400px !default;
+@mixin flexLg($col, $mGutter) {
+  @media (min-width: $screenLg) {
+    @include gutterFormula($col, $mGutter);
+  }
+}
+
+// 範例：
+// 子層 - 平均欄寬
+// .col{
+//   @include flexXs(1, 0px);
+//   @include flexSm(2, $mGutter);
+//   @include flexMd(3, $mGutter);
+//   @include flexLg(3, $mGutter);
+// }
+
+/////////////////////// step 2、子層設定欄寬
+
+.flexEqual_2 {
+  .flexSet {
+    .col {
+      @include flexXsEqual(1, 0px);
+      @include flexSmEqual(2, $mGutter);
+      @include flexMdEqual(2, $mGutter);
+      @include flexLgEqual(2, $mGutter);
+      @include gutter();
+    }
+    .thumbnail {
+      margin-bottom: 30px;
+      @include flexXsEqual(1, 0px);
+      @include flexSmEqual(2, $mGutter);
+      @include flexMdEqual(2, $mGutter);
+      @include flexLgEqual(2, $mGutter);
+      @include screen('mobile') {
+        justify-content: center;
+      }
+    }
+  }
+}
+.flexEqual_3 {
+  .flexSet {
+    .col {
+      @include flexXsEqual(1, 0px);
+      @include flexSmEqual(2, $mGutter);
+      @include flexMdEqual(3, $mGutter);
+      @include flexLgEqual(3, $mGutter);
+      @include gutter();
+    }
+    .thumbnail {
+      margin-bottom: 30px;
+      @include flexXsEqual(1, 0px);
+      @include flexSmEqual(2, $mGutter);
+      @include flexMdEqual(3, $mGutter);
+      @include flexLgEqual(3, $mGutter);
+      @include screen('mobile') {
+        justify-content: center;
+      }
+    }
+  }
+}
+.flexEqual_4 {
+  .flexSet {
+    .col {
+      @include flexXsEqual(1, 0px);
+      @include flexSmEqual(2, $mGutter);
+      @include flexMdEqual(4, $mGutter);
+      @include flexLgEqual(4, $mGutter);
+      @include gutter();
+    }
+    .thumbnail {
+      margin-bottom: 30px;
+      @include flexXsEqual(1, 0px);
+      @include flexSmEqual(2, $mGutter);
+      @include flexMdEqual(4, $mGutter);
+      @include flexLgEqual(4, $mGutter);
+      @include screen('mobile') {
+        justify-content: center;
+      }
+    }
+  }
+}
+.flexEqual_5 {
+  .flexSet {
+    .col {
+      @include flexXsEqual(1, 0px);
+      @include flexSmEqual(2, $mGutter);
+      @include flexMdEqual(4, $mGutter);
+      @include flexLgEqual(5, $mGutter);
+      @include gutter();
+    }
+    .thumbnail {
+      margin-bottom: 30px;
+      @include flexXsEqual(1, 0px);
+      @include flexSmEqual(2, $mGutter);
+      @include flexMdEqual(4, $mGutter);
+      @include flexLgEqual(5, $mGutter);
+      @include screen('mobile') {
+        justify-content: center;
+      }
+    }
+  }
+}
+// .flexEqual-6 {
+//     .flexSet {
+//         .col {
+//             @include flexXsEqual(1, 0px);
+//             @include flexSmEqual(2, $mGutter);
+//             @include flexMdEqual(6, $mGutter);
+//             @include flexLgEqual(6, $mGutter);
+//             @include gutter();
+//         }
+//     }
+// }
+// .flexEqual_7 {
+//     .flexSet {
+//         .col {
+//             @include flexXsEqual(1, 0px);
+//             @include flexSmEqual(3, $mGutter);
+//             @include flexMdEqual(4, $mGutter);
+//             @include flexLgEqual(7, $mGutter);
+//             @include gutter();
+//         }
+//     }
+// }
+// .flexEqual-8 {
+//     .flexSet {
+//         .col {
+//             @include flexXsEqual(2, 2px);
+//             @include flexSmEqual(4, $mGutter);
+//             @include flexMdEqual(6, $mGutter);
+//             @include flexLgEqual(8, $mGutter);
+//             @include gutter();
+//         }
+//     }
+// }
+// .flexEqual_9 {
+//     .flexSet {
+//         .col {
+//             @include flexXsEqual(2, 2px);
+//             @include flexSmEqual(3, $mGutter);
+//             @include flexMdEqual(6, $mGutter);
+//             @include flexLgEqual(9, $mGutter);
+//             @include gutter();
+//         }
+//     }
+// }
+// .flexEqual-10 {
+//     .flexSet {
+//         .col {
+//             @include flexXsEqual(4, 2px);
+//             @include flexSmEqual(6, $mGutter);
+//             @include flexMdEqual(8, $mGutter);
+//             @include flexLgEqual(10, $mGutter);
+//             @include gutter();
+//         }
+//     }
+// }
+// .flexEqual_11 {
+//     .flexSet {
+//         .col {
+//             @include flexXsEqual(3, 2px);
+//             @include flexSmEqual(5, $mGutter);
+//             @include flexMdEqual(7, $mGutter);
+//             @include flexLgEqual(11, $mGutter);
+//             @include gutter();
+//         }
+//     }
+// }
+// .flexEqual-12 {
+//     .flexSet {
+//         .col {
+//             @include flexXsEqual(3, 2px);
+//             @include flexSmEqual(6, $mGutter);
+//             @include flexMdEqual(9, $mGutter);
+//             @include flexLgEqual(12, $mGutter);
+//             @include gutter();
+//         }
+//     }
+// }
+
+//////////////////////////////////////////////////
+////////////////// 自訂欄寬         ///////////////
+////////////////// 處理不均分的欄位  ///////////////
+//////////////////////////////////////////////////
+
+// 單欄滿版
+.full {
+  .container {
+    padding: 0;
+    max-width: 100%;
+  }
+}
+// 多欄 = 12
+.flex_3_6_3 {
+  .col {
+    @include flexXs(12, 0px);
+    @include flexSm(12, $mGutter);
+    @include flexMd(3, $mGutter);
+    @include flexLg(3, $mGutter);
+    @include gutter();
+
+    &:nth-child(2) {
+      @include flexXs(12, 0px);
+      @include flexSm(12, $mGutter);
+      @include flexMd(6, $mGutter);
+      @include flexLg(6, $mGutter);
+    }
+  }
+}
+
+.flex_8_4 {
+  .col {
+    @include flexXs(12, 0px);
+    @include flexSm(6, $mGutter);
+    @include flexMd(8, $mGutter);
+    @include flexLg(8, $mGutter);
+    @include gutter();
+
+    &:nth-child(2) {
+      @include flexXs(12, 0px);
+      @include flexSm(6, $mGutter);
+      @include flexMd(4, $mGutter);
+      @include flexLg(4, $mGutter);
+    }
+  }
+}
+.flex_4_8 {
+  .col {
+    @include flexXs(12, 0px);
+    @include flexSm(6, $mGutter);
+    @include flexMd(4, $mGutter);
+    @include flexLg(4, $mGutter);
+    @include gutter();
+
+    &:nth-child(2) {
+      @include flexXs(12, 0px);
+      @include flexSm(6, $mGutter);
+      @include flexMd(8, $mGutter);
+      @include flexLg(8, $mGutter);
+    }
+  }
+}
+
+// 綜合
+.mixEqual_2 {
+  .flexSet {
+    @extend %flexSet;
+    .col {
+      @include flexXsEqual(1, 0px);
+      @include flexSmEqual(2, $mGutter);
+      @include flexMdEqual(2, $mGutter);
+      @include flexLgEqual(2, $mGutter);
+      // @include gutter();
+      padding: 1em;
+
+      h3 {
+        margin: 10px 0;
+      }
+    }
+  }
+
+  .inner_4_8 {
+    @extend %flexSet;
+    div {
+      @include flexXs(12, 0px);
+      @include flexSm(4, $mGutter);
+      @include flexMd(4, $mGutter);
+      @include flexLg(4, $mGutter);
+
+      &:last-child {
+        @include flexXs(12, 0px);
+        @include flexSm(8, $mGutter);
+        @include flexMd(8, $mGutter);
+        @include flexLg(8, $mGutter);
+      }
+    }
+  }
+}

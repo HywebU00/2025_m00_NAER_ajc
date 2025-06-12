@@ -1,0 +1,212 @@
+// 按鈕外框
+.btnGrp {
+  text-align: center;
+  padding: 1em 0;
+}
+
+// 按鈕的共用設定
+@mixin btnSetting($btnBg: #e0e0e0, $btnWordColor: $btnWordColor) {
+  background: $btnBg;
+  border: 1px solid $btnBg;
+  color: $btnWordColor;
+
+  // text-shadow:1px 1px 1px RGBA(0,0,0,.3);
+  // border-radius: $btnRadius;
+  // @include gradient(lighten($btnBg, 5), darken($btnBg, 15), vertical);
+  &:hover {
+    background: darken($btnBg, 10); // Old browsers
+    border: 1px solid darken($btnBg, 20);
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    // @include gradient(lighten($btnBg, 10), darken($btnBg, 18), vertical);
+  }
+
+  // &:focus-visible {
+  //   background: darken($btnBg, 10); // Old browsers
+  //   border: 1px solid darken($btnBg, 20);
+  //   cursor: pointer;
+  //   color: #fff;
+  //   outline: none;
+  //   box-shadow: 0 0px 0px 2px $aFocus;
+  //   // @include gradient(lighten($btnBg, 10), darken($btnBg, 18), vertical);
+  // }
+  // &:focus-visible {
+  //   outline: red 2px solid;
+  // }
+
+  &.active {
+    background: lighten($btnBg, 5);
+    cursor: pointer;
+  }
+}
+
+// 按鈕預設陰影
+%btn {
+  font-size: $fontSize;
+  touch-action: manipulation;
+  background-image: none; //修正firefox
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: normal;
+  width: auto;
+  padding: $btnPadding;
+  min-width: 4em;
+  margin: 0.25em 0.1em;
+
+  i {
+    margin-right: 0.25em;
+    margin-left: 0.25em;
+  }
+}
+
+// 按鈕基本樣式
+.btn {
+  @extend %btn;
+  // box-sizing: border-box;
+  @include btnSetting;
+  text-shadow: none;
+
+  // &:focus-visible,
+  &:hover {
+    color: $btnWordColor;
+    outline: none;
+  }
+}
+
+//按鈕顏色
+//@include btnSetting(按鈕顏色,字的顏色);
+.btnGreen {
+  // @extend %btn;
+  @include btnSetting($colorGreen, #fff);
+}
+
+.btnBlue {
+  // @extend %btn;
+  @include btnSetting($colorBlue, #fff);
+}
+
+.btnYellow {
+  // @extend %btn;
+  @include btnSetting(lighten($colorYellow, 5), #333);
+}
+
+.btnOrange {
+  // @extend %btn;
+  @include btnSetting(lighten($colorOrange, 0), #fff);
+}
+
+.btnRed {
+  // @extend %btn;
+  @include btnSetting($colorRed, #fff);
+}
+
+.btnPurple {
+  // @extend %btn;
+  @include btnSetting(lighten($colorPurple, 5), #fff);
+}
+
+.btnSubmit {
+  // @extend %btn;
+  @include btnSetting(lighten($colorPrimary, 5), #fff);
+}
+
+.btnReset {
+  // @extend %btn;
+  color: lighten($colorWord, 15);
+}
+
+.btnSearch {
+  // @extend %btn;
+  @include btnSetting(lighten($colorPrimary, 5), #fff);
+}
+
+// 主要按鈕
+.btnPrimary {
+  background: $colorPrimary;
+  color: #fff;
+  border: solid 1px $colorPrimary;
+
+  // &:focus-visible, 
+  &:hover {
+    background: darken($colorPrimary, 10);
+    border: solid 1px $colorPrimary;
+  }
+}
+
+// 次要按鈕
+.btnSecondary {
+  background: #fff;
+  color: darken($colorPrimary, 15);
+  border: solid 1px $colorPrimary;
+  text-shadow: none;
+
+  // &:focus-visible,
+  &:hover {
+    color: darken($colorPrimary, 30);
+    background: #b5deff;
+    border: solid 1px #b5deff;
+  }
+}
+
+// 一般按鈕
+.btnNormal {
+  background: #f1f1f1;
+  color: #65656e;
+  border: solid 1px #c3c3c3;
+  text-shadow: none;
+
+  // &:focus-visible,
+  &:hover {
+    color: darken(#65656e, 15);
+    background: #c3c3c3;
+    border: solid 1px #c3c3c3;
+  }
+}
+
+// 返回
+.btnBack {
+  background: #555;
+  color: #fff;
+  border: 1px solid #ddd;
+
+  // &:focus-visible,
+  &:hover {
+    background: darken($colorPrimary, 10);
+    border: 1px solid #ddd;
+  }
+}
+
+.disabled,
+[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  text-shadow: none;
+}
+
+.readonly,
+[readonly] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  text-shadow: none;
+}
+
+// 按鈕大小
+.btnXl {
+  font-size: $fontSize * 1.5; //24px
+}
+
+.btnLg {
+  font-size: $fontSize * 1.25; //20px
+}
+
+.btnSm {
+  font-size: $fontSize * 0.938; //15px
+}
+
+.btnXs {
+  font-size: $fontSize * 0.75; //12px
+}

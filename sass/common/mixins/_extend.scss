@@ -1,0 +1,47 @@
+// 斜線
+%slash {
+  content: ' > ';
+  display: inline-block;
+  padding: 0px 4px;
+  margin: 0px 5px 0px 5px;
+  color: #3d3124;
+}
+
+// 箭頭
+%arrowSetting {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  content: ' ';
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+%arrowDown {
+  @extend %arrowSetting;
+  border-width: 6px 3px 0 3px;
+  border-color: #555 transparent transparent transparent;
+}
+%arrowRight {
+  @extend %arrowSetting;
+  border-width: 3px 0 3px 6px;
+  border-color: transparent transparent transparent #555;
+}
+%arrowUp {
+  @extend %arrowSetting;
+  border-width: 0 3px 6px 3px;
+  border-color: transparent transparent #555 transparent;
+}
+%arrowLeft {
+  @extend %arrowSetting;
+  border-width: 3px 6px 3px 0;
+  border-color: transparent #555 transparent transparent;
+}
+// 繼承
+// @extend %slash;              // 斜線
+// @extend %arrowSetting;      // 箭頭
+// @extend %arrowDown;         // 箭頭：下
+// @extend %arrowRight;        // 箭頭：右
+// @extend %arrowUp;           // 箭頭：上
+// @extend %arrowLeft;         // 箭頭：左
+// @extend %flexSet;           // 啟動 display:flex

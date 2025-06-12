@@ -1,0 +1,1522 @@
+@mixin formStyle($formColor: $colorWord, $formBorder: $colorGray, $formRadius: $btnRadius) {
+  color: $formColor;
+  font-size: 1em;
+  border: 1px solid $formBorder;
+  padding: 0.5em;
+  background: #fff;
+  vertical-align: middle;
+  margin: 0.3em;
+  box-sizing: border-box;
+  border-radius: $formRadius;
+  transition: all 0.3s ease-out;
+
+  // @include screen('mobile') {
+  //     margin: 0 0 .3em 0;
+  // }
+}
+
+// %mix-col {
+//     align-items: flex-start;
+//     @include gutter(0);
+
+//     .formTitle {
+//         max-width: calc(100% - .6em);
+//         flex-basis: calc(100% - .6em);
+//         @include gutter(0);
+//         margin: 0 .3em .5em;
+//     }
+
+//     // &>input {
+//     //     flex: 1 1 auto;
+//     // }
+
+//     .formGrp {
+//         border-bottom: 0;
+//         align-items: center;
+
+//         @include screen('xsMobile') {
+//             flex-basis: 100%;
+//         }
+//         .formContent{
+//             flex-basis: 100%;
+//             max-width: 100%;
+//             padding:0;
+//         }
+
+//     }
+// }
+
+select::-ms-expand {
+  display: none;
+}
+
+// 表單必填
+.necessary {
+  color: red;
+  margin: 0px 0.2em;
+}
+
+.formGrid {
+  border-top: 1px solid #ddd;
+
+  .formGrp {
+    border-bottom: 1px dashed #ddd;
+    padding: 0.5em 0;
+  }
+}
+
+.flexForm {
+  font-size: 0.938rem;
+  margin: 0.5em;
+
+  .formGrp {
+    display: flex;
+    //overflow: hidden;
+    flex-wrap: wrap;
+    position: relative;
+
+    // 閱讀條文
+    &.agree {
+      border-bottom: none;
+
+      label {
+        //float: left;
+        width: auto;
+        margin: 0 0.5em 0.5em 0;
+      }
+    }
+  }
+
+  .formTitle {
+    max-width: $formTitleWidth;
+    flex: 0 0 $formTitleWidth;
+    align-self: flex-start;
+    padding: 0.3em 1em;
+
+    @include screen('mobile') {
+      max-width: calc(100% - 0.6em);
+      flex-basis: calc(100% - 0.6em);
+      margin: 0 0.3em;
+      @include gutter(0);
+    }
+
+    & + .formContent {
+
+      // &.formCol_6_6,
+      // &.formCol_4_4_4,
+      // &.formCol_3_3_3_3,
+      // &.formCol_3_9,
+      // &.formCol_9_3,
+      // &.formCol_3_3_6,
+      // &.formCol_6_3_3,
+      // &.formCol_2_10,
+      // &.formCol_10_2,
+      // &.formCol_4_8,
+      // &.formCol_8_4,
+      // &.formCol_2_2_8,
+      // &.formCol_8_2_2
+      &[class*='formCol'] {
+        flex-basis: calc(100% - #{$formTitleWidth});
+        max-width: calc(100% - #{$formTitleWidth});
+        padding-top: 0;
+        @include gutter();
+
+        @include screen('mobile') {
+          flex-basis: 100%;
+          max-width: 100%;
+          @include gutter(0);
+        }
+      }
+    }
+  }
+
+  .formContent {
+    display: flex;
+    //padding-top: 3px;
+    max-width: calc(100% - #{$formTitleWidth});
+    // flex:1 1 calc(100% - #{$formTitleWidth});
+    flex: auto;
+    flex-basis: calc(100% - #{$formTitleWidth});
+    position: relative;
+    min-height: 1px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    @include gutter();
+
+    @include screen('mobile') {
+      max-width: 100%;
+      flex-basis: 100%;
+      @include gutter(0);
+    }
+
+    *[class^='notice'] {
+      margin: 0 0.3em 0.3em 0.3em;
+      width: calc(100% - 0.6em);
+    }
+
+    //有條件式表單
+    &.additional {
+      flex-wrap: nowrap;
+      align-items: center;
+
+      .checkbox {
+        flex: 1 0 auto;
+        width: auto;
+        display: inline-flex;
+        align-items: center;
+
+        label {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .help {
+      font-size: 0.813em;
+      color: #888;
+      padding: 0 0.5em;
+    }
+
+    // 第二層的設定
+    .formGrp {
+      flex: 0 0 100%;
+      min-height: 2.5em;
+      margin: 0;
+
+      .formContent {
+        flex-shrink: 0;
+        // flex-basis: calc(100% - #{$formTitleWidth});
+        // max-width:  calc(100% - #{$formTitleWidth});
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        @include gutter(0);
+
+        @include screen('mobile') {
+          flex-basis: 100%;
+        }
+
+        &.formInline {
+
+          input[type='text'],
+          input[type='tel'],
+          select,
+          .checkbox {
+            width: auto;
+            min-width: 100px;
+            display: inline-block;
+
+            @include screen('xsMobile') {
+              width: calc(100% - 0.6em);
+              display: block;
+            }
+          }
+        }
+      }
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+    }
+
+    // 電話專屬
+    .tel {
+
+      input[type='text']:first-child,
+      input[type='tel']:first-child {
+        background: url(../images/icon/icon_add.svg) no-repeat 0.5em center;
+        background-size: 12px;
+        padding-left: 1.5em;
+      }
+
+      input[type='text']:first-child,
+      select:first-child,
+      input[type='tel']:first-child {
+        width: 100px;
+
+        & ~ input {
+          width: calc(100% - 200px);
+
+          @include screen('xsMobile') {
+            width: 100%;
+            display: block;
+          }
+        }
+      }
+    }
+
+    // 生日專屬
+    .birthday {
+      select {
+        display: inline-block;
+        margin-right: 0.5em;
+        text-align-last: center;
+
+        @include screen('xsMobile') {
+          width: 88%;
+          min-width: 88%;
+          display: inline-block;
+          text-align-last: left;
+        }
+
+        option {
+          text-align: center;
+        }
+
+        // ~select {
+        //     margin-left: .2em;
+
+        //     // @include screen('xsMobile') {
+        //     //     margin-left: 0;
+        //     // }
+        // }
+      }
+    }
+
+    // 地址專屬
+    .address {
+      select {
+        min-width: 100px;
+
+        option {
+          text-align: center;
+        }
+
+        @include screen('xsMobile') {
+          width: 100px;
+          display: inline-block;
+        }
+      }
+
+      input[type='text'] {
+        //width: calc(100% - 231px) ;
+        flex: 1 1 auto;
+
+        @include screen('mobile') {
+          display: block;
+          width: calc(100% - 0.6em);
+        }
+      }
+    }
+
+    // 日期專屬
+    .datePick {
+      position: relative;
+
+      @include screen('xsMobile') {
+        width: 100%;
+        display: block;
+        padding-right: 0;
+      }
+
+      & + .datePick {
+        margin-left: 0.3em;
+        margin-right: 0;
+        padding-right: 0;
+
+        &:before {
+          content: '~';
+          font-size: 1.5em;
+          color: #777;
+        }
+
+        @include screen('xsMobile') {
+          margin-left: 0em;
+
+          //padding-right:.5em;
+          &:before {
+            display: none;
+          }
+        }
+
+        // i {
+        //     right: .5em;
+        // }
+      }
+
+      i {
+        position: absolute;
+        padding: 0.37em 0.1em;
+        right: 1em;
+        top: 0.2em;
+        min-width: 1em;
+        background: none;
+        border: none;
+        width: auto;
+        pointer-events: none;
+
+        // &:focus-visible,
+        &:hover {
+          box-shadow: none;
+          border: none;
+        }
+      }
+
+      & > input[type='text'],
+      & > input[type='date'] {
+        width: 10em;
+
+        @include screen('xsMobile') {
+          width: calc(100% - 0.6em);
+        }
+      }
+
+      & > input[type='text'] {
+        padding-right: 2em;
+      }
+    }
+  }
+
+  //選單格線系統
+  [class*='formCol'] {
+    flex-basis: 100%;
+    max-width: 100%;
+    align-items: center;
+    //justify-content: space-around;
+    @include gutter(0);
+
+    & > .formGrp {
+      border-bottom: 0;
+      padding-top: 0;
+      //margin: 0;
+    }
+
+    //& >input,
+    //& >select,
+    //&>label{
+    //     margin: .3em 0;
+    // }
+
+    label {
+      @include gutter(0.6em);
+      padding-top: 5px;
+      // &.labelHidden{
+      //     width: 0;
+      //     flex-basis: 0;
+      // }
+    }
+
+    @include screen('mobile') {
+      @include gutter();
+    }
+  }
+
+  .formCol_6_6 {
+    & > .formGrp {
+      width: 50%;
+      flex-basis: 50%;
+      max-width: 50%;
+
+      @include screen('xsMobile') {
+        width: 100%;
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+    }
+
+    & > input,
+    & > select,
+    & > label {
+      width: calc(50% - 0.6em);
+      flex-basis: calc(50% - 0.6em);
+      max-width: calc(50% - 0.6em);
+
+      @include screen('xsMobile') {
+        width: calc(100% - 0.6em);
+        flex-basis: calc(100% - 0.6em);
+        max-width: calc(100% - 0.6em);
+      }
+    }
+  }
+
+  .formCol_4_4_4 {
+    & > .formGrp {
+      width: calc(100% * 0.33333);
+      flex-basis: calc(100% * 0.33333);
+      max-width: calc(100% * 0.33333);
+
+      @include screen('xsMobile') {
+        width: 100%;
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+    }
+
+    & > input,
+    & > select,
+    & > label {
+      width: calc(100% * 0.33333 - 0.6em);
+      flex-basis: calc(100% * 0.33333 - 0.6em);
+      max-width: calc(100% * 0.33333 - 0.6em);
+
+      @include screen('xsMobile') {
+        width: calc(100% - 0.6em);
+        flex-basis: calc(100% - 0.6em);
+        max-width: calc(100% - 0.6em);
+      }
+    }
+  }
+
+  .formCol_3_3_3_3 {
+    & > .formGrp {
+      width: 25%;
+      flex-basis: 25%;
+      max-width: 25%;
+
+      @include screen('mobile') {
+        width: 50%;
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+
+      @include screen('xsMobile') {
+        width: 100%;
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+    }
+
+    & > input,
+    & > select,
+    & > label {
+      width: calc(25% - 0.6em);
+      flex-basis: calc(25% - 0.6em);
+      max-width: calc(25% - 0.6em);
+
+      @include screen('xsMobile') {
+        width: calc(100% - 0.6em);
+        flex-basis: calc(100% - 0.6em);
+        max-width: calc(100% - 0.6em);
+      }
+    }
+  }
+
+  .formCol_2_2_2_2_2_2 {
+    & > .formGrp {
+      width: calc(100% / 6);
+      flex-basis: calc(100% / 6);
+      max-width: calc(100% / 6);
+
+      @include screen('mobile') {
+        width: 50%;
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+
+      // @include screen('xsMobile') {
+      //     flex-basis: 100%;
+      //     width: 100%;
+      // }
+    }
+
+    & > input,
+    & > select,
+    & > label {
+      width: calc(100% / 6 - 0.6em);
+      flex-basis: calc(100% / 6 - 0.6em);
+      max-width: calc(100% / 6 - 0.6em);
+
+      @include screen('xsMobile') {
+        width: calc(50% - 0.6em);
+        flex-basis: calc(50% - 0.6em);
+        max-width: calc(50% - 0.6em);
+      }
+    }
+  }
+
+  .formCol_3_9 {
+    & > .formGrp {
+      width: 25%;
+      flex-basis: 25%;
+      max-width: 25%;
+
+      @include screen('xsMobile') {
+        width: 100%;
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+
+      &:nth-child(2) {
+        width: 75%;
+        flex-basis: 75%;
+        max-width: 75%;
+
+        @include screen('xsMobile') {
+          width: 100%;
+          flex-basis: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+
+    & > input,
+    & > select,
+    & > label {
+      width: calc(25% - 0.6em);
+      max-width: calc(25% - 0.6em);
+      flex-basis: calc(25% - 0.6em);
+
+      @include screen('xsMobile') {
+        width: calc(25% - 0.6em);
+        max-width: calc(25% - 0.6em);
+        flex-basis: calc(100% - 0.6em);
+      }
+
+      &:nth-child(2) {
+        width: calc(75% - 0.6em);
+        flex-basis: calc(75% - 0.6em);
+        max-width: calc(75% - 0.6em);
+
+        @include screen('xsMobile') {
+          width: calc(100% - 0.6em);
+          flex-basis: calc(100% - 0.6em);
+          max-width: calc(100% - 0.6em);
+        }
+      }
+    }
+  }
+
+  .formCol_9_3 {
+    & > .formGrp {
+      flex-basis: 75%;
+      max-width: 75%;
+      width: 75%;
+
+      @include screen('xsMobile') {
+        flex-basis: 100%;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      &:nth-child(2) {
+        flex-basis: 25%;
+        max-width: 25%;
+        width: 25%;
+
+        @include screen('xsMobile') {
+          flex-basis: 100%;
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    & > input,
+    & > select,
+    & > label {
+      width: calc(75% - 0.6em);
+      max-width: calc(75% - 0.6em);
+      flex-basis: calc(75% - 0.6em);
+
+      @include screen('xsMobile') {
+        width: calc(100% - 0.6em);
+        max-width: calc(100% - 0.6em);
+        flex-basis: calc(100% - 0.6em);
+      }
+
+      &:nth-child(2) {
+        width: calc(25% - 0.6em);
+        max-width: calc(25% - 0.6em);
+        flex-basis: calc(25% - 0.6em);
+
+        @include screen('xsMobile') {
+          width: calc(100% - 0.6em);
+          max-width: calc(100% - 0.6em);
+          flex-basis: calc(100% - 0.6em);
+        }
+      }
+    }
+  }
+
+  .formCol_3_3_6 {
+    & > .formGrp {
+      width: 25%;
+      flex-basis: 25%;
+      max-width: 25%;
+
+      @include screen('xsMobile') {
+        width: 50%;
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+
+      &:last-child {
+        width: 50%;
+        flex-basis: 50%;
+        max-width: 50%;
+
+        @include screen('xsMobile') {
+          width: 100%;
+          flex-basis: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+
+    & > input,
+    & > select,
+    & > label {
+      width: calc(25% - 0.6em);
+      max-width: calc(25% - 0.6em);
+      flex-basis: calc(25% - 0.6em);
+
+      @include screen('xsMobile') {
+        width: calc(50% - 0.6em);
+        max-width: calc(50% - 0.6em);
+        flex-basis: calc(50% - 0.6em);
+      }
+
+      &:last-child {
+        width: calc(50% - 0.6em);
+        max-width: calc(50% - 0.6em);
+        flex-basis: calc(50% - 0.6em);
+
+        @include screen('xsMobile') {
+          width: calc(100% - 0.6em);
+          max-width: calc(100% - 0.6em);
+          flex-basis: calc(100% - 0.6em);
+        }
+      }
+    }
+  }
+
+  .formCol_6_3_3 {
+
+    & > .formGrp,
+    & > input[type='text'],
+    & > select {
+      width: 25%;
+      flex-basis: 25%;
+      max-width: 25%;
+
+      @include screen('xsMobile') {
+        width: 50%;
+        max-width: 50%;
+        flex-basis: 50%;
+      }
+    }
+
+    & > .formGrp,
+    & > input[type='text'],
+    & > select {
+      &:first-child {
+        width: 50%;
+        max-width: 50%;
+        flex-basis: 50%;
+
+        @include screen('xsMobile') {
+          width: 100%;
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+
+  .formCol_4_8 {
+    & > .formGrp {
+      width: calc(100% / 3);
+      max-width: calc(100% / 3);
+      flex-basis: calc(100% / 3);
+
+      @include screen('xsMobile') {
+        width: 50%;
+        max-width: 50%;
+        flex-basis: 50%;
+      }
+
+      &:last-child {
+        width: calc(100% / 3 * 2);
+        max-width: calc(100% / 3 * 2);
+        flex-basis: calc(100% / 3 * 2);
+
+        @include screen('xsMobile') {
+          width: 100%;
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+    }
+
+    & > input,
+    & > select,
+    & > label {
+      width: calc(100% / 3 - 0.6em);
+      max-width: calc(100% / 3 - 0.6em);
+      flex-basis: calc(100% / 3 - 0.6em);
+
+      @include screen('xsMobile') {
+        width: calc(100% - 0.6em);
+        max-width: calc(100% - 0.6em);
+        flex-basis: calc(100% - 0.6em);
+      }
+
+      &:last-child {
+        width: calc(100% / 3 * 2 - 0.6em);
+        max-width: calc(100% / 3 * 2 - 0.6em);
+        flex-basis: calc(100% / 3 * 2 - 0.6em);
+
+        @include screen('xsMobile') {
+          width: calc(100% - 0.6em);
+          max-width: calc(100% - 0.6em);
+          flex-basis: calc(100% - 0.6em);
+        }
+      }
+    }
+  }
+
+  .formCol_2_10 {
+    & > .formGrp {
+      width: calc(100% / 6);
+      max-width: calc(100% / 6);
+      flex-basis: calc(100% / 6);
+
+      @include screen('xsMobile') {
+        width: 100%;
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+
+      &:last-child {
+        max-width: calc(100% / 12 * 10);
+        flex-basis: calc(100% / 12 * 10);
+        width: calc(100% / 12 * 10);
+
+        @include screen('xsMobile') {
+          max-width: 100%;
+          flex-basis: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    & > input,
+    & > select,
+    & > label {
+      width: calc(100% / 12 * 2 - 0.6em);
+      max-width: calc(100% / 12 * 2 - 0.6em);
+      flex-basis: calc(100% / 12 * 2 - 0.6em);
+
+      @include screen('xsMobile') {
+        width: calc(100% - 0.6em);
+        max-width: calc(100% - 0.6em);
+        flex-basis: calc(100% - 0.6em);
+      }
+
+      &:last-child {
+        width: calc(100% / 12 * 10 - 0.6em);
+        max-width: calc(100% / 12 * 10 - 0.6em);
+        flex-basis: calc(100% / 12 * 10 - 0.6em);
+
+        @include screen('xsMobile') {
+          width: calc(100% - 0.6em);
+          max-width: calc(100% - 0.6em);
+          flex-basis: calc(100% - 0.6em);
+        }
+      }
+    }
+  }
+
+  .formCol_10_2 {
+    & > .formGrp {
+      width: calc(100% / 6);
+      max-width: calc(100% / 6);
+      flex-basis: calc(100% / 6);
+
+      @include screen('xsMobile') {
+        width: 100%;
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+
+      &:first-child {
+        width: calc(100% / 12 * 10);
+        max-width: calc(100% / 12 * 10);
+        flex-basis: calc(100% / 12 * 10);
+
+        @include screen('xsMobile') {
+          width: 100%;
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+    }
+
+    & > input,
+    & > select,
+    & > label {
+      width: calc(100% / 12 * 2 - 0.6em);
+      max-width: calc(100% / 12 * 2 - 0.6em);
+      flex-basis: calc(100% / 12 * 2 - 0.6em);
+
+      @include screen('xsMobile') {
+        width: calc(100% - 0.6em);
+        max-width: calc(100% - 0.6em);
+        flex-basis: calc(100% - 0.6em);
+      }
+
+      &:first-child {
+        width: calc(100% / 12 * 10 - 0.6em);
+        max-width: calc(100% / 12 * 10 - 0.6em);
+        flex-basis: calc(100% / 12 * 10 - 0.6em);
+
+        @include screen('xsMobile') {
+          width: calc(100% - 0.6em);
+          max-width: calc(100% - 0.6em);
+          flex-basis: calc(100% - 0.6em);
+        }
+      }
+    }
+  }
+
+  .formCol_2_2_8 {
+    & > .formGrp {
+      width: calc(100% / 12 * 2);
+      max-width: calc(100% / 12 * 2);
+      flex-basis: calc(100% / 12 * 2);
+
+      @include screen('xsMobile') {
+        width: 50%;
+        max-width: 50%;
+        flex-basis: 50%;
+      }
+
+      &:last-child {
+        width: calc(100% / 12 * 8);
+        max-width: calc(100% / 12 * 8);
+        flex-basis: calc(100% / 12 * 8);
+
+        @include screen('xsMobile') {
+          width: 100%;
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+    }
+
+    & > input,
+    & > select,
+    & > label {
+      width: calc(100% / 12 * 2 - 0.6em);
+      max-width: calc(100% / 12 * 2 - 0.6em);
+      flex-basis: calc(100% / 12 * 2 - 0.6em);
+
+      @include screen('xsMobile') {
+        width: calc(50% - 0.6em);
+        max-width: calc(50% - 0.6em);
+        flex-basis: calc(50% - 0.6em);
+      }
+
+      &:last-child {
+        width: calc(100% / 12 * 8 - 0.6em);
+        max-width: calc(100% / 12 * 8 - 0.6em);
+        flex-basis: calc(100% / 12 * 8 - 0.6em);
+
+        @include screen('xsMobile') {
+          width: calc(100% - 0.6em);
+          max-width: calc(100% - 0.6em);
+          flex-basis: calc(100% - 0.6em);
+        }
+      }
+    }
+  }
+
+  .formCol_8_2_2 {
+    & > .formGrp {
+      width: calc(100% / 12 * 2);
+      max-width: calc(100% / 12 * 2);
+      flex-basis: calc(100% / 12 * 2);
+
+      @include screen('xsMobile') {
+        width: 50%;
+        max-width: 50%;
+        flex-basis: 50%;
+      }
+
+      &:first-child {
+        width: calc(100% / 12 * 8);
+        max-width: calc(100% / 12 * 8);
+        flex-basis: calc(100% / 12 * 8);
+
+        @include screen('xsMobile') {
+          width: 100%;
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+    }
+
+    & > input,
+    & > select,
+    & > label {
+      width: calc(100% / 12 * 2 - 0.6em);
+      max-width: calc(100% / 12 * 2 - 0.6em);
+      flex-basis: calc(100% / 12 * 2 - 0.6em);
+
+      @include screen('xsMobile') {
+        width: calc(50% - 0.6em);
+        max-width: calc(50% - 0.6em);
+        flex-basis: calc(50% - 0.6em);
+      }
+
+      &:first-child {
+        width: calc(100% / 12 * 8 - 0.6em);
+        max-width: calc(100% / 12 * 8 - 0.6em);
+        flex-basis: calc(100% / 12 * 8 - 0.6em);
+
+        @include screen('xsMobile') {
+          width: calc(100% - 0.6em);
+          max-width: calc(100% - 0.6em);
+          flex-basis: calc(100% - 0.6em);
+        }
+      }
+    }
+  }
+
+  .btnGrp {
+    justify-content: center;
+
+    .btn,
+    .btnReset,
+    .btnSubmit,
+    input[type='submit'],
+    input[type='reset'],
+    input[type='button'],
+    input[type='search'] {
+      margin: 0.3em;
+    }
+  }
+
+  .btn,
+  input[type='submit'],
+  input[type='reset'],
+  input[type='button'],
+  input[type='search'] {
+    flex: 1 1 auto;
+  }
+
+  //---------------------------------------------form setting--------//
+  .formGrp,
+  .checkGrp,
+  .radioGrp,
+  .btnGrp,
+  .uploadGrp {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0.3em 0;
+
+    @include screen('mobile') {
+      flex-wrap: wrap;
+    }
+  }
+
+  .checkGrp,
+  .radioGrp {
+    label {
+      position: relative;
+      //display: block;
+      z-index: 1;
+      flex-basis: 100%;
+      display: flex;
+      align-items: center;
+
+      input {
+        &:checked {
+          & ~ span {
+            &:after {
+              position: absolute;
+              width: 1em;
+              height: 1em;
+              border-radius: 50%;
+              background: #54caff;
+              content: '';
+              left: 0.35em;
+              top: 0.3em;
+              z-index: -1;
+              animation: ripple 0.35s linear;
+            }
+          }
+        }
+      }
+    }
+
+    // radio與check個別行內設定
+    &.formInline {
+      label {
+        //display: inline-block;
+        margin: 0 0.5em 0 0;
+        flex-basis: auto;
+        margin-right: 1em;
+        display: inline-flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &.formInline,
+  .formInline {
+
+    .checkGrp,
+    .radioGrp {
+      label {
+        flex-basis: auto;
+      }
+    }
+  }
+
+  .formGrp,
+  .uploadGrp {
+
+    // 文字表單個別行內設定
+    &.formInline {
+      label {
+        display: inline-block;
+        margin-right: 0.5em;
+      }
+
+      & > input,
+      & > textarea,
+      & > select,
+      & > .input_i {
+        width: auto;
+        flex: 0 1 auto;
+      }
+
+      input[type='checkbox'],
+      input[type='radio'] {
+        width: 1em;
+      }
+    }
+  }
+}
+
+// form 全域行內設定
+.formInline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  label {
+    vertical-align: middle;
+    margin: 0 0.5em 0 0;
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+
+    & ~ input,
+    & ~ textarea {
+      width: auto;
+      vertical-align: middle;
+    }
+  }
+
+  input[type='text'],
+  input[type='password'],
+  select,
+  textarea,
+  button,
+  .btn,
+  input[type='submit'],
+  input[type='reset'],
+  input[type='button'],
+  input[type='search'],
+  .input_i {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .formGrp,
+  .checkGrp,
+  .radioGrp,
+  .btnGrp,
+  .uploadGrp {
+    display: flex;
+    margin-right: 0.5em;
+    width: auto;
+    flex: 0 0 auto;
+    // @include screen('mobile'){
+    //     width: 100%;
+    // }
+  }
+
+  .btnGrp {
+    padding: 0;
+
+    .btn,
+    input[type='submit'],
+    input[type='reset'],
+    input[type='button'],
+    input[type='search'] {
+      margin: 0.3em;
+      padding: 0.45em 1em;
+    }
+  }
+}
+
+//---------------------------------------------下拉選單--------//
+label,
+legend {
+  // white-space: nowrap;
+  display: inline-block;
+  margin: 0 0 0.5em 0;
+  @include gutter(0.6em);
+
+  @include screen('xsMobile') {
+    display: block;
+  }
+
+  &.inline {
+
+    input,
+    select,
+    textarea {
+      width: auto;
+    }
+  }
+
+  &.labelHidden {
+    font-size: 0px !important;
+    width: 0px !important;
+    position: absolute !important;
+    overflow: hidden !important;
+  }
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+//---------------------------------------------預設設定--------//
+input,
+textarea,
+select,
+button {
+  @include formStyle(); // 預設載入formStyle設定
+}
+
+input,
+select,
+textarea {
+  width: calc(100% - 0.6em);
+  -webkit-appearance: none; //清除 safari 的預設樣式
+  -moz-appearance: none;
+  appearance: none;
+
+  @include screen('mobile') {
+    width: 100%;
+  }
+}
+
+//notice 必免語意不清需討論
+.input_i {
+  input {
+    width: calc(100% - 0.6em);
+  }
+}
+
+//---------------------------------------------文字輸入表單--------//
+input[type='text'],
+input[type='password'],
+input[type='file'],
+input[type='tel'],
+input[type='mail'],
+input[type='number'] {
+  &::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: darken($colorGray, 20);
+  }
+
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: darken($colorGray, 20);
+  }
+
+  &:-ms-input-placeholder {
+    /* IE 10+ */
+    color: darken($colorGray, 20);
+  }
+
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: darken($colorGray, 20);
+  }
+}
+
+// button,
+// input[type='button'] {
+//   @extend %btn;
+//   @include btnSetting($formFocus, #FFF);
+// }
+
+// input[type='submit'] {
+//   @extend %btn;
+//   @include btnSetting($formFocus, #FFF);
+// }
+
+textarea {
+  @include formStyle();
+  height: 5em;
+  overflow-y: scroll;
+
+  @include screen('xsMobile') {
+    width: 100%;
+  }
+}
+
+input[type='text'],
+// input[type='reset'],
+// input[type='file'],
+input[type='tel'],
+input[type='email'],
+input[type='password'],
+textarea,
+select {
+
+  &:focus {
+    outline: $formFocus 2px solid;
+    outline-offset: -2px;
+  }
+}
+
+//
+//---------------------------------------------下拉選單--------//
+select {
+  line-height: 1.35em;
+  padding: 0.5em 24px 0.5em 0.5em;
+  border: 1px solid $colorGray;
+  background: #fff url(../images/icon/icon_select_arrow.svg) no-repeat right center;
+  background-size: 16px;
+
+  option {
+    // outline: none;
+    border: none;
+  }
+
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+}
+
+//---------------------------------------------reset--------//
+// input[type='reset'] {
+//   @extend %btn;
+//   @include btnSetting(darken($colorGray, 20), #FFF);
+//   text-shadow: none;
+// }
+
+//---------------------------------------------checkbox & radio--------//
+input[type='checkbox'],
+input[type='radio'] {
+  font-size: 1em;
+  margin: 0.3em;
+  width: 1em;
+  height: 1em;
+  background-color: #f7f6ee;
+  border: 2px solid $colorGray;
+}
+
+input[type='radio'] {
+  border-radius: 50%;
+}
+
+input[type='checkbox']:checked,
+input[type='radio']:checked {
+  border-color: $formFocus;
+  background-color: $formFocus;
+  // outline: none;
+}
+
+input[type='checkbox']:checked {
+  background-image: url(../images/basic/icon_checked.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 98%;
+  box-shadow: $formFocus 0 0 0 2px;
+  border-radius: 2px;
+}
+
+input[type='radio']:checked {
+  border-color: $formFocus;
+  background-color: $formFocus;
+  box-shadow: #fff 0 0 0 3px inset, $formFocus 0 0 0 2px;
+}
+
+// input[type='radio'],
+// input[type='checkbox'] {
+//   &:focus-visible {
+//     // border-color: $formFocus;
+//     // background-color: $formFocus;
+//     // box-shadow: $formFocus 0 0 0 2px;
+//     outline: red 2px solid;
+//   }
+// }
+
+//---------------------------------------------readonly disable -------//
+// input[readonly],
+// input[disable] {
+//     background: lighten($colorGray, 15);
+//     color: darken($colorGray, 10);
+//     border-color: darken($colorGray, 10);
+
+//     &~label {
+//         color: darken($colorGray, 10);
+//     }
+
+//     &:hover,
+//     &:focus-visible{
+//         border-color: darken($colorGray, 10);
+//         box-shadow: none; // cursor: not-allowed;
+//     }
+// }
+
+// 檔案上傳
+// https://codepen.io/shubhamc_007/pen/oZyodd
+.uploadGrp {
+  position: relative;
+
+  input[readonly],
+  input[disable] {
+    background: transparent;
+    color: #666;
+  }
+
+  .uploadBtn {
+    position: absolute;
+    overflow: hidden;
+    top: 10px;
+    right: 0.5em;
+    @extend %btn;
+    @include btnSetting($formFocus, #fff);
+    padding: 0.2em 1em;
+    border-radius: 4px;
+
+    // &:focus-visible,
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+input[type='file'] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 1.25em;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+//---------------------------------------------captcha--------//
+
+// button.captcha,
+img.captcha {
+  padding: 0;
+  line-height: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  max-height: 2.5em;
+  margin: 0 0.3em;
+  border: 1px solid #ccc;
+
+  & + input {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  & ~ .btn {
+    min-width: 0;
+    padding: 8px 10px;
+  }
+
+}
+
+//---------------------------------------------必填欄位說明--------//
+abbr[title] {
+  border-bottom: none;
+  text-decoration: none;
+}
+
+//---------------------------前面有icon的input------------------//
+.input_i {
+  position: relative;
+  width: 100%;
+
+  i {
+    position: absolute;
+    padding: 0.2em 0;
+    left: 0.5em;
+    top: 0.6em;
+    background: none;
+    border-right: 1px solid $colorGray;
+    width: 2.4em;
+    pointer-events: none;
+    z-index: 5;
+
+    &:before {
+      width: 2.2em;
+      text-align: center;
+    }
+
+    // @include screen('mobile') {
+    //     left: .2em;
+    // }
+
+    & + input {
+      padding: 0.5em 0.5em 0.5em 3em;
+    }
+  }
+
+  input {
+    padding: 0.5em 3em 0.5em 0.5em;
+
+    & + i {
+      border-right: none;
+      border-left: 1px solid $colorGray;
+      right: 0.5em;
+      left: auto;
+    }
+  }
+}
+
+.password {
+  padding: 0.5em 3em 0.5em 3em !important;
+}
+
+.passwordEye {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  border: none;
+  color: transparent;
+  width: 20px !important;
+  height: 20px;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url('../images/icon/icon_eye_c_dark.svg') center no-repeat;
+  }
+
+  &.hide::before {
+    background: url('../images/icon/icon_eye_dark.svg') center no-repeat;
+  }
+}

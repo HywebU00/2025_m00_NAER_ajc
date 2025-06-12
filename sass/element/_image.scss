@@ -1,0 +1,52 @@
+img {
+  &.imgRounded {
+    //導角，可自訂
+    border-radius: $roundedAngle;
+  }
+  &.imgCircle {
+    //圓形
+    border-radius: 50%;
+  }
+  &:not([src]) {
+    visibility: hidden;
+    opacity: 0;
+  }
+  &.lazy {
+    visibility: hidden;
+  }
+  &.loaded {
+    visibility: visible;
+    animation: lazy_animation 0.5s ease-out;
+  }
+}
+@keyframes lazy_animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+// 設定img 在IE9+ SAFARI FIREFOX CHROME 可以object-fit
+/*for IE */
+.imgContainer {
+  width: 100%;
+  position: relative;
+  background: #f1f1f1;
+
+  .fill {
+    object-fit: fill;
+  }
+  .contain {
+    object-fit: contain;
+  }
+  .cover {
+    object-fit: cover;
+  }
+  .none {
+    object-fit: none;
+  }
+  .scale-down {
+    object-fit: scale-down;
+  }
+}
