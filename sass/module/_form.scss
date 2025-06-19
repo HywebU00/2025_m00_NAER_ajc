@@ -1285,9 +1285,9 @@ select {
 //---------------------------------------------下拉選單--------//
 select {
   line-height: 1.35em;
-  padding: 0.5em 30px 0.5em 1em;
+  padding: 0.5em 35px 0.5em 1em;
   border: 1px solid $colorGray;
-  background: #fff url(../images/icon/icon_select_arrow.svg) no-repeat right 10px center;
+  background: #fff url(../images/icon_select_arrow.svg) no-repeat right 13px top 0.75em;
   background-size: 16px;
 
   option {
@@ -1315,8 +1315,8 @@ input[type='radio'] {
   margin: 0.3em;
   width: 1em;
   height: 1em;
-  background-color: #f7f6ee;
-  border: 2px solid $colorGray;
+  background-color: #fff;
+  border: 1px solid #8b837c;
 }
 
 input[type='radio'] {

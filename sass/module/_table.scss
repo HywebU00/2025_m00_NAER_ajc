@@ -100,13 +100,15 @@ table {
   .sorttd {
     text-align: center;
     .sort {
-      display: inline-block;
+      display: block;
       border: solid 1px #a0a0a0;
       padding: 0.1em 0.3em;
       color: #444444;
       margin: 0 auto;
       font-size: rem(18);
       border-radius: 3px;
+      margin: 0 0.5em;
+      white-space: nowrap;
       @include screen('xsMobile') {
         display: block;
       }

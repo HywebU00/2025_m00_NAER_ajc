@@ -145,6 +145,8 @@
 
     select {
       margin: 0px 0.5em;
+      border-radius: 2em;
+      background-size: 14px auto;
 
       @include screen('mobile') {
         margin: 0px;
@@ -154,6 +156,7 @@
     .btn {
       min-width: auto;
       padding: 0.4em 1em;
+      border-radius: 2em;
 
       &.btnSubmit {
         margin-left: 10px;
