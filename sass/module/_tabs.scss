@@ -117,7 +117,8 @@
   .tabContent {
     // display: none;
     position: relative;
-    box-shadow: #bbb 0 0 0 1px inset;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
     // &.active {
     //   display: block;
@@ -137,7 +138,6 @@
 
     .tabContentIn {
       padding: 15px;
-
 
       ul {
         margin: 0;

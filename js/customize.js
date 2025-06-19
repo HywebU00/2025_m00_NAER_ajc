@@ -293,6 +293,110 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 })();
 
+//spinfoBlock5 tab切換
+(function () {
+  const tabs = document.querySelectorAll('.spinfoBlock5 .tab-btn');
+  const panels = document.querySelectorAll('.spinfoBlock5 .tab-panel');
+  tabs.forEach((tab, idx) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t, i) => {
+        t.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+        t.tabIndex = i === idx ? 0 : -1;
+        panels[i].hidden = i !== idx;
+      });
+      panels[idx].focus();
+    });
+    tab.addEventListener('keydown', (e) => {
+      let newIdx = idx;
+      if (e.key === 'ArrowRight') newIdx = (idx + 1) % tabs.length;
+      if (e.key === 'ArrowLeft') newIdx = (idx - 1 + tabs.length) % tabs.length;
+      if (newIdx !== idx) {
+        tabs[newIdx].focus();
+      }
+    });
+  });
+})();
+
+//spinfoBlock6 tab切換
+(function () {
+  const tabs = document.querySelectorAll('.spinfoBlock6 .tab-btn');
+  const panels = document.querySelectorAll('.spinfoBlock6 .tab-panel');
+  tabs.forEach((tab, idx) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t, i) => {
+        t.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+        t.tabIndex = i === idx ? 0 : -1;
+        panels[i].hidden = i !== idx;
+      });
+      panels[idx].focus();
+    });
+    tab.addEventListener('keydown', (e) => {
+      let newIdx = idx;
+      if (e.key === 'ArrowRight') newIdx = (idx + 1) % tabs.length;
+      if (e.key === 'ArrowLeft') newIdx = (idx - 1 + tabs.length) % tabs.length;
+      if (newIdx !== idx) {
+        tabs[newIdx].focus();
+      }
+    });
+  });
+})();
+
+// 限縮依據關閉
+document.querySelectorAll('.constriction-close').forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    var li = btn.closest('li');
+    if (li) li.remove();
+  });
+});
+//左欄收合
+// 分類選單滑出功能
+document.addEventListener('DOMContentLoaded', function () {
+  const menuBtn = document.querySelector('.classification_menu_btn a');
+  const leftBlock = document.querySelector('.classification_groupleft');
+  let isOpen = false;
+
+  if (menuBtn && leftBlock) {
+    // 點擊選單按鈕切換顯示
+    menuBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      if (!isOpen) {
+        leftBlock.classList.add('open');
+        menuBtn.classList.add('open');
+        isOpen = true;
+      } else {
+        leftBlock.classList.remove('open');
+        menuBtn.classList.remove('open');
+        isOpen = false;
+      }
+    });
+
+    // ESC 鍵關閉選單
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && isOpen) {
+        leftBlock.classList.remove('open');
+        menuBtn.classList.remove('open');
+        isOpen = false;
+      }
+    });
+  }
+});
+
+//查詢結果分類收合
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.collapsible-header .collapse-toggle').forEach(function (toggleBtn) {
+    var content = toggleBtn.closest('.collapsible-header').nextElementSibling;
+    toggleBtn.addEventListener('click', function () {
+      var expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', !expanded);
+      if (content) {
+        content.classList.toggle('collapsed', expanded);
+      }
+    });
+  });
+});
+
 //timeline
 (function () {
   const timeline = document.querySelector('.timeline-list');

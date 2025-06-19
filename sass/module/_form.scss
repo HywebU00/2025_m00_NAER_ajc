@@ -101,7 +101,6 @@ select::-ms-expand {
     }
 
     & + .formContent {
-
       // &.formCol_6_6,
       // &.formCol_4_4_4,
       // &.formCol_3_3_3_3,
@@ -197,7 +196,6 @@ select::-ms-expand {
         }
 
         &.formInline {
-
           input[type='text'],
           input[type='tel'],
           select,
@@ -226,7 +224,6 @@ select::-ms-expand {
 
     // 電話專屬
     .tel {
-
       input[type='text']:first-child,
       input[type='tel']:first-child {
         background: url(../images/icon/icon_add.svg) no-repeat 0.5em center;
@@ -686,7 +683,6 @@ select::-ms-expand {
   }
 
   .formCol_6_3_3 {
-
     & > .formGrp,
     & > input[type='text'],
     & > select {
@@ -1062,7 +1058,6 @@ select::-ms-expand {
 
   &.formInline,
   .formInline {
-
     .checkGrp,
     .radioGrp {
       label {
@@ -1073,7 +1068,6 @@ select::-ms-expand {
 
   .formGrp,
   .uploadGrp {
-
     // 文字表單個別行內設定
     &.formInline {
       label {
@@ -1173,7 +1167,6 @@ legend {
   }
 
   &.inline {
-
     input,
     select,
     textarea {
@@ -1201,6 +1194,8 @@ textarea,
 select,
 button {
   @include formStyle(); // 預設載入formStyle設定
+  // border-radius: 2em;
+  padding: 0.6em 1em;
 }
 
 input,
@@ -1280,7 +1275,6 @@ input[type='email'],
 input[type='password'],
 textarea,
 select {
-
   &:focus {
     outline: $formFocus 2px solid;
     outline-offset: -2px;
@@ -1291,9 +1285,9 @@ select {
 //---------------------------------------------下拉選單--------//
 select {
   line-height: 1.35em;
-  padding: 0.5em 24px 0.5em 0.5em;
+  padding: 0.5em 30px 0.5em 1em;
   border: 1px solid $colorGray;
-  background: #fff url(../images/icon/icon_select_arrow.svg) no-repeat right center;
+  background: #fff url(../images/icon/icon_select_arrow.svg) no-repeat right 10px center;
   background-size: 16px;
 
   option {
@@ -1441,7 +1435,6 @@ img.captcha {
     min-width: 0;
     padding: 8px 10px;
   }
-
 }
 
 //---------------------------------------------必填欄位說明--------//

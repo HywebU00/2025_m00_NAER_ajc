@@ -322,7 +322,8 @@ h2.title {
     font-size: 1.5em;
     padding: 12px 0px 15px 0px;
     margin: 0.5em 0px 0.2em;
-    border-bottom: 1px solid $colorPrimary;
+    color: #3d3124;
+    // border-bottom: 1px solid $colorPrimary;
   }
 
   ol,
@@ -335,23 +336,27 @@ h2.title {
   li {
     position: relative;
     padding: 0.25em 0;
-    border-bottom: solid 1px #eee;
+    border-bottom: solid 1px #d7d1ca;
     padding-left: 1.5em;
+    line-height: 1.5em;
+    &:first-child {
+      border-top: solid 1px #d7d1ca;
+    }
 
     &:before {
-      content: '·';
-      font-size: 2em;
-      font-weight: bold;
+      content: '';
       width: 1em;
       height: 1em;
       position: absolute;
-      top: 0.25em;
-      left: 0.1em;
-      color: #666;
+      top: 1.24em;
+      left: 0.2em;
+      // margin-top: -0.45em;
+      background: url('../images/weblink_libg.png') no-repeat center center;
+      background-size: 1em auto;
     }
 
     a {
-      padding: 0.2em 0px;
+      padding: 0.6em 0px;
       display: block;
       @include aSetting($colorWord);
     }

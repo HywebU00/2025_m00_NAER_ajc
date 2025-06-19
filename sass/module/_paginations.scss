@@ -27,32 +27,33 @@
       box-sizing: border-box;
 
       a {
-        min-width: 40px;
-        height: 40px;
-        border-radius: 5px;
+        min-width: 38px;
+        height: 38px;
+        border-radius: 50%;
         padding: 6px 10px;
         font-weight: 700;
         display: block;
         white-space: nowrap;
         font-size: 1em;
         color: $colorWord;
-        background: #eee;
-        border: #ccc solid 1px;
+        // background: #eee;
+        // border: #ccc solid 1px;
         margin: 0 0.1em 0.25em;
+        line-height: 1.75em;
 
         // &:focus-visible,
         &:hover {
           background: $colorPrimary;
           color: #fff;
-          border: $colorPrimary solid 1px;
+          // border: $colorPrimary solid 1px;
         }
       }
 
       &.active {
         a {
           color: #fff;
-          background: $formFocus;
-          border: darken($formFocus, 5) solid 1px;
+          background: darken($colorPrimary, 5);
+          // border: darken($colorPrimary, 10) solid 1px;
         }
       }
 
@@ -79,7 +80,6 @@
 
           // &:focus-visible,
           &:hover {
-
             &:before,
             &:after {
               border: 2px solid #fff;
@@ -141,6 +141,7 @@
     display: flex;
     align-items: center;
     vertical-align: middle;
+    flex-wrap: wrap;
 
     select {
       margin: 0px 0.5em;

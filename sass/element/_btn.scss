@@ -130,7 +130,7 @@
   color: #fff;
   border: solid 1px $colorPrimary;
 
-  // &:focus-visible, 
+  // &:focus-visible,
   &:hover {
     background: darken($colorPrimary, 10);
     border: solid 1px $colorPrimary;
@@ -209,4 +209,19 @@
 
 .btnXs {
   font-size: $fontSize * 0.75; //12px
+}
+
+// 主要按鈕
+.btn-black {
+  background: #3d3124;
+  color: #fff;
+  border: solid 1px #3d3124;
+  border-radius: 2em;
+
+  // &:focus-visible,
+  &:hover {
+    background: darken(#3d3124, 10);
+    border: solid 1px #3d3124;
+    color: #fff;
+  }
 }
