@@ -953,3 +953,34 @@
     }
   }
 }
+
+.h2_title_c {
+  font-size: rem(30);
+  color: #353535;
+  text-align: center;
+  span {
+    display: inline-block;
+    margin: 0 auto;
+    letter-spacing: 8px;
+    position: relative;
+    padding: 0 50px;
+    &:before {
+      content: '';
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 0.18em;
+      left: 0;
+      background: url('../images/h2_c_bg.svg') no-repeat center center;
+    }
+    &:after {
+      content: '';
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 0.18em;
+      right: 0.2em;
+      background: url('../images/h2_c_bg.svg') no-repeat center center;
+    }
+  }
+}

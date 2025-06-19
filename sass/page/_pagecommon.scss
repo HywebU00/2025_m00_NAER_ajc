@@ -182,7 +182,7 @@
   .title {
     font-size: rem(18);
     flex: 0 0 auto;
-    padding: 0.5em 0.3em 0.5em 0;
+    padding: 0.3em 0.3em 0.3em 0;
     @include screen('mobile') {
       flex: 1 1 auto;
       flex-basis: 100%;
@@ -207,7 +207,7 @@
         }
         a {
           display: block;
-          padding: 0.5em 3em 0.5em 1.5em;
+          padding: 0.3em 3em 0.3em 1.5em;
           border: 1px solid #807f7d;
           border-radius: 2em;
           color: #3d3124;
@@ -225,14 +225,14 @@
         .close {
           position: absolute;
           z-index: 2;
-          top: 1.5em;
+          top: 1.3em;
           right: 0.8em;
           margin-top: -0.75em;
           a {
             display: block;
             font-size: 0;
             background-image: url('../images/icon_close.svg');
-            background-size: 16px;
+            background-size: 14px;
             background-repeat: no-repeat;
             background-position: center;
             width: 18px;
@@ -345,6 +345,8 @@
         flex: 1 1 auto;
         width: auto;
         border-radius: 2em;
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         @include screen('mobile') {
           flex: 1 1 auto;
         }
@@ -353,6 +355,8 @@
         flex: 0 0 auto;
         width: auto;
         border-radius: 2em;
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         @include screen('mobile') {
           flex: 1 1 auto;
         }
@@ -536,7 +540,7 @@
     display: none;
     position: absolute;
     left: -1em;
-    top: 0;
+    top: 3.2em;
     z-index: 1;
     width: 1.5em;
     @include screen('tablet') {
@@ -548,7 +552,7 @@
     a {
       color: #fff;
       display: block;
-      background-color: $colorHr;
+      background-color: $formFocus;
       padding: 2em 0.5em 0.5em;
       border-radius: 0 5px 5px 0;
       width: 2em;
@@ -575,8 +579,8 @@
   }
   .classification_groupleft {
     flex: 0 0 auto;
-    flex-basis: 260px;
-    padding: 0;
+    flex-basis: 280px;
+    padding: 0 10px;
     box-sizing: border-box;
 
     @include screen('tablet') {
@@ -591,16 +595,22 @@
       -webkit-overflow-scrolling: touch;
 
       &.open {
-        left: 20px; // 改為左側滑入
+        left: 8px; // 改為左側滑入
+      }
+      .title {
+        background: $colorPrimary;
+        color: #fff;
+        margin: 0;
+        padding: 1em;
       }
     }
 
     @include screen('xsMobile') {
       width: 100%;
-      left: -100%; // 改為左側滑出
+      left: -150%; // 改為左側滑出
 
       &.open {
-        left: 0; // 改為左側滑入
+        left: 5px; // 改為左側滑入
       }
     }
   }
@@ -917,6 +927,8 @@
       select {
         min-width: 150px;
         border-radius: 2em;
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         @media screen and (max-width: 480px) {
           width: 100%;
           min-width: 100%;
@@ -1464,7 +1476,7 @@
 }
 .sort_block {
   background: #fff;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15); // 修改陰影方向
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); // 修改陰影方向
   padding: 1em;
 }
 .classification_list {
@@ -1546,10 +1558,17 @@
   justify-content: flex-end;
   align-items: center;
   margin-bottom: 0.8em;
+  @include screen('mobile') {
+    justify-content: flex-start;
+    margin-left: 1em;
+  }
   label {
     flex: 0 0 auto;
     width: auto;
     margin: 0;
+    @include screen('mobile') {
+      flex: 1 1 100%;
+    }
   }
   select {
     flex: 0 0 auto;
@@ -1560,5 +1579,8 @@
     color: #fff;
     border: solid 1px #3d3124;
     padding: 0.5em 40px 0.5em 1.5em;
+    @include screen('mobile') {
+      flex: 1 1 100%;
+    }
   }
 }
