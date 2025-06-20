@@ -59,14 +59,14 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: #000;
+    color: #222 !important;
     text-decoration: none;
     span {
-      color: #7cb52f;
+      color: #666;
       margin-right: 15px;
     }
     &:hover {
-      color: #7cb52f;
+      color: $colorPrimary !important;
     }
   }
 }

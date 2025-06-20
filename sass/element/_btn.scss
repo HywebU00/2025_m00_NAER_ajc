@@ -5,7 +5,7 @@
 }
 
 // 按鈕的共用設定
-@mixin btnSetting($btnBg: #e0e0e0, $btnWordColor: $btnWordColor) {
+@mixin btnSetting($btnBg: #d7d1ca, $btnWordColor: $btnWordColor) {
   background: $btnBg;
   border: 1px solid $btnBg;
   color: $btnWordColor;

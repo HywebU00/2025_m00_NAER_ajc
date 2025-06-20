@@ -35,15 +35,19 @@
     margin-bottom: 1.5em;
     background-color: #fff;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 
     .title {
       margin: 0 0 1em;
       padding: 0.5em;
       text-align: center;
       color: #fff;
-      background-color: #666;
+      background-color: $colorPrimary;
       font-size: 1.25em;
       font-weight: bolder;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
     }
 
     ul {
@@ -92,15 +96,19 @@
     margin-bottom: 1.5em;
     background-color: #fff;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 
     .title {
       margin: 0 0 1em;
       padding: 0.5em;
       text-align: center;
       color: #fff;
-      background-color: #666;
+      background-color: $colorPrimary;
       font-size: 1.25em;
       font-weight: bolder;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
     }
 
     ul {
@@ -109,10 +117,10 @@
       list-style-type: none;
 
       li {
-        font-size: 0.938rem;
-        margin: 0 0 5px;
-        padding: 0 0 5px;
-        border-bottom: 1px solid #ccc;
+        font-size: rem(15);
+        margin: 0;
+        padding: 0;
+        // border-bottom: solid 1px #d7d1ca;
 
         &:last-child {
           border: none;
@@ -120,12 +128,35 @@
 
         a {
           display: block;
-          padding: 0.5em 0;
-          line-height: 1.4em;
+          padding: 0.5em 0 0.5em 1em;
+          line-height: 1.6em;
           color: #333;
+          position: relative;
+          &:before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            top: 1.1em;
+            left: 0.2em;
+            background: #704430;
+            border-radius: 50%;
+            // background: url(../images/weblink_libg.png) no-repeat center center;
+            // background-size: 1em auto;
+          }
 
           &:hover {
             color: $aHover;
+          }
+        }
+      }
+
+      ul {
+        padding: 0 0 0 1em;
+        li {
+          a {
+            margin: 0;
+            border: none;
           }
         }
       }

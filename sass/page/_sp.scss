@@ -984,3 +984,58 @@
     }
   }
 }
+
+.qp {
+  p {
+    font-size: rem(16);
+    margin-left: 0.5em;
+    font-weight: 400;
+  }
+  .flexForm {
+    border-top: 2px solid #d7d1ca;
+    border-bottom: 1px solid #d7d1ca;
+    .formGrp {
+      background: #f6f4ef;
+      padding: 0;
+      border-bottom: solid 1px #d7d1ca;
+    }
+    .formContent {
+      background: #fff;
+      padding: 0.5em;
+    }
+
+    .formTitle {
+      padding: 0.5em 1em;
+    }
+    @include screen('mobile') {
+      border: none;
+      .formGrp {
+        border: none;
+      }
+    }
+  }
+  .btnGrp {
+    justify-content: center;
+  }
+  h3 {
+    font-size: rem(24);
+    margin-left: 0.5rem;
+  }
+  .btn {
+    border-radius: 2em;
+    border: none;
+    padding: 0.5em 0.4em;
+  }
+  .btnReset,
+  .btnSubmit {
+    padding: 0.6em 1em;
+    min-width: 10em;
+    margin: 1em 0.5em;
+  }
+  input {
+    border-radius: 2em;
+  }
+  textarea {
+    border-radius: 15px;
+  }
+}

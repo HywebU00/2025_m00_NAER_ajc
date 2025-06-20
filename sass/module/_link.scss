@@ -2,7 +2,6 @@
 
 // 選項次層
 .submenu {
-
   ul,
   ol {
     display: flex;
@@ -32,13 +31,16 @@
     }
 
     a {
-      border: 1px solid #ddd;
+      border: 0px solid #d7d1ca;
       padding: 1em 1em 1em 2.5em;
       display: block;
       vertical-align: top;
       position: relative;
       height: 100%;
       box-sizing: border-box;
+      border-radius: 15px;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+
       @include aSetting($colorWord);
 
       // @include textOverflow;
@@ -56,8 +58,10 @@
 
       // &:focus-visible,
       &:hover {
-        border: 1px solid $aHover;
+        border: 0px solid #d7d1ca;
         color: $aHover;
+        background: #f6f4ef;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
       }
     }
   }
