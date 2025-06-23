@@ -225,3 +225,16 @@
     color: #fff;
   }
 }
+
+.tactics_btn {
+  padding: 0.5em 1em 0.5em 0.6em;
+  min-width: auto;
+
+  .i_search:before {
+    background: url(../images/icon_search.svg) center center no-repeat;
+    background-size: contain;
+    margin-top: -0.1em;
+    margin-bottom: 0.1em;
+    filter: invert(100);
+  }
+}

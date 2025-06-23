@@ -65,6 +65,56 @@
             }
           }
         }
+        &.hasChild {
+          & > a {
+            &:after {
+              content: '';
+              width: 4px;
+              height: 4px;
+              display: inline-block;
+              margin-left: 0.5em;
+              vertical-align: middle;
+              // border: 2px solid lighten($colorWord, 40);
+              border: 2px solid #fff;
+              transform: rotate(135deg);
+              border-bottom: none;
+              border-left: none;
+              margin-bottom: 0.2em;
+            }
+            &:hover {
+              &:after {
+                content: '';
+                width: 6px;
+                height: 6px;
+                display: inline-block;
+                margin-left: 0.5em;
+                vertical-align: middle;
+                transform: rotate(135deg);
+                border-bottom: none;
+                border-left: none;
+                margin-bottom: 0.2em;
+                border-color: #efede9;
+                box-sizing: border-box;
+              }
+            }
+            &:focus {
+              &:after {
+                content: '';
+                width: 6px;
+                height: 6px;
+                display: inline-block;
+                margin-left: 0.5em;
+                vertical-align: middle;
+                transform: rotate(135deg);
+                border-bottom: none;
+                border-left: none;
+                margin-bottom: 0.2em;
+                border-color: #fff;
+                box-sizing: border-box;
+              }
+            }
+          }
+        }
       }
     }
   }

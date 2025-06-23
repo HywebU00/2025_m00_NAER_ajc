@@ -384,6 +384,9 @@ h2.title {
   .fileDownload {
     li {
       border-bottom: solid 1px #d7d1ca;
+      .fileName {
+        color: $colorWord;
+      }
     }
   }
 }

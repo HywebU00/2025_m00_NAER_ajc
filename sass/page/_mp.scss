@@ -897,7 +897,8 @@ section {
       }
 
       /* hover 時滑上來 */
-      &:hover .more2 .half-circle {
+      &:hover .more2 .half-circle,
+      &:focus .more2 .half-circle {
         transform: translateY(0);
       }
     }

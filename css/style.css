@@ -3154,6 +3154,17 @@ img {
     border: solid 1px #3d3124;
     color: #fff;
   }
+  .tactics_btn {
+    padding: 0.5em 1em 0.5em 0.6em;
+    min-width: auto;
+  }
+  .tactics_btn .i_search:before {
+    background: url(../images/icon_search.svg) center center no-repeat;
+    background-size: contain;
+    margin-top: -0.1em;
+    margin-bottom: 0.1em;
+    filter: invert(100);
+  }
   .breadcrumb {
     padding: 0.1em 0em 0.1em;
     font-size: 1rem;
@@ -4464,6 +4475,47 @@ img {
     color: #fff;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 15px;
+  }
+  .mainMenu.sticky > ul li.hasChild > a:after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    display: inline-block;
+    margin-left: 0.5em;
+    vertical-align: middle;
+    border: 2px solid #fff;
+    transform: rotate(135deg);
+    border-bottom: none;
+    border-left: none;
+    margin-bottom: 0.2em;
+  }
+  .mainMenu.sticky > ul li.hasChild > a:hover:after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    margin-left: 0.5em;
+    vertical-align: middle;
+    transform: rotate(135deg);
+    border-bottom: none;
+    border-left: none;
+    margin-bottom: 0.2em;
+    border-color: #efede9;
+    box-sizing: border-box;
+  }
+  .mainMenu.sticky > ul li.hasChild > a:focus:after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    margin-left: 0.5em;
+    vertical-align: middle;
+    transform: rotate(135deg);
+    border-bottom: none;
+    border-left: none;
+    margin-bottom: 0.2em;
+    border-color: #fff;
+    box-sizing: border-box;
   }
   @media screen and (max-width: 767px) {
     .mainMenu {
@@ -6219,13 +6271,13 @@ img {
       width: 100%;
     }
   }
-  input[type=text]:focus,
-  input[type=tel]:focus,
-  input[type=email]:focus,
-  input[type=password]:focus,
-  textarea:focus,
-  select:focus {
-    outline: #3d3124 2px solid;
+  input[type=text]:focus-visible,
+  input[type=tel]:focus-visible,
+  input[type=email]:focus-visible,
+  input[type=password]:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: #d30000 2px solid;
     outline-offset: -2px;
   }
   select {
@@ -9551,7 +9603,7 @@ img {
     font-weight: bold;
     line-height: 58px;
   }
-  .mpBook .group .list:hover .more2 .half-circle {
+  .mpBook .group .list:hover .more2 .half-circle, .mpBook .group .list:focus .more2 .half-circle {
     transform: translateY(0);
   }
   .collection {
@@ -10035,6 +10087,9 @@ img {
   }
   .cp .fileDownload li {
     border-bottom: solid 1px #d7d1ca;
+  }
+  .cp .fileDownload li .fileName {
+    color: #2a2a2a;
   }
   .sp {
     position: relative;

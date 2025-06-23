@@ -1275,8 +1275,9 @@ input[type='email'],
 input[type='password'],
 textarea,
 select {
-  &:focus {
-    outline: $formFocus 2px solid;
+  &:focus-visible {
+    // outline: $formFocus 2px solid;
+    outline: $colorRed 2px solid;
     outline-offset: -2px;
   }
 }
