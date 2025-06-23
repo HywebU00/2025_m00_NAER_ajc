@@ -11718,7 +11718,7 @@ img {
     flex: 1 1 auto;
   }
   .classification_data .classification_list_block .classification_list_data .title {
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 1.125em;
     margin-bottom: 0.5em;
     display: flex;
@@ -12498,14 +12498,15 @@ img {
   }
   .classification_list .collapse-toggle .arrow {
     display: inline-block;
-    width: 0.8em;
-    height: 0.8em;
+    width: 0.8rem;
+    height: 0.8rem;
     border-right: 2px solid #564c40;
     border-bottom: 2px solid #564c40;
     transform: rotate(-135deg);
     transition: transform 0.2s;
-    margin-left: 0.2em;
-    margin-top: 0.3em;
+    margin-left: 0.2rem;
+    margin-top: 0.3rem;
+    font-size: 0;
   }
   .classification_list .collapse-toggle[aria-expanded=false] .arrow {
     transform: rotate(45deg);
