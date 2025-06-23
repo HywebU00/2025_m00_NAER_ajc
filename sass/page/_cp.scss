@@ -389,4 +389,17 @@ h2.title {
       }
     }
   }
+  p {
+    word-break: break-all;
+    font-weight: 400;
+  }
+  ul,
+  ol {
+    font-weight: 400;
+  }
+  table {
+    td {
+      font-weight: 400;
+    }
+  }
 }

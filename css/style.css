@@ -7952,9 +7952,6 @@ img {
       max-width: 100%;
     }
   }
-  .innerPage p {
-    word-break: break-all;
-  }
   .hidden {
     display: none;
   }
@@ -10091,6 +10088,17 @@ img {
   }
   .cp .fileDownload li .fileName {
     color: #2a2a2a;
+  }
+  .cp p {
+    word-break: break-all;
+    font-weight: 400;
+  }
+  .cp ul,
+  .cp ol {
+    font-weight: 400;
+  }
+  .cp table td {
+    font-weight: 400;
   }
   .sp {
     position: relative;
