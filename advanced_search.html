@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js">
+  <head>
+    <meta name="robots" content="noindex" />
+    <!-- 使用 noindex 禁止 Google 搜尋建立索引，套版時請工程師刪掉這行 -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>國家教育研究院學術期刊網-教育研究與發展期刊</title>
+    <!-- WOW動畫-->
+    <link href="css/animate.css" rel="stylesheet" />
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- 直接跳主內容區 -->
+    <a class="goCenter" href="#aC">按Enter到主內容區</a>
+    <button class="sidebarCtrlBtn" type="button" aria-expanded="false" aria-controls="mobileArea">側欄選單</button>
+    <!-- wrapper Start -->
+    <div class="wrapper">
+      <!-- header Start -->
+      <header class="header">
+        <div class="container">
+          <a class="accessKeyItem" href="#aU" id="aU" accesskey="U" aria-label="上方功能區塊">:::</a>
+          <h1>
+            <a href="index.html"><img src="images/logo.png" alt="國家教育研究院學術期刊網" /></a>
+          </h1>
+          <!-- noscript -->
+          <noscript>
+            您的瀏覽器不支援JavaScript語法，JavaScript語法並不影響內容的陳述。您可使用按鍵盤上的Ctrl鍵+ (+)鍵放大/(-)鍵縮小來改變字型大小；回到上一頁可使用瀏覽器提供的 Alt+左方向鍵(←) 快速鍵功能；列印可使用瀏覽器提供的(Ctrl+P)功能。您的瀏覽器，不支援script語法，若您的瀏覽器無法支援請點選此超連結
+            <a href="#">網站導覽</a>
+          </noscript>
+          <!-- menu Start -->
+          <nav class="menu mainMenu" role="navigation" aria-label="主選單">
+            <ul>
+              <li>
+                <a href="#">查找文章</a>
+                <ul>
+                  <li><a href="#">簡易查詢</a></li>
+                  <li><a href="#">進階查詢</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">瀏覽期刊</a>
+                <ul>
+                  <li><a href="#">編譯論叢</a></li>
+                  <li><a href="#">教科書研究</a></li>
+                  <li><a href="#">教育研究與發展期刊</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">熱門文章</a>
+              </li>
+              <li>
+                <a href="#">網站公告</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- menu End -->
+          <!-- navigation Start -->
+          <nav class="navigation" role="navigation" aria-label="頁首功能列">
+            <!-- 新增div navList -->
+            <div class="navList">
+              <ul>
+                <!-- <li class="gohome"><a href="#">回首頁</a></li> -->
+                <li class="gositemap"><a href="#">網站導覽</a></li>
+                <li class="goqa"><a href="#">常見問答</a></li>
+                <li class="goeng"><a href="#">English</a></li>
+              </ul>
+            </div>
+          </nav>
+          <!-- navigation End -->
+        </div>
+      </header>
+      <!-- header End -->
+
+      <!-- main Start -->
+      <main id="center" class="main innerPage theme4">
+        <!-- 內頁新增一個classname-->
+        <a class="accessKeyItem" href="#aC" id="ac" accesskey="C" aria-label="主要內容區">:::</a>
+        <div class="container">
+          <!-- 主要內容區 -->
+          <div class="centerBlock">
+            <!-- breadcrumb路徑 -->
+            <nav aria-label="麵包屑" class="breadcrumb">
+              <ul>
+                <li><a href="#">首頁</a></li>
+                <li aria-current="page">查詢服務</li>
+              </ul>
+            </nav>
+            <!-- SP Start -->
+            <section class="sp">
+              <h2 class="h2_title_c"><span>進階查詢</span></h2>
+              <!-- functionPanel -->
+              <div class="functionPanel">
+                <!-- function功能區塊 -->
+                <div class="function">
+                  <ul>
+                    <li class="back"><a href="javascript:history.back()">回上一頁</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- functionPanel end-->
+              <!-- Advanced_search_content -->
+              <div class="Advanced_search_content">
+                <form action="">
+                  <div class="flex-form form_grid">
+                    <!-- 增加範圍內查詢區塊start-->
+                    <div class="form_grp withinblock">
+                      <div class="form_content" role="group">
+                        <!-- 1 -->
+                        <div class="search_group">
+                          <div class="search_right">
+                            <label for="category1" class="visually-hidden">分類</label>
+                            <select id="category1" name="category1">
+                              <option value="fullText" checked="checked">不限欄位</option>
+                              <option value="commonTitle">題名</option>
+                              <option value="commonAbstract">摘要</option>
+                              <option value="commonKeywords">關鍵詞</option>
+                              <option value="commonCreator">作者</option>
+                              <option value="coJournal">書刊名/會議名稱</option>
+                              <option value="coPublisher">出版者</option>
+                            </select>
+                          </div>
+                          <div class="search_middle">
+                            <label for="keyword1" class="visually-hidden">關鍵字</label>
+                            <input class="txtinput" id="keyword1" name="keyword1" type="text" placeholder="請輸入關鍵字" aria-label="請輸入關鍵字" />
+                          </div>
+                          <div class="search_btn_content">
+                            <button type="button" class="btn btn-black addition" aria-label="增加查詢條件">增加</button>
+                          </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="search_group">
+                          <div class="search_left">
+                            <label for="logic2" class="visually-hidden">邏輯運算</label>
+                            <select id="logic2" name="logic2">
+                              <option value="AND">AND</option>
+                              <option value="OR">OR</option>
+                            </select>
+                          </div>
+                          <div class="search_right">
+                            <label for="category2" class="visually-hidden">分類</label>
+                            <select id="category2" name="category2">
+                              <option value="fullText" checked="checked">不限欄位</option>
+                              <option value="commonTitle">題名</option>
+                              <option value="commonAbstract">摘要</option>
+                              <option value="commonKeywords">關鍵詞</option>
+                              <option value="commonCreator">作者</option>
+                              <option value="coJournal">書刊名/會議名稱</option>
+                              <option value="coPublisher">出版者</option>
+                            </select>
+                          </div>
+                          <div class="search_middle">
+                            <label for="keyword2" class="visually-hidden">關鍵字</label>
+                            <input class="txtinput" id="keyword2" name="keyword2" type="text" placeholder="請輸入關鍵字" aria-label="請輸入關鍵字" />
+                          </div>
+                          <div class="search_btn_content">
+                            <button type="button" class="btn btn-black minus" aria-label="減少查詢條件">減少</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 增加範圍內查詢區塊 end -->
+                    <hr aria-hidden="true" />
+                    <h3 id="narrowSearch">縮小查詢範圍</h3>
+                    <div class="form_grp narrowgroup" role="group" aria-labelledby="dataTypeLabel">
+                      <label id="dataTypeLabel" class="form_title">查詢資料類型</label>
+                      <div class="form_content">
+                        <div class="check_grp form_inline">
+                          <input type="checkbox" id="sampleCheckbox1" name="dataType" value="all" checked />
+                          <label for="sampleCheckbox1">教育訊息</label>
+                          <input type="checkbox" id="sampleCheckbox2" name="dataType" value="journal" />
+                          <label for="sampleCheckbox2">期刊論文</label>
+                          <input type="checkbox" id="sampleCheckbox3" name="dataType" value="book" />
+                          <label for="sampleCheckbox3">圖書全文</label>
+                          <input type="checkbox" id="sampleCheckbox5" name="dataType" value="project" />
+                          <label for="sampleCheckbox5">研究計畫及報告</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form_grp narrowgroup" role="group" aria-labelledby="langLabel">
+                      <label id="langLabel" class="form_title" for="language">語文</label>
+                      <div class="form_content form_inline">
+                        <select id="language" name="language">
+                          <option selected="selected" value="">請選擇</option>
+                          <option value="中文">中文</option>
+                          <option value="閩南語文">閩南語文</option>
+                          <option value="客家語文">客家語文</option>
+                          <option value="英文">英文</option>
+                          <option value="日文">日文</option>
+                          <option value="印尼文">印尼文</option>
+                          <option value="越南文">越南文</option>
+                          <option value="法文">法文</option>
+                          <option value="德文">德文</option>
+                          <option value="韓文">韓文</option>
+                          <option value="泰國文">泰國文</option>
+                          <option value="瑞典文">瑞典文</option>
+                          <option value="土耳其文">土耳其文</option>
+                          <option value="西班牙文">西班牙文</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form_grp narrowgroup" role="group" aria-labelledby="yearLabel">
+                      <label id="yearLabel" class="form_title">年份</label>
+                      <div class="form_content form_inline yearsgroup">
+                        <label for="yearStart"
+                          ><span>起</span>
+                          <select id="yearStart" name="yearStart">
+                            <option value="" selected="true">請選擇</option>
+                            <option value="2025-01-01">2025</option>
+                            <option value="2024-01-01">2024</option>
+                            <option value="2023-01-01">2023</option>
+                            <option value="2022-01-01">2022</option>
+                            <option value="2021-01-01">2021</option>
+                            <option value="2020-01-01">2020</option>
+                            <option value="2019-01-01">2019</option>
+                            <option value="2018-01-01">2018</option>
+                            <option value="2017-01-01">2017</option>
+                            <option value="2016-01-01">2016</option>
+                            <option value="2015-01-01">2015</option>
+                            <option value="2014-01-01">2014</option>
+                            <option value="2013-01-01">2013</option>
+                            <option value="2012-01-01">2012</option>
+                            <option value="2011-01-01">2011</option>
+                            <option value="2010-01-01">2010</option>
+                            <option value="2009-01-01">2009</option>
+                            <option value="2008-01-01">2008</option>
+                            <option value="2007-01-01">2007</option>
+                            <option value="2006-01-01">2006</option>
+                          </select>
+                        </label>
+                        <label for="yearEnd"
+                          ><span>訖</span>
+                          <select id="yearEnd" name="yearEnd">
+                            <option value="" selected="true">請選擇</option>
+                            <option value="2025-01-01">2025</option>
+                            <option value="2024-01-01">2024</option>
+                            <option value="2023-01-01">2023</option>
+                            <option value="2022-01-01">2022</option>
+                            <option value="2021-01-01">2021</option>
+                            <option value="2020-01-01">2020</option>
+                            <option value="2019-01-01">2019</option>
+                            <option value="2018-01-01">2018</option>
+                            <option value="2017-01-01">2017</option>
+                            <option value="2016-01-01">2016</option>
+                            <option value="2015-01-01">2015</option>
+                            <option value="2014-01-01">2014</option>
+                            <option value="2013-01-01">2013</option>
+                            <option value="2012-01-01">2012</option>
+                            <option value="2011-01-01">2011</option>
+                            <option value="2010-01-01">2010</option>
+                            <option value="2009-01-01">2009</option>
+                            <option value="2008-01-01">2008</option>
+                            <option value="2007-01-01">2007</option>
+                            <option value="2006-01-01">2006</option>
+                          </select>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form_grp narrowgroup" role="group" aria-labelledby="otherCondLabel">
+                      <label id="otherCondLabel" class="form_title">其他條件</label>
+                      <div class="form_content">
+                        <div class="check_grp form_inline">
+                          <input type="checkbox" id="sampleCheckbox6" name="otherCond" value="authorized" />
+                          <label for="sampleCheckbox6">已授權</label>
+                          <input type="checkbox" id="sampleCheckbox7" name="otherCond" value="fulltext" />
+                          <label for="sampleCheckbox7">有全文</label>
+                        </div>
+                      </div>
+                    </div>
+                    <hr aria-hidden="true" />
+                    <h3 id="otherSettings">其他設定</h3>
+                    <div class="form_grp narrowgroup" role="group" aria-labelledby="searchModeLabel">
+                      <label id="searchModeLabel" class="form_title">查詢模式</label>
+                      <div class="form_content">
+                        <div class="radio_grp form_inline">
+                          <input type="radio" id="sampleRadioa" name="searchMode" value="exact" checked />
+                          <label for="sampleRadioa">精確查詢</label>
+                          <input type="radio" id="sampleRadiob" name="searchMode" value="fuzzy" />
+                          <label for="sampleRadiob">模糊查詢</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form_grp narrowgroup" role="group" aria-labelledby="resultModeLabel">
+                      <label id="resultModeLabel" class="form_title">每頁查詢結果筆數</label>
+                      <div class="form_content">
+                        <div class="radio_grp form_inline">
+                          <input type="radio" id="sampleRadioc" name="resultMode" value="20" checked />
+                          <label for="sampleRadioc">20</label>
+                          <input type="radio" id="sampleRadiod" name="resultMode" value="50" />
+                          <label for="sampleRadiod">50</label>
+                          <input type="radio" id="sampleRadiod" name="resultMode" value="100" />
+                          <label for="sampleRadiod">100</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="btn_grp form_inline">
+                      <button class="btn btn-submit" type="submit">查詢</button>
+                      <button class="btn btn-reset" type="reset">重填</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- Advanced_search_content end-->
+            </section>
+            <!-- SP End -->
+          </div>
+        </div>
+      </main>
+      <!-- fatFooter Start -->
+      <section class="fatFooter">
+        <div class="container">
+          <nav aria-label="頁尾網站導覽">
+            <ul>
+              <li>
+                <a href="#">查找文章</a>
+                <ul>
+                  <li><a href="#">簡易查詢</a></li>
+                  <li><a href="#">進階查詢</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">瀏覽期刊</a>
+                <ul>
+                  <li><a href="#">編譯論叢</a></li>
+                  <li><a href="#">教科書研究</a></li>
+                  <li><a href="#">教育研究與發展期刊</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">典藏期刊</a>
+              </li>
+              <li>
+                <a href="#">網站公告</a>
+              </li>
+              <li>
+                <a href="#">相關連結</a>
+              </li>
+              <li>
+                <a href="#">聯絡我們</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <!-- fatFooter End -->
+      <!-- footer Start-->
+      <footer>
+        <div class="container">
+          <a class="accessKeyItem" href="#aZ" id="aZ" accesskey="Z" aria-label="頁尾區">:::</a>
+          <div class="footerLogo">
+            <img src="images/f_logo.png" alt="國家教育研究院" class="imgResponsive" />
+            <span class="counter">累計瀏覽人次:<em>46476653</em></span>
+          </div>
+          <div class="footerInfo">
+            <ul class="footerLink">
+              <li><a href="javascript:;">個資法及隱私聲明</a></li>
+              <li><a href="javascript:;">資訊安全政策</a></li>
+              <li><a href="javascript:;">網站資料開放宣告</a></li>
+            </ul>
+            <p>地址：106011 臺北市大安區和平東路一段179號　電話：02-7740-7877　傳真：02-7740-78</p>
+          </div>
+
+          <div class="footerIcon">
+            <p class="copyright">Copyright © 國家教育研究院學術期刊網站 All Rights Reserved.</p>
+            <a target="_blank" href="javascript:;" class="acc">
+              <img src="images/accessibility_aa.jpg" alt="通過AA檢測等級無障礙網頁檢測" />
+            </a>
+          </div>
+        </div>
+      </footer>
+      <!-- footer End -->
+    </div>
+    <a href="javascript:;" class="scrollToTop" role="button">回頁首</a>
+
+    <!-- lazyload -->
+    <script src="vendor/lazyload/lazyload.js"></script>
+    <!-- wow -->
+    <script src="js/wow.js"></script>
+    <script>
+      wow = new WOW({
+        animateClass: 'animated',
+        offset: 100,
+        callback: function (box) {
+          console.log('WOW: animating <' + box.tagName.toLowerCase() + '>');
+        },
+      });
+      wow.init();
+    </script>
+
+    <!-- fancybox -->
+    <script src="vendor/fancybox/fancybox.umd.js"></script>
+    <script src="vendor/fancybox/l10n/zh_TW.umd.js"></script>
+    <!-- swiper -->
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- main js-->
+    <script src="js/main.js"></script>
+    <!-- js -->
+    <script src="js/customize.js"></script>
+  </body>
+</html>

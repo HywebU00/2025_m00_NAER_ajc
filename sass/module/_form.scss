@@ -1227,7 +1227,8 @@ input[type='mail'],
 input[type='number'] {
   &::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: darken($colorGray, 20);
+    color: darken($colorGray, 50);
+    font-weight: 400;
   }
 
   &::-moz-placeholder {
