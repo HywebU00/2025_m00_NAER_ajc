@@ -564,6 +564,16 @@
   background: #f6f4ef;
   padding: 2em 4% 1em;
   font-size: rem(18);
+  h3 {
+    margin: 0.5em 0;
+    font-family: 'Noto Serif TC', serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 2px;
+    color: #5f0524;
+    font-size: rem(28);
+  }
   .visually-hidden {
     clip: rect(1px, 1px, 1px, 1px);
     -webkit-clip-path: inset(50%);
