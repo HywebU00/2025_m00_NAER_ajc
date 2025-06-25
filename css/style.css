@@ -2969,6 +2969,16 @@ img {
   .Advanced_search_content .narrowgroup .search_left {
     flex: 0 0 auto;
   }
+  @media screen and (max-width: 767px) {
+    .Advanced_search_content .search_group .search_right,
+    .Advanced_search_content .search_group .search_left,
+    .Advanced_search_content .advancedgroup .search_right,
+    .Advanced_search_content .advancedgroup .search_left,
+    .Advanced_search_content .narrowgroup .search_right,
+    .Advanced_search_content .narrowgroup .search_left {
+      flex: 1 1 auto;
+    }
+  }
   .Advanced_search_content .search_group .search_middle,
   .Advanced_search_content .advancedgroup .search_middle,
   .Advanced_search_content .narrowgroup .search_middle {

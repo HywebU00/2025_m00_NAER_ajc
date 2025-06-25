@@ -616,6 +616,9 @@
     .search_right,
     .search_left {
       flex: 0 0 auto;
+      @include screen('mobile') {
+        flex: 1 1 auto;
+      }
     }
     .search_middle {
       flex: 1 1 auto;
