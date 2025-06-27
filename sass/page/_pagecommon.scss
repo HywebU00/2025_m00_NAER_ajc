@@ -741,6 +741,24 @@
                   //   background-image: url('../images/icon_search.svg');
                   // }
                 }
+                &.copy {
+                  background-image: url('../images/icon_copy.svg');
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: 22px;
+                }
+                &.sharelink {
+                  background-image: url('../images/icon_sharelink.svg');
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: 20px;
+                }
+                &.citeapa {
+                  background-image: url('../images/icon_citeapa.svg');
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: 24px;
+                }
                 &:hover {
                   background-color: darken(#d7d1ca, 10);
                 }
@@ -773,10 +791,10 @@
             display: block;
           }
         }
-        p {
-          @include textLine(2, 1.8em);
-          color: #666;
-        }
+        // p {
+        //   @include textLine(2, 1.8em);
+        //   color: #666;
+        // }
       }
       .data_content {
         display: flex;
@@ -892,7 +910,7 @@
     display: flex;
     flex-wrap: wrap;
     .form_grp {
-      flex: 1 1 50%;
+      flex: 1 1 100%;
       @media screen and (max-width: 1199px) {
         flex: 1 1 100%;
       }
@@ -901,13 +919,14 @@
   .form_grp {
     border: none;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     font-size: rem(18);
     .form_title {
       flex: 0 0 auto;
       width: auto;
       margin: 0;
-      padding: 0;
+      padding: 0.3em 0;
+      align-self: flex-start;
     }
     .form_content {
       max-width: calc(100% - 100px);
@@ -925,12 +944,14 @@
         margin: 0 0.3em 0.3em 0;
       }
       select {
-        min-width: 150px;
+        min-width: 200px;
+        width: calc(100% - 7em);
         border-radius: 2em;
         border: none;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
         @media screen and (max-width: 480px) {
-          width: 100%;
+          // width: 100%;
           min-width: 100%;
           margin: 0.3em 0 0.5em;
         }
@@ -954,6 +975,7 @@
       }
     }
   }
+
   .btn_grp {
     justify-content: flex-start;
     @media screen and (max-width: 480px) {
@@ -1575,13 +1597,68 @@
     flex: 0 0 auto;
     width: auto;
     border-radius: 2em;
-    background: #3d3124 url(../images/icon_select_arrow_w.svg) no-repeat right 15px top 0.75em;
-    background-size: 16px;
+    background: #3d3124 url('../images/icon_select_arrow_white.png') no-repeat right 0 top 0.75em;
+    background-size: 1.6em auto;
     color: #fff;
     border: solid 1px #3d3124;
-    padding: 0.5em 40px 0.5em 1.5em;
+    padding: 0.5em 1.8em 0.5em 1.5em;
     @include screen('mobile') {
       flex: 1 1 100%;
+    }
+  }
+}
+//顯示全部文字
+.truncate-text {
+  position: relative;
+  max-width: 100%;
+  padding-bottom: 0.5em;
+
+  p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3.2em;
+    transition: max-height 0.2s;
+    margin-bottom: 1.5em;
+    color: #666;
+  }
+  &.expanded p {
+    -webkit-line-clamp: unset;
+    max-height: none;
+    overflow: visible !important;
+  }
+  .show-more-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1em;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.2s;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    .arrow {
+      display: inline-block;
+      width: 0.8em;
+      height: 0.8em;
+      border-right: 2px solid #564c40;
+      border-bottom: 2px solid #564c40;
+      transform: rotate(45deg);
+      margin-left: 0.2em;
+      margin-bottom: 0.1em;
+      transition: transform 0.2s;
+    }
+  }
+  &.expanded {
+    .show-more-btn {
+      .arrow {
+        transform: rotate(-135deg);
+        margin-bottom: 0;
+      }
     }
   }
 }

@@ -492,7 +492,7 @@
   padding: 2em 4% 3em;
   .detailBox {
     background: #d7d1ca;
-    padding: 2em 5% 3em;
+    padding: 2em 5% 2em;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   }
   .noticeTab {
@@ -544,19 +544,31 @@
     font-weight: 500;
     line-height: 2.3em;
   }
+  .tbbox {
+    background: #fff;
+    padding: 0;
+    font-size: rem(18);
+    font-weight: 500;
+    line-height: 1.8em;
+  }
   table {
+    caption {
+      display: none;
+    }
     th {
       background: #f9f7f4;
       color: #6a6866;
       border-left: none;
       border-right: none;
       vertical-align: top;
-      padding: 0.5em;
+      padding: 0.5em 1em;
+      text-align: right;
+      width: 20%;
     }
     td {
       border-left: none;
       border-right: none;
-      padding: 0.5em;
+      padding: 0.5em 1em;
     }
     select {
       width: auto;
@@ -1038,4 +1050,11 @@
   textarea {
     border-radius: 15px;
   }
+}
+// 錨點捲動設定
+#newvol_id,
+#notscon_id,
+#editorial_id {
+  scroll-margin-top: 20px;
+  overflow: clip;
 }

@@ -397,6 +397,17 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+//文字收合
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.truncate-text').forEach(function (block) {
+    var btn = block.querySelector('.show-more-btn');
+    btn.addEventListener('click', function () {
+      var expanded = block.classList.toggle('expanded');
+      btn.setAttribute('aria-expanded', expanded);
+    });
+  });
+});
+
 //timeline
 (function () {
   const timeline = document.querySelector('.timeline-list');

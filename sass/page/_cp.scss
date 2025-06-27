@@ -340,6 +340,7 @@ h2.title {
     border-bottom: solid 1px #d7d1ca;
     padding-left: 1.5em;
     line-height: 1.5em;
+    font-size: rem(18);
     &:first-child {
       border-top: solid 1px #d7d1ca;
     }
@@ -376,6 +377,7 @@ h2.title {
     }
 
     li {
+      font-size: rem(16);
       &:first-child {
         border-top: none;
       }
@@ -384,6 +386,10 @@ h2.title {
   .fileDownload {
     li {
       border-bottom: solid 1px #d7d1ca;
+      font-size: rem(16);
+      &:before {
+        top: 1.2em;
+      }
       .fileName {
         color: $colorWord;
       }
@@ -391,15 +397,15 @@ h2.title {
   }
   p {
     word-break: break-all;
-    font-weight: 400;
+    font-weight: 500;
   }
   ul,
   ol {
-    font-weight: 400;
+    font-weight: 500;
   }
   table {
     td {
-      font-weight: 400;
+      font-weight: 500;
     }
   }
 }

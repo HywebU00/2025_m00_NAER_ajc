@@ -27,9 +27,11 @@ table {
   }
   td {
     border: #d7d1ca 1px solid;
-    word-break: break-all;
+    // word-break: break-all;
+    word-break: break-word;
     a {
-      word-break: break-all;
+      // word-break: break-all;
+      word-break: break-word;
       color: $colorWord;
       display: inline-block;
     }
