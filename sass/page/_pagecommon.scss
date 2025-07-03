@@ -1597,11 +1597,13 @@
     flex: 0 0 auto;
     width: auto;
     border-radius: 2em;
-    background: #3d3124 url('../images/icon_select_arrow_white.png') no-repeat right 0 top 0.75em;
+    // background: #3d3124 url('../images/icon_select_arrow_white.png') no-repeat right 0 top 0.75em;
+    background: #ffffff url('../images/icon_select_arrow.png') no-repeat right 0 top 0.75em;
     background-size: 1.6em auto;
-    color: #fff;
-    border: solid 1px #3d3124;
+    // color: #fff;
+    border: solid 1px #fff;
     padding: 0.5em 1.8em 0.5em 1.5em;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     @include screen('mobile') {
       flex: 1 1 100%;
     }
@@ -1661,4 +1663,15 @@
       }
     }
   }
+}
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }

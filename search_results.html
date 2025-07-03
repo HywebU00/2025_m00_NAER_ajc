@@ -450,19 +450,20 @@
                     <div class="classification_groupright">
                       <!-- sequence -->
                       <div class="sequence">
-                        <label for="sort-select field-select">排序</label>
-                        <select name="sort" id="sort-select" aria-label="排序">
-                          <option value="asc">依出版年度(遞增)</option>
-                          <option value="desc" selected>依出版年(遞減)</option>
-                          <option value="asc">依相似度(遞增)</option>
-                          <option value="desc">依相似度(遞減)</option>
+                        <label for="sort-select" class="sr-only">排序依據</label>
+                        <select name="sort" id="sort-select" aria-label="排序依據">
+                          <option value="title" selected>書刊名</option>
+                          <option value="author">作者</option>
+                          <option value="publisher">出版者</option>
+                          <option value="pubdate">出版日期</option>
+                          <option value="relevance">相似度</option>
                         </select>
-                        <select name="field" id="field-select" aria-label="顯示欄位設定">
-                          <option value="commonCreator">作者</option>
-                          <option value="commonTitle">題名</option>
-                          <option selected="" value="commonDate">出版日期</option>
-                          <option value="coJournal">書刊名/會議名稱</option>
+                        <label for="field-select" class="sr-only">排序方式</label>
+                        <select name="field" id="field-select" aria-label="排序方式">
+                          <option value="desc">降冪</option>
+                          <option value="asc">升冪</option>
                         </select>
+                        <button class="btn btn-black" type="submit" aria-label="執行排序">排序</button>
                       </div>
                       <!-- sequence end-->
                       <div class="classification_data">
@@ -880,7 +881,7 @@
                           <div id="output-range-legend" class="form_title">輸出範圍：</div>
                           <div class="form_content">
                             <fieldset>
-                              <legend class="sr-only hidden">選擇輸出範圍</legend>
+                              <legend class="sr-only">選擇輸出範圍</legend>
                               <div class="radio_grp form_inline">
                                 <label for="outputRange-checked">
                                   <input type="radio" name="outputRange" id="outputRange-checked" value="checked" checked />
@@ -902,7 +903,7 @@
                           <div id="output-format-legend" class="form_title">輸出格式：</div>
                           <div class="form_content">
                             <fieldset>
-                              <legend class="sr-only hidden">選擇輸出格式</legend>
+                              <legend class="sr-only">選擇輸出格式</legend>
                               <div class="radio_grp form_inline">
                                 <label>
                                   <input type="radio" name="outputFormat" value="summary" checked aria-checked="true" />
@@ -914,15 +915,14 @@
                                 </label>
                               </div>
                               <div class="radio_grp form_inline">
-                                <label for="format-select" class="sr-only. hidden">書目資料輸出格式</label>
+                                <label for="format-select" class="sr-only">書目資料輸出格式</label>
                                 <select name="format" id="format-select" aria-label="選擇檔案格式">
-                                  <option selected="selected" value="">請選擇</option>
-                                  <option value="detail:csv">CSV</option>
-                                  <option value="detail:ris">EndNote</option>
-                                  <option value="detail:ris">RefWorks</option>
-                                  <option value="teric:APA">APA</option>
-                                  <option value="teric:MLA">MLA</option>
-                                  <option value="teric:Chicago">Chicago</option>
+                                  <option selected="selected" value="csv">CSV</option>
+                                  <option value="endnote">EndNote</option>
+                                  <option value="refworks">RefWorks</option>
+                                  <option value="apa">APA</option>
+                                  <option value="mla">MLA</option>
+                                  <option value="chicago">Chicago</option>
                                 </select>
                                 <button class="btn btn-black">確定</button>
                               </div>

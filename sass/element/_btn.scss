@@ -69,6 +69,7 @@
   // box-sizing: border-box;
   @include btnSetting;
   text-shadow: none;
+  border-radius: 2em;
 
   // &:focus-visible,
   &:hover {
