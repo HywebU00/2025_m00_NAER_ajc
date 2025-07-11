@@ -12788,7 +12788,6 @@ img {
     margin-top: -0.3em;
   }
   .classification_list .collapsible-content {
-    max-height: 500px;
     opacity: 1;
   }
   .classification_list .collapsible-content ul {
@@ -12811,13 +12810,61 @@ img {
     text-align: right;
     color: #646464;
   }
-  .classification_list .collapsible-content input[type=checkbox] {
+  .classification_list .collapsible-content input[type=checkbox],
+  .classification_list .collapsible-content input[type=radio] {
     margin: -0.25em 0.3em 0 -1.5em;
+  }
+  .classification_list .collapsible-content .more {
+    padding: 0;
+    width: 100%;
+    margin: 0.5em auto 1em;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+  }
+  .classification_list .collapsible-content .more:hover {
+    background: none;
+  }
+  .classification_list .collapsible-content .more a {
+    display: inline-block;
+    margin: 0 auto;
+    color: #fff;
+    background-color: #8f0836;
+    padding: 0.6em 1.5em;
+    border-radius: 2em;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.938em;
+    line-height: 1em;
+  }
+  .classification_list .collapsible-content .more a:hover {
+    background-color: #5f0524;
   }
   .classification_list .collapsible-content.collapsed {
     max-height: 0;
     opacity: 0;
     pointer-events: none;
+  }
+  .classification_btn {
+    text-align: center;
+    margin: 0;
+    display: block;
+    width: 100%;
+    padding: 1em 0;
+    background: #3d3124;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+  }
+  .classification_btn .tactics_btn {
+    padding: 0.5em 1.5em;
+    background-color: #d7d1ca;
+    color: #2a2a2a;
+    border-radius: 2em;
+    border: 1px solid #ccc4bb;
+    margin: 0.2em;
+  }
+  .classification_btn .tactics_btn:hover {
+    background-color: #c1b8ad;
+    border-color: #b6ab9e;
   }
   .sequence {
     display: flex;

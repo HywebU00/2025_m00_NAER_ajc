@@ -384,6 +384,19 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //查詢結果分類收合
+// document.addEventListener('DOMContentLoaded', function () {
+//   document.querySelectorAll('.collapsible-header .collapse-toggle').forEach(function (toggleBtn) {
+//     var content = toggleBtn.closest('.collapsible-header').nextElementSibling;
+//     toggleBtn.addEventListener('click', function () {
+//       var expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+//       toggleBtn.setAttribute('aria-expanded', !expanded);
+//       if (content) {
+//         content.classList.toggle('collapsed', expanded);
+//       }
+//     });
+//   });
+// });
+
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.collapsible-header .collapse-toggle').forEach(function (toggleBtn) {
     var content = toggleBtn.closest('.collapsible-header').nextElementSibling;
@@ -394,6 +407,37 @@ document.addEventListener('DOMContentLoaded', function () {
         content.classList.toggle('collapsed', expanded);
       }
     });
+  });
+
+  // 顯示/收合更多條列
+  document.querySelectorAll('.collapsible-content').forEach(function (contentBlock) {
+    var ul = contentBlock.querySelector('ul');
+    var items = ul ? ul.querySelectorAll('li') : [];
+    var moreBox = contentBlock.querySelector('.more');
+    var moreBtn = moreBox ? moreBox.querySelector('a') : null;
+    var showCount = 5;
+
+    function updateList(expanded) {
+      items.forEach(function (li, idx) {
+        li.style.display = expanded || idx < showCount ? '' : 'none';
+      });
+      if (moreBtn) {
+        moreBtn.textContent = expanded ? '向上收合' : '顯示更多';
+        moreBtn.setAttribute('aria-expanded', expanded);
+      }
+    }
+
+    if (items.length > showCount && moreBtn) {
+      updateList(false);
+      moreBox.style.display = '';
+      moreBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var expanded = moreBtn.getAttribute('aria-expanded') === 'true';
+        updateList(!expanded);
+      });
+    } else if (moreBox) {
+      moreBox.style.display = 'none';
+    }
   });
 });
 
