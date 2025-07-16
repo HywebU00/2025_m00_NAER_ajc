@@ -547,7 +547,7 @@
   .tbbox {
     background: #fff;
     padding: 0;
-    font-size: rem(18);
+    font-size: rem(16);
     font-weight: 500;
     line-height: 1.8em;
   }
@@ -569,6 +569,7 @@
       border-left: none;
       border-right: none;
       padding: 0.5em 1em;
+      // text-align: justify;
     }
     select {
       width: auto;
@@ -1057,4 +1058,34 @@
 #editorial_id {
   scroll-margin-top: 20px;
   overflow: clip;
+}
+
+.fun_link {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    li {
+      flex: 0 0 auto;
+      margin: 0 0.5em 0 0;
+    }
+  }
+  a {
+    display: block;
+    padding: 0.5em 2em;
+    margin: 0em 0.2em 0.5em 0;
+    background: $colorPrimary;
+    color: #fff;
+    border-radius: 2em;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    font-size: rem(18);
+    &:hover {
+      background: darken($colorPrimary, 10);
+      color: #fff;
+    }
+  }
 }

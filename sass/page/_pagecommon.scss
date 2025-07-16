@@ -532,6 +532,7 @@
 .classification_block {
   display: flex;
   position: relative;
+  width: 100%;
   @include screen('tablet') {
     display: block;
   }
@@ -695,7 +696,7 @@
           flex-wrap: wrap;
         }
         a {
-          flex: 1 1 auto;
+          flex: 1 1 calc(100% - 120px);
           color: $colorDark;
           display: block;
           @include textLine(2, 1.6em);
@@ -705,8 +706,12 @@
           @include screen('tablet') {
             margin-bottom: 10px;
           }
+          @include screen('xsMobile') {
+            flex: 1 1 100%;
+          }
         }
         .data_share {
+          flex: 0 0 100px;
           ul {
             margin: 0;
             padding: 0;
@@ -757,7 +762,7 @@
                   background-image: url('../images/icon_citeapa.svg');
                   background-repeat: no-repeat;
                   background-position: center;
-                  background-size: 24px;
+                  background-size: 16px;
                 }
                 &:hover {
                   background-color: darken(#d7d1ca, 10);
