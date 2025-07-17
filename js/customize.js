@@ -397,6 +397,8 @@ document.addEventListener('DOMContentLoaded', function () {
 //   });
 // });
 
+//
+
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.collapsible-header .collapse-toggle').forEach(function (toggleBtn) {
     var content = toggleBtn.closest('.collapsible-header').nextElementSibling;

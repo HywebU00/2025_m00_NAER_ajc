@@ -1424,18 +1424,53 @@ function fontSize() {
 // -----  分享按鈕 share dropdwon   ---------------------------------------
 // -----------------------------------------------------------------------
 
-function shareBtnFunction() {
-  // 創造一個a連結的按鈕
-  const shareUl = document.querySelector('.share');
-  if (shareUl) {
-    const btn = document.createElement('button');
-    btn.setAttribute('class', 'shareButton');
-    btn.setAttribute('role', 'button');
-    btn.setAttribute('tabindex', '0');
-    btn.textContent = 'share分享按鈕';
-    shareUl.insertBefore(btn, shareUl.childNodes[0]);
-  }
+// function shareBtnFunction() {
+//   // 創造一個a連結的按鈕
+//   const shareUl = document.querySelector('.share');
+//   if (shareUl) {
+//     const btn = document.createElement('button');
+//     btn.setAttribute('class', 'shareButton');
+//     btn.setAttribute('role', 'button');
+//     btn.setAttribute('tabindex', '0');
+//     btn.textContent = 'share分享按鈕';
+//     shareUl.insertBefore(btn, shareUl.childNodes[0]);
+//   }
 
+//   toggleSlider('.functionPanel .share > button', '.functionPanel .share ul');
+// }
+// shareBtnFunction();
+
+function shareBtnFunction() {
+  // 支援多組 .share
+  const shareUls = document.querySelectorAll('.functionPanel .share');
+  shareUls.forEach((shareUl, idx) => {
+    // 檢查是否已經有 shareButton，避免重複插入
+    if (!shareUl.querySelector('.shareButton')) {
+      const btn = document.createElement('button');
+      btn.setAttribute('class', 'shareButton');
+      btn.setAttribute('type', 'button');
+      btn.setAttribute('aria-haspopup', 'true'); // Correct attribute name
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-controls', `shareDropdown_${idx}`);
+      btn.textContent = '分享';
+      shareUl.insertBefore(btn, shareUl.firstChild);
+
+      // 設定 ul 的 id 及 aria-labelledby
+      const shareList = shareUl.querySelector('ul');
+      if (shareList) {
+        shareList.setAttribute('id', `shareDropdown_${idx}`);
+        shareList.setAttribute('aria-labelledby', btn.id || ''); // Correct attribute name
+        shareList.setAttribute('role', 'menu');
+        // 每個 li 下的 a 加上 role="menuitem"
+        shareList.querySelectorAll('li a').forEach((a) => {
+          a.setAttribute('role', 'menuitem');
+          a.setAttribute('tabindex', '-1');
+        });
+      }
+    }
+  });
+
+  // 支援多組同時使用
   toggleSlider('.functionPanel .share > button', '.functionPanel .share ul');
 }
 shareBtnFunction();

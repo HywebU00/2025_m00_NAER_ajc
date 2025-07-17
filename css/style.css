@@ -7378,6 +7378,10 @@ img {
     background: url(../images/icon_search.svg) no-repeat center center;
     background-size: 90%;
   }
+  .functionPanel .function ul li.citeapa a:before {
+    background: url(../images/icon_citeapa.svg) no-repeat center center;
+    background-size: 90%;
+  }
   .share {
     box-sizing: border-box;
     margin: 0.5em 0;
@@ -12050,6 +12054,32 @@ img {
       flex: 1 1 100%;
     }
   }
+  .classification_data .classification_list_block .classification_list_data .title .functionPanel {
+    flex: 0 0 100px;
+  }
+  .classification_data .classification_list_block .classification_list_data .title .functionPanel .share ul {
+    top: 3em;
+  }
+  .classification_data .classification_list_block .classification_list_data .title .functionPanel li a {
+    width: 40px;
+    height: 40px !important;
+  }
+  .classification_data .classification_list_block .classification_list_data .title .functionPanel .shareButton {
+    width: 40px;
+    height: 40px;
+  }
+  .classification_data .classification_list_block .classification_list_data .title .functionPanel .shareButton:before {
+    background: url(../images/icon_sharelink.svg) no-repeat center center;
+    background-size: 20px;
+  }
+  .classification_data .classification_list_block .classification_list_data .title .functionPanel .citeapa a {
+    width: 40px;
+    height: 40px;
+  }
+  .classification_data .classification_list_block .classification_list_data .title .functionPanel .citeapa a:before {
+    background: url(../images/icon_citeapa.svg) no-repeat center center;
+    background-size: 16px;
+  }
   .classification_data .classification_list_block .classification_list_data .title .data_share {
     flex: 0 0 100px;
   }
@@ -13000,6 +13030,27 @@ img {
     clip: rect(0, 0, 0, 0) !important;
     white-space: nowrap !important;
     border: 0 !important;
+  }
+  .fancybox__container {
+    --fancybox-bg: rgba(24, 24, 27, 0.8) !important;
+  }
+  #dialog-content {
+    padding: 0.5rem !important;
+  }
+  .popupBox {
+    background: #f6f4ef;
+    border-radius: 0;
+    padding-bottom: 1em;
+  }
+  .popupBox h2 {
+    background: #8f0836;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    font-size: 1.25em;
+  }
+  .popupBox p {
+    margin: 1em;
   }
 }
 .colorA a:hover {

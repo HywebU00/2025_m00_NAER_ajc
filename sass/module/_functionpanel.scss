@@ -242,6 +242,12 @@ div.function {
             background-size: 90%;
           }
         }
+        &.citeapa {
+          a:before {
+            background: url(../images/icon_citeapa.svg) no-repeat center center;
+            background-size: 90%;
+          }
+        }
       }
     }
   }
