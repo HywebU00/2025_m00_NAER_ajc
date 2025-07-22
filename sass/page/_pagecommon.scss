@@ -690,7 +690,7 @@
       .title {
         font-weight: bold;
         font-size: 1.125em;
-        margin-bottom: 0.5em;
+        margin-bottom: 0.2em;
         display: flex;
         @include screen('tablet') {
           flex-wrap: wrap;
@@ -699,7 +699,7 @@
           flex: 1 1 calc(100% - 120px);
           color: $colorDark;
           display: block;
-          @include textLine(2, 1.6em);
+          // @include textLine(2, 1.6em);
           &:hover {
             color: $colorPrimary;
           }
@@ -712,6 +712,12 @@
         }
         .functionPanel {
           flex: 0 0 100px;
+          padding: 0;
+          align-self: flex-start;
+          margin: 0;
+          @include screen('xsMobile') {
+            flex: 0 0 auto;
+          }
           .share {
             ul {
               top: 3em;
@@ -719,26 +725,29 @@
           }
           li {
             a {
-              width: 40px;
-              height: 40px !important;
+              width: 26px;
+              height: 26px !important;
+              padding: 0;
             }
           }
           .shareButton {
-            width: 40px;
-            height: 40px;
+            width: 26px;
+            height: 26px;
+            padding: 0;
             &:before {
-              background: url(../images/icon_sharelink.svg) no-repeat center center;
-              background-size: 20px;
+              // background: url(../images/icon_sharelink.svg) no-repeat center center;
+              background: url(../images/basic/icon_share.svg) no-repeat center center;
+              background-size: 14px;
             }
           }
           .citeapa {
             a {
-              width: 40px;
-              height: 40px;
+              width: 26px;
+              height: 26px;
 
               &:before {
                 background: url(../images/icon_citeapa.svg) no-repeat center center;
-                background-size: 16px;
+                background-size: 12px;
               }
             }
           }
@@ -1711,6 +1720,7 @@
     transition: max-height 0.2s;
     margin-bottom: 1.5em;
     color: #666;
+    margin: 0.5em 0;
   }
   &.expanded p {
     -webkit-line-clamp: unset;

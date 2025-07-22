@@ -570,6 +570,16 @@
       border-right: none;
       padding: 0.5em 1em;
       // text-align: justify;
+      a {
+        color: $colorPrimary;
+        text-decoration: underline;
+        &:hover {
+          color: darken($colorPrimary, 10);
+          text-decoration: none;
+        }
+      }
+      button {
+      }
     }
     select {
       width: auto;
@@ -1086,6 +1096,28 @@
     &:hover {
       background: darken($colorPrimary, 10);
       color: #fff;
+    }
+  }
+}
+
+.file_format {
+  li {
+    display: inline-block;
+    margin: 0 0.1em 0.5em 0.1em;
+    font-size: rem(16);
+    color: #333;
+    line-height: 1.5;
+    img {
+      vertical-align: middle;
+      width: auto;
+      height: 42px;
+    }
+    a {
+      color: $colorPrimary;
+      text-decoration: none;
+      &:hover {
+        color: darken($colorPrimary, 10);
+      }
     }
   }
 }

@@ -99,7 +99,23 @@
                 <!-- function功能區塊 -->
                 <div class="function">
                   <ul>
-                    <li class="back"><a href="javascript:history.back()">回上一頁</a></li>
+                    <!-- <li class="back"><a href="javascript:history.back()">回上一頁</a></li> -->
+                    <li class="print"><a href="#">友善列印</a></li>
+                    <li class="link"><a href="#">相關連結</a></li>
+                  </ul>
+                </div>
+                <!-- 社群分享 -->
+                <div class="share">
+                  <ul>
+                    <li>
+                      <a href="#"><img src="images/basic/icon_facebook.svg" alt="facebook" /></a>
+                    </li>
+                    <li>
+                      <a href="#"><img src="images/basic/icon_x.svg" alt="twitter" /></a>
+                    </li>
+                    <li>
+                      <a href="#"><img src="images/basic/icon_line.svg" alt="line" /></a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -160,13 +176,14 @@
                       <div class="formInline">
                         <div class="total">
                           共<span>308</span>筆資料，第<span>1/18</span>頁，<label for="pet-select">每頁顯示</label>
-                          <select name="" id="pet-select" aria-label="每頁顯示">
+                          <!-- <select name="" id="pet-select" aria-label="每頁顯示">
                             <option value="">10</option>
                             <option value="">20</option>
                             <option value="">30</option>
                             <option value="">40</option>
-                          </select>
-                          筆<input type="button" value="確定" class="btn btnSubmit" title="確定" />
+                          </select> -->
+                          &nbsp;<a href="#">10</a>&nbsp;&nbsp;&nbsp;<a href="#">20</a>&nbsp;&nbsp;&nbsp;<a href="#">30</a>&nbsp;&nbsp;&nbsp;&nbsp;筆
+                          <input type="button" value="確定" class="btn btnSubmit" title="確定" />
                         </div>
                       </div>
                     </form>
@@ -468,17 +485,15 @@
                       <div class="sequence">
                         <label for="sort-select" class="sr-only">排序依據</label>
                         <select name="sort" id="sort-select" aria-label="排序依據">
-                          <option value="title" selected>書刊名</option>
-                          <option value="author">作者</option>
-                          <option value="publisher">出版者</option>
-                          <option value="pubdate">出版日期</option>
-                          <option value="relevance">相似度</option>
+                          <option value="relevance" selected>相似度</option>
+                          <option value="date_desc">最近日期</option>
+                          <option value="date_asc">最早日期</option>
                         </select>
-                        <label for="field-select" class="sr-only">排序方式</label>
+                        <!-- <label for="field-select" class="sr-only">排序方式</label>
                         <select name="field" id="field-select" aria-label="排序方式">
                           <option value="desc">降冪</option>
                           <option value="asc">升冪</option>
-                        </select>
+                        </select> -->
                         <button class="btn btn-black" type="submit" aria-label="執行排序">排序</button>
                       </div>
                       <!-- sequence end-->
@@ -1160,7 +1175,7 @@
                                   <option value="mla">MLA</option>
                                   <option value="chicago">Chicago</option>
                                 </select>
-                                <button class="btn btn-black">確定</button>
+                                <!-- <button class="btn btn-black">確定</button> -->
                               </div>
                             </fieldset>
                           </div>
@@ -1169,7 +1184,7 @@
                         <div class="function">
                           <ul>
                             <li class="icon_download"><a href="#">下載</a></li>
-                            <li class="icon_forward"><a href="#">寄至信箱</a></li>
+                            <!-- <li class="icon_forward"><a href="#">寄至信箱</a></li> -->
                           </ul>
                         </div>
                       </div>
