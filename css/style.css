@@ -13015,7 +13015,7 @@ img {
     transition: max-height 0.2s;
     margin-bottom: 1.5em;
     color: #666;
-    margin: 0.5em 0;
+    margin: 0.5em 0 1em;
   }
   .truncate-text.expanded p {
     -webkit-line-clamp: unset;
