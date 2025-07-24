@@ -539,7 +539,7 @@
                                     <!-- div內的內容可以自行設定 -->
                                     <div class="popupBox">
                                       <h2>APA引註</h2>
-                                      <p>鍾怡慧、徐昊果、曾絲宜（2014）。澳洲技術及繼續教育專業教材之發展與內涵分析。教科書研究，7 (3)，1-32。</p>
+                                      <p>1鍾怡慧、徐昊果、曾絲宜（2014）。澳洲技術及繼續教育專業教材之發展與內涵分析。教科書研究，7 (3)，1-32。</p>
                                     </div>
                                   </div>
                                   <!-- modal end-->
@@ -604,7 +604,7 @@
                                     <!-- div內的內容可以自行設定 -->
                                     <div class="popupBox">
                                       <h2>APA引註</h2>
-                                      <p>鍾怡慧、徐昊果、曾絲宜（2014）。澳洲技術及繼續教育專業教材之發展與內涵分析。教科書研究，7 (3)，1-32。</p>
+                                      <p>22鍾怡慧、徐昊果、曾絲宜（2014）。澳洲技術及繼續教育專業教材之發展與內涵分析。教科書研究，7 (3)，1-32。</p>
                                     </div>
                                   </div>
                                   <!-- modal end-->
@@ -665,7 +665,7 @@
                                     <!-- div內的內容可以自行設定 -->
                                     <div class="popupBox">
                                       <h2>APA引註</h2>
-                                      <p>鍾怡慧、徐昊果、曾絲宜（2014）。澳洲技術及繼續教育專業教材之發展與內涵分析。教科書研究，7 (3)，1-32。</p>
+                                      <p>33鍾怡慧、徐昊果、曾絲宜（2014）。澳洲技術及繼續教育專業教材之發展與內涵分析。教科書研究，7 (3)，1-32。</p>
                                     </div>
                                   </div>
                                   <!-- modal end-->
@@ -1279,10 +1279,28 @@
       });
       wow.init();
     </script>
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
 
     <!-- fancybox -->
     <script src="vendor/fancybox/fancybox.umd.js"></script>
     <script src="vendor/fancybox/l10n/zh_TW.umd.js"></script>
+    <!-- 解決fancybox多筆燈箱 -->
+    <script>
+      $(document).ready(function () {
+        $('.classification_list_block').each(function (index) {
+          var triggerLink = $(this).find('a[data-fancybox]');
+          var modalContent = $(this).find('.modal');
+
+          if (triggerLink.length > 0 && modalContent.length > 0) {
+            var newId = 'dialog-content-' + index;
+            modalContent.attr('id', newId);
+            triggerLink.attr('data-src', '#' + newId);
+          }
+        });
+        Fancybox.bind('[data-fancybox]', {});
+      });
+    </script>
+
     <!-- swiper -->
     <script src="vendor/swiper/swiper-bundle.min.js"></script>
     <!-- main js-->
