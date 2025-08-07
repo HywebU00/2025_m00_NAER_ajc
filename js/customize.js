@@ -455,31 +455,68 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //timeline
+// (function () {
+//   const timeline = document.querySelector('.timeline-list');
+//   const leftBtn = document.querySelector('.timeline-arrow-left');
+//   const rightBtn = document.querySelector('.timeline-arrow-right');
+//   const items = document.querySelectorAll('.timeline-item button');
+
+//   leftBtn.addEventListener('click', () => {
+//     timeline.scrollBy({ left: -120, behavior: 'smooth' });
+//   });
+//   rightBtn.addEventListener('click', () => {
+//     timeline.scrollBy({ left: 120, behavior: 'smooth' });
+//   });
+
+//   items.forEach((btn) => {
+//     btn.addEventListener('click', function () {
+//       items.forEach((b) => {
+//         b.setAttribute('aria-pressed', 'false');
+//         b.parentElement.removeAttribute('aria-current');
+//       });
+//       this.setAttribute('aria-pressed', 'true');
+//       this.parentElement.setAttribute('aria-current', 'true');
+//       // 可在此觸發年份切換事件
+//     });
+//   });
+// })();
+
 (function () {
-  const timeline = document.querySelector('.timeline-list');
-  const leftBtn = document.querySelector('.timeline-arrow-left');
-  const rightBtn = document.querySelector('.timeline-arrow-right');
-  const items = document.querySelectorAll('.timeline-item button');
+  const allTimelineLists = document.querySelectorAll('.timeline-list');
 
-  leftBtn.addEventListener('click', () => {
-    timeline.scrollBy({ left: -120, behavior: 'smooth' });
-  });
-  rightBtn.addEventListener('click', () => {
-    timeline.scrollBy({ left: 120, behavior: 'smooth' });
-  });
+  allTimelineLists.forEach((timelineList) => {
+    const leftBtn = timelineList.previousElementSibling;
+    const rightBtn = timelineList.nextElementSibling;
+    const items = timelineList.querySelectorAll('.timeline-item button');
 
-  items.forEach((btn) => {
-    btn.addEventListener('click', function () {
-      items.forEach((b) => {
-        b.setAttribute('aria-pressed', 'false');
-        b.parentElement.removeAttribute('aria-current');
+    const isLeftBtnValid = leftBtn && leftBtn.classList.contains('timeline-arrow-left');
+    const isRightBtnValid = rightBtn && rightBtn.classList.contains('timeline-arrow-right');
+
+    if (isLeftBtnValid) {
+      leftBtn.addEventListener('click', () => {
+        timelineList.scrollBy({ left: -120, behavior: 'smooth' });
       });
-      this.setAttribute('aria-pressed', 'true');
-      this.parentElement.setAttribute('aria-current', 'true');
-      // 可在此觸發年份切換事件
+    }
+
+    if (isRightBtnValid) {
+      rightBtn.addEventListener('click', () => {
+        timelineList.scrollBy({ left: 120, behavior: 'smooth' });
+      });
+    }
+
+    items.forEach((btn) => {
+      btn.addEventListener('click', function () {
+        items.forEach((b) => {
+          b.setAttribute('aria-pressed', 'false');
+          b.parentElement.removeAttribute('aria-current');
+        });
+        this.setAttribute('aria-pressed', 'true');
+        this.parentElement.setAttribute('aria-current', 'true');
+      });
     });
   });
 })();
+
 //收合
 document.addEventListener('DOMContentLoaded', function () {
   var btn = document.querySelector('.spinfoBlock3 .collapse-toggle');

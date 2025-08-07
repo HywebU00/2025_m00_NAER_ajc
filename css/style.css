@@ -10538,8 +10538,6 @@ img {
   .spinfoBlock2 .tableList table td {
     line-height: 1.8;
     border: none;
-    border-top: solid 1px #d7d1ca;
-    border-bottom: solid 1px #d7d1ca;
   }
   @media screen and (max-width: 575px) {
     .spinfoBlock2 .tableList table td {
@@ -10547,6 +10545,12 @@ img {
     }
   }
   .spinfoBlock2 .tableList table tr:last-child td {
+    border-bottom: none;
+  }
+  .spinfoBlock2 .tableList table tbody {
+    border-bottom: solid 1px #d7d1ca;
+  }
+  .spinfoBlock2 .tableList table tbody:last-child {
     border-bottom: none;
   }
   .spinfoBlock2 .tableList caption {
@@ -10574,7 +10578,6 @@ img {
     background: rgba(255, 255, 255, 0);
     border: 0px solid #bbb;
     width: 2.2em;
-    height: 2.2em;
     font-size: 1.2em;
     cursor: pointer;
     color: #333;
@@ -13063,6 +13066,8 @@ img {
   }
   .fancybox__container {
     --fancybox-bg: rgba(24, 24, 27, 0.8) !important;
+    max-width: 90% !important;
+    margin: 0 auto !important;
   }
   #dialog-content {
     padding: 0.5rem !important;
@@ -13081,6 +13086,8 @@ img {
   }
   .popupBox p {
     margin: 1em;
+    font-weight: 500;
+    line-height: 1.6;
   }
 }
 .colorA a:hover {

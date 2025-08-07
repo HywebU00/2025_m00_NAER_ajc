@@ -194,8 +194,8 @@
       td {
         line-height: 1.8;
         border: none;
-        border-top: solid 1px #d7d1ca;
-        border-bottom: solid 1px #d7d1ca;
+        // border-top: solid 1px #d7d1ca;
+        // border-bottom: solid 1px #d7d1ca;
         @include screen('xsMobile') {
           border: none !important;
         }
@@ -207,7 +207,12 @@
           }
         }
       }
-
+      tbody {
+        border-bottom: solid 1px #d7d1ca;
+      }
+      tbody:last-child {
+        border-bottom: none;
+      }
       tbody:nth-child(n + 1) {
         // border-top: solid 2px #beb5ab;
       }
@@ -239,7 +244,7 @@
     border: 0px solid #bbb;
     // border-radius: 50%;
     width: 2.2em;
-    height: 2.2em;
+    // height: 2.2em;
     font-size: 1.2em;
     cursor: pointer;
     color: #333;

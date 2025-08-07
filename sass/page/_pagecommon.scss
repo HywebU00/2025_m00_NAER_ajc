@@ -1773,6 +1773,8 @@
 }
 .fancybox__container {
   --fancybox-bg: rgba(24, 24, 27, 0.8) !important;
+  max-width: 90% !important;
+  margin: 0 auto !important;
 }
 #dialog-content {
   padding: 0.5rem !important;
@@ -1790,5 +1792,7 @@
   }
   p {
     margin: 1em;
+    font-weight: 500;
+    line-height: 1.6;
   }
 }
