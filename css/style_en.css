@@ -11487,6 +11487,7 @@ img {
     padding: 0;
     border-bottom: #d7d1ca 1px solid;
     word-break: break-word;
+    align-items: stretch;
   }
   .js-process-member-list .member-list-flex > .member-list-flex__row:last-of-type {
     border-bottom: none;
@@ -11500,13 +11501,15 @@ img {
   }
   .js-process-member-list .member-list-flex__title {
     flex-grow: 1;
+    padding: 0.5em;
   }
   .js-process-member-list .member-list-flex__main-title {
     font-weight: bold;
     font-size: 1.25em;
-    text-align: center;
+    text-align: left;
     padding-bottom: 0em;
-    margin: 0.5em 0;
+    padding: 0.5em 0.8rem;
+    border-bottom: #d7d1ca 1px solid;
   }
   .js-process-member-list .member-list-flex__category {
     font-weight: bold;
