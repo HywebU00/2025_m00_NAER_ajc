@@ -11474,7 +11474,7 @@ img {
   .js-process-member-list div.member-list-flex {
     box-sizing: border-box;
     padding: 0;
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1.6;
     margin: 0;
     font-weight: 500;
@@ -11519,6 +11519,7 @@ img {
     margin-bottom: 0;
     border-radius: 4px;
     border-bottom: #d7d1ca 1px solid;
+    font-size: 1.125rem;
   }
   .innerpage_content {
     background-color: #f6f4ef;
