@@ -159,7 +159,7 @@
 
 section {
   .titleBox {
-    font-size: rem(36);
+    font-size: rem(28);
     text-align: center;
     font-weight: bold;
     padding: 1.4em 0 1.2em;
@@ -168,7 +168,8 @@ section {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    letter-spacing: 8px;
+    letter-spacing: 0;
+    line-height: 1.2;
     @include screen('tablet') {
       font-size: rem(32);
     }
@@ -362,8 +363,9 @@ section {
     color: #313131;
     padding: 0 32px 0 20px;
     font-weight: bold;
-    font-size: rem(18);
-    @include textOverflow;
+    font-size: rem(16);
+    @include textLine(2, 23px);
+    // @include textOverflow;
     &:after {
       content: '';
       display: block;
@@ -387,14 +389,17 @@ section {
     .sort1 {
       color: $colorPrimary;
       margin-right: 10px;
+      display: block;
     }
     .sort2 {
       color: $colorBlue;
       margin-right: 10px;
+      display: block;
     }
     .sort3 {
       color: $colorPurple;
       margin-right: 10px;
+      display: block;
     }
   }
 }
@@ -916,12 +921,12 @@ section {
     &::before {
       content: '';
       position: absolute;
-      width: 5em;
+      width: 6em;
       height: 2px;
       background: $colorPrimary;
       bottom: -2px;
       left: 50%;
-      margin-left: -2.5em;
+      margin-left: -3em;
     }
   }
 }

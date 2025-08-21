@@ -9191,7 +9191,7 @@ img {
     }
   }
   section .titleBox {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     text-align: center;
     font-weight: bold;
     padding: 1.4em 0 1.2em;
@@ -9200,7 +9200,8 @@ img {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    letter-spacing: 8px;
+    letter-spacing: 0;
+    line-height: 1.2;
   }
   @media screen and (max-width: 991px) {
     section .titleBox {
@@ -9398,10 +9399,15 @@ img {
     color: #313131;
     padding: 0 32px 0 20px;
     font-weight: bold;
-    font-size: 1.125rem;
+    font-size: 1rem;
     overflow: hidden;
-    white-space: nowrap;
+    text-overflow: -o-ellipsis-lastline;
     text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 23px;
+    height: calc(23px * 2);
   }
   .listTypeA .title:after {
     content: "";
@@ -9428,14 +9434,17 @@ img {
   .listTypeA .title .sort1 {
     color: #8f0836;
     margin-right: 10px;
+    display: block;
   }
   .listTypeA .title .sort2 {
     color: #156a81;
     margin-right: 10px;
+    display: block;
   }
   .listTypeA .title .sort3 {
     color: #38446a;
     margin-right: 10px;
+    display: block;
   }
   .listTypeB .item a {
     display: block;
@@ -9917,12 +9926,12 @@ img {
   .collection .titleBox::before {
     content: "";
     position: absolute;
-    width: 5em;
+    width: 6em;
     height: 2px;
     background: #8f0836;
     bottom: -2px;
     left: 50%;
-    margin-left: -2.5em;
+    margin-left: -3em;
   }
   h1.title,
   h2.title {
@@ -10056,7 +10065,7 @@ img {
     position: relative;
     padding: 0.5em 0 0.5em 1.5em;
     border-bottom: solid 1px #eee;
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
   .fileDownload li:before {
     content: "·";
@@ -10426,9 +10435,9 @@ img {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    letter-spacing: 2px;
+    letter-spacing: 0;
     color: rgb(94.701986755, 5.298013245, 35.761589404);
-    font-size: 1.875rem;
+    font-size: 1.75rem;
   }
   @media screen and (max-width: 767px) {
     .spinfoBlock h2 {
@@ -10525,7 +10534,9 @@ img {
   }
   .spinfoBlock .caption p {
     line-height: 1.6em;
-    font-size: 1.125rem;
+    font-size: 1rem;
+    text-align: justify;
+    font-weight: 500;
   }
   @media screen and (max-width: 767px) {
     .spinfoBlock .caption {
@@ -10550,12 +10561,12 @@ img {
     border-radius: 4px 4px 0 0;
     font-size: 1em;
     color: #756e69;
-    font-size: 1.75rem;
+    font-size: 1.625rem;
     font-family: "Noto Serif TC", serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    letter-spacing: 2px;
+    letter-spacing: 0;
   }
   .spinfoBlock2 .tab-btn[aria-selected=true] {
     background: rgba(255, 255, 255, 0);
@@ -10572,6 +10583,7 @@ img {
     line-height: 1.8;
     font-weight: 400;
     margin: 1em 0.5em;
+    text-align: justify;
   }
   .spinfoBlock2 p .more2 {
     background: #d1c8c4;
@@ -10710,9 +10722,9 @@ img {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    letter-spacing: 2px;
+    letter-spacing: 0;
     color: #3d3124;
-    font-size: 1.75rem;
+    font-size: 1.625rem;
   }
   .spinfoBlock3 .collapse-toggle .arrow {
     flex: 0 0 50px;
@@ -10751,7 +10763,7 @@ img {
     outline: none;
     font-size: 1em;
     color: #756b62;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     margin: 0;
     flex: 1 1 auto;
     border-bottom: 4px solid rgba(255, 255, 255, 0);
@@ -10775,6 +10787,7 @@ img {
     line-height: 1.8;
     font-weight: 500;
     margin: 1em 0.5em;
+    text-align: justify;
   }
   .spinfoBlock3 p .more2 {
     background: #d1c8c4;
@@ -10813,9 +10826,9 @@ img {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    letter-spacing: 2px;
+    letter-spacing: 0;
     color: #3d3124;
-    font-size: 1.75rem;
+    font-size: 1.625rem;
   }
   .spinfoBlock4 .collapse-toggle .arrow {
     flex: 0 0 50px;
@@ -10854,7 +10867,7 @@ img {
     outline: none;
     font-size: 1em;
     color: #756b62;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     margin: 0;
     flex: 1 1 auto;
     border-bottom: 4px solid rgba(255, 255, 255, 0);
@@ -13801,4 +13814,4 @@ img {
     display: table-header-group;
     /* 表格即使分頁也會顯示表頭 */
   }
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style_en.css.map */

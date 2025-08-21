@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta name="robots" content="noindex" />
+    <!-- 使用 noindex 禁止 Google 搜尋建立索引，套版時請工程師刪掉這行 -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NAER Acdemic Journal Center</title>
+    <!-- WOW動畫-->
+    <link href="css/animate.css" rel="stylesheet" />
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style_en.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- 直接跳主內容區 -->
+    <a class="goCenter" href="#aC">Skip to main content</a>
+    <button class="sidebarCtrlBtn" type="button" aria-expanded="false" aria-controls="mobileArea">Sidebar Menu</button>
+    <!-- wrapper Start -->
+    <div class="wrapper">
+      <!-- header Start -->
+      <header class="header">
+        <div class="container">
+          <a class="accessKeyItem" href="#aU" id="aU" accesskey="U" aria-label="Top function block">:::</a>
+          <h1>
+            <a href="index.html"><img src="images/logo.png" alt="NAER Acdemic Journal Center" /></a>
+          </h1>
+          <!-- noscript -->
+          <noscript>
+            Your browser does not support JavaScript, or it has been disabled. The functionality of this website will not be affected. You may use your keyboard to navigate: use Ctrl + (+) to zoom in or Ctrl + (-) to zoom out; use Alt + Left Arrow (←) to go back to the previous page; use Ctrl + P to
+            print. If your browser does not support scripts, please click this hyperlink.
+            <a href="#">Sitemap</a>
+          </noscript>
+          <!-- menu Start -->
+          <nav class="menu mainMenu" role="navigation" aria-label="Main menu">
+            <ul>
+              <li>
+                <a href="#">Search Articles</a>
+                <ul>
+                  <li><a href="#">Simple Search</a></li>
+                  <li><a href="#">Advanced Search</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Browsing Services</a>
+                <ul>
+                  <li><a href="#">Compilation and Translation Review online</a></li>
+                  <li><a href="#">Journal of Textbook Research</a></li>
+                  <li><a href="#">Journal of Educational Research and Development</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Popular Articles</a>
+              </li>
+              <li>
+                <a href="#">Announcement</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- menu End -->
+          <!-- navigation Start -->
+          <nav class="navigation" role="navigation" aria-label="Header function bar">
+            <!-- 新增div navList -->
+            <div class="navList">
+              <ul>
+                <!-- <li class="gohome"><a href="#">回首頁</a></li> -->
+                <li class="gositemap"><a href="#">Sitemap</a></li>
+                <li class="goqa"><a href="#">FAQ</a></li>
+                <li class="goch"><a href="#">中文版</a></li>
+              </ul>
+            </div>
+          </nav>
+          <!-- navigation End -->
+        </div>
+      </header>
+      <!-- header End -->
+      <!-- main Start -->
+      <main class="main">
+        <a class="accessKeyItem" href="#aC" id="aC" accesskey="C" aria-label="Main content area">:::</a>
+        <!-- 任何一個section下一層都要包下一層都要包div container作對齊 -->
+        <!-- //// class 都可以隨意命名 !!! ///// -->
+
+        <!-- mpSlider -->
+        <section class="flex_12 full mpSlider">
+          <div class="container">
+            <div class="swiper">
+              <div class="swiperControlBox">
+                <button type="button" data-info-play="play" data-info-stop="stop">stop</button>
+              </div>
+              <!--前一筆-->
+              <button type="button" class="prevSlider swiperArrow">Previous</button>
+              <!--下一筆-->
+              <button type="button" class="nextSlider swiperArrow">Next</button>
+              <div class="swiper-wrapper">
+                <div class="item imgContainer swiper-slide" data-title="圖說1">
+                  <img src="images/banner02.jpg" alt="" />
+                </div>
+                <div class="item imgContainer swiper-slide" data-title="圖說2">
+                  <img src="images/banner01.jpg" alt="" />
+                </div>
+                <div class="item imgContainer swiper-slide" data-title="圖說3">
+                  <img src="images/banner03.jpg" alt="" />
+                </div>
+                <div class="item imgContainer swiper-slide" data-title="圖說4">
+                  <img src="images/banner01.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- swiper 點切換-->
+            <div class="swiperDots"></div>
+          </div>
+        </section>
+        <!-- mpSlider end-->
+        <!--Search Start -->
+        <div class="mpSearch wow fadeInDown" data-wow-duration="1s" data-wow-delay=".5s" role="search">
+          <div class="content">
+            <div class="formGrp">
+              <label for="topSearch">Search</label>
+              <select name="" id="topSearch">
+                <option value="All Fields">All Fields</option>
+                <option value="全部欄位">Field Name Field Name Field Name</option>
+              </select>
+              <input name="topSearch" type="text" id="topSearch" placeholder="Enter keywords" accesskey="S" aria-label="Search Site" />
+              <button type="button" class="btn btnSearch">Advanced Search</button>
+            </div>
+
+            <div class="keywordHot" aria-labelledby="hotKeywordsTitle">
+              <span class="title" id="hotKeywordsTitle">Popular Searches / </span>
+              <ul>
+                <li><a href="#" role="button">Digital Learning</a></li>
+                <li><a href="#" role="button">AI Applications</a></li>
+                <li><a href="#" role="button">Educational Guidance</a></li>
+                <li><a href="#" role="button">Cognitive Theory</a></li>
+                <li><a href="#" role="button">Scaffolding</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Search End -->
+
+        <!-- mpbook -->
+        <section class="mpBook wow fadeInUp" data-wow-duration="2s" data-wow-delay="1.5s">
+          <div class="container">
+            <div class="group">
+              <div class="list">
+                <a href="#">
+                  <div class="imgContainer">
+                    <img src="images/book01.jpg" alt="圖說1" />
+                  </div>
+                  <div class="caption">
+                    <div class="title">Compilation and Translation Review online</div>
+                    <p>In addition to academic articles on compilation and translation studies and related industry developments, the journal also features a variety of specialized contributions, including forums, book reviews, translation reviews, and annotated translations.</p>
+                  </div>
+                  <div class="more2"><span class="half-circle">more>></span></div>
+                </a>
+              </div>
+              <div class="list">
+                <a href="#">
+                  <div class="imgContainer">
+                    <img src="images/book02.jpg" alt="圖說1" />
+                  </div>
+                  <div class="caption">
+                    <div class="title">Journal of Textbook Research</div>
+                    <p>
+                      《Journal of Textbook Research》founded in 2008, is a leading scholarly journal in the Chinese-speaking world dedicated to the study of textbooks. It is published tri-annually in mid-April, August, and December, featuring articles on the development of textbooks and teaching
+                      materials.
+                    </p>
+                  </div>
+                  <div class="more2"><span class="half-circle">more>></span></div>
+                </a>
+              </div>
+              <div class="list">
+                <a href="#">
+                  <div class="imgContainer">
+                    <img src="images/book03.jpg" alt="圖說1" />
+                  </div>
+                  <div class="caption">
+                    <div class="title">Journal of Educational Research and Development</div>
+                    <p>Providing information on relevant educational research from home and abroad.</p>
+                  </div>
+                  <div class="more2"><span class="half-circle">more>></span></div>
+                </a>
+              </div>
+              <div class="list">
+                <a href="#">
+                  <div class="imgContainer">
+                    <img src="images/book04.jpg" alt="圖說1" />
+                  </div>
+                  <div class="caption">
+                    <div class="title">Education Trends E-Journal Introduction</div>
+                    <p>
+                      The Education Trends E-Journal is a practice-oriented electronic publication with a multi-faceted mission. It integrates and analyzes educational data, issues, and strategies; disseminates research findings; and serves to communicate educational information while highlighting
+                      the unique characteristics of various schools.
+                    </p>
+                  </div>
+                  <div class="more2"><span class="half-circle">more>></span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- mpbook end -->
+        <!--  兩欄樣式 -->
+        <section class="col_6_6 listTypeA">
+          <div class="container">
+            <div class="col">
+              <!-- news -->
+              <div class="news wow fadeInLeft" data-wow-duration="2s" data-wow-delay="1s">
+                <div class="titleBox">Announcements</div>
+                <div class="listBox">
+                  <div class="item">
+                    <a href="#">
+                      <time class="date">2025-06-10</time>
+                      <div class="title">Journal of Educational Research and Development, Vol. 20, No. 3 is now available.</div>
+                    </a>
+                  </div>
+                  <div class="item">
+                    <a href="#">
+                      <time class="date">2025-06-06</time>
+                      <div class="title">Compilation and Translation Review, Vol. 17, No. 2 is now available.</div>
+                    </a>
+                  </div>
+                  <div class="item">
+                    <a href="#">
+                      <time class="date">2025-05-10</time>
+                      <div class="title">Journal of Educational Research and Development, Vol. 20, No. 2 is now available.</div>
+                    </a>
+                  </div>
+                  <div class="item">
+                    <a href="#">
+                      <time class="date">2025-05-10</time>
+                      <div class="title">Journal of Educational Research and Development, Vol. 20, No. 2 is now available.</div>
+                    </a>
+                  </div>
+                  <div class="item">
+                    <a href="#">
+                      <time class="date">2025-05-10</time>
+                      <div class="title">Journal of Educational Research and Development, Vol. 20, No. 2 is now available.</div>
+                    </a>
+                  </div>
+                </div>
+                <a href="#" class="more">more</a>
+              </div>
+              <!-- news end-->
+            </div>
+            <div class="col">
+              <!-- popular -->
+              <div class="popular wow fadeInRight" data-wow-duration="2s" data-wow-delay="2s">
+                <div class="titleBox">Popular Articles</div>
+                <div class="listBox">
+                  <div class="item">
+                    <a href="#">
+                      <time class="date">2025-06-10</time>
+                      <div class="title"><span class="sort1">Compilation and Translation Review online</span>「"A wolf in sheep's clothing": This idiom originates from</div>
+                    </a>
+                  </div>
+                  <div class="item">
+                    <a href="#">
+                      <time class="date">2025-06-06</time>
+                      <div class="title"><span class="sort1">Compilation and Translation Review online</span>「衡量口譯培訓生的認知技能：使用衡量口譯培訓生的認知技能：使用</div>
+                    </a>
+                  </div>
+                  <div class="item">
+                    <a href="#">
+                      <time class="date">2025-05-10</time>
+                      <div class="title"><span class="sort2">Journal of Textbook Research</span>全球公民素養的學習成效之探究全球公民素養的學習成效之探究</div>
+                    </a>
+                  </div>
+                  <div class="item">
+                    <a href="#">
+                      <time class="date">2025-05-10</time>
+                      <div class="title"><span class="sort2">Journal of Textbook Research</span>探究STEAM教育實踐聯合國永續探究STEAM教育實踐聯合國永續</div>
+                    </a>
+                  </div>
+                  <div class="item">
+                    <a href="#">
+                      <time class="date">2025-05-10</time>
+                      <div class="title"><span class="sort3">Journal of Educational Research and Development</span>Exploring the Factors Affecting the WorldSkills Competition</div>
+                    </a>
+                  </div>
+                </div>
+                <a href="#" class="more">more</a>
+              </div>
+              <!-- popular end-->
+            </div>
+          </div>
+        </section>
+        <!-- collection -->
+        <section class="col_12 collection wow fadeInUp" data-wow-duration="2s" data-wow-delay="1.5s">
+          <div class="container">
+            <div class="col">
+              <div class="titleBox">Journals in the collection</div>
+              <!-- 新增 Swiper Slider，每次顯示4張，手機顯示2張 -->
+              <div class="customSwiperBox">
+                <!-- 前一筆 -->
+                <button type="button" class="prevSlider swiperArrow">Previous</button>
+                <!-- 下一筆 -->
+                <button type="button" class="nextSlider swiperArrow">Next</button>
+                <div class="swiper customSwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <a href="#">
+                        <img src="images/book05.jpg" alt="圖片1" />
+                        <p>Bulletin of Educational Resources</p>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="#">
+                        <img src="images/book06.jpg" alt="圖片2" />
+                        <p>Journal of Educational Research and Information</p>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="#">
+                        <img src="images/book07.jpg" alt="圖片3" />
+                        <p>Educational Human Resources and Professional Development</p>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="#">
+                        <img src="images/book08.jpg" alt="圖片4" />
+                        <p>Asia Pacific Journal of Educational Development</p>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="#">
+                        <img src="images/book05.jpg" alt="圖片1" />
+                        <p>Bulletin of Educational Resources</p>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="#">
+                        <img src="images/book06.jpg" alt="圖片2" />
+                        <p>Journal of Educational Research and Information</p>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="#">
+                        <img src="images/book07.jpg" alt="圖片3" />
+                        <p>Educational Human Resources and Professional Development</p>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="#">
+                        <img src="images/book08.jpg" alt="圖片4" />
+                        <p>Asia Pacific Journal of Educational Development</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="more">more</a>
+            </div>
+          </div>
+        </section>
+        <!--  collection end-->
+      </main>
+      <!-- fatFooter Start -->
+      <section class="fatFooter">
+        <div class="container">
+          <nav aria-label="Footer Site Navigation">
+            <ul>
+              <li>
+                <a href="#">Search Articles</a>
+                <ul>
+                  <li><a href="#">Simple Search</a></li>
+                  <li><a href="#">Advanced Search</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Browsing Services</a>
+                <ul>
+                  <li><a href="#">Compilation and Translation Review online</a></li>
+                  <li><a href="#">Journal of Textbook Research</a></li>
+                  <li><a href="#">Journal of Educational Research and Development</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Popular Articles</a>
+              </li>
+              <li>
+                <a href="#">Announcement</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <!-- fatFooter End -->
+      <!-- footer Start-->
+      <footer>
+        <div class="container">
+          <a class="accessKeyItem" href="#aZ" id="aZ" accesskey="Z" aria-label="Footer area">:::</a>
+          <div class="footerLogo">
+            <img src="images/f_logo_en.png" alt="National Academy for Educational Research" class="imgResponsive" />
+            <span class="counter">Visitors:<em>46476653</em></span>
+          </div>
+          <div class="footerInfo">
+            <ul class="footerLink">
+              <li><a href="javascript:;">Personal Data Protection Act and Privacy Statement</a></li>
+              <li><a href="javascript:;">Information Security Policy</a></li>
+              <li><a href="javascript:;">Government Website Open Information Announcement </a></li>
+            </ul>
+            <p>Address: No. 179, Section 1, Heping East Road, Da’an District, Taipei City 106011, Taiwan　Tel: +886-2-7740-7877　Fax: +886-2-7740-78</p>
+          </div>
+
+          <div class="footerIcon">
+            <p class="copyright">Copyright © National Academy for Educational Research All Rights Reserved.</p>
+            <a target="_blank" href="javascript:;" class="acc">
+              <img src="images/accessibility_aa.jpg" alt="AA Level Accessibility Certified" />
+            </a>
+          </div>
+        </div>
+      </footer>
+      <!-- footer End -->
+    </div>
+    <a href="javascript:;" class="scrollToTop" role="button">Back to Top</a>
+
+    <!-- lazyload -->
+    <script src="vendor/lazyload/lazyload.js"></script>
+    <!-- fancybox -->
+    <script src="vendor/fancybox/fancybox.umd.js"></script>
+    <script src="vendor/fancybox/l10n/zh_TW.umd.js"></script>
+    <!-- swiper -->
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- wow -->
+    <script src="js/wow.js"></script>
+    <script>
+      wow = new WOW({
+        animateClass: 'animated',
+        offset: 100,
+        callback: function (box) {
+          console.log('WOW: animating <' + box.tagName.toLowerCase() + '>');
+        },
+      });
+      wow.init();
+    </script>
+    <!-- main js-->
+    <script src="js/main.js"></script>
+    <!-- js -->
+    <script src="js/customize.js"></script>
+  </body>
+</html>

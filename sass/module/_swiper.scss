@@ -4,6 +4,12 @@
 
 .mpSlider {
   position: relative;
+  @media screen and (max-width: 1200px) {
+    margin: 2em 0 0 0;
+  }
+  @include screen('tablet') {
+    margin: 1.3em 0 0 0;
+  }
   a {
     display: block;
   }

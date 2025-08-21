@@ -116,23 +116,12 @@
       }
 
       .tableWrapper {
-        display: flex;
-        align-items: flex-start;
-      }
-
-      @media screen and (max-width: 545px) {
-        .tableWrapper {
-          flex-flow: row wrap;
-        }
-
-        .tableWrapper h2 {
-          flex: 1 0 100%;
-          margin-bottom: 1em;
-        }
+        /* display: flex;
+        align-items: flex-start; */
       }
 
       h2 {
-        margin: 0.5em 0 0.25em;
+        margin: 0.5em 0 0.5em;
         font-size: 1rem;
         line-height: 1.25em;
         white-space: nowrap;
@@ -158,6 +147,7 @@
       <hr />
       <div class="tableWrapper">
         <!-- hyUI 標準頁面 -->
+        <h2>中文版</h2>
         <table>
           <thead>
             <tr>
@@ -251,6 +241,60 @@
               <td></td>
               <td>404 網站錯誤</td>
               <td><a href="404.html">404 網站錯誤</a></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+        <h2>英文版</h2>
+        <table>
+          <thead>
+            <tr>
+              <th class="num">編號</th>
+              <th>頁面名稱</th>
+              <th>檔案名稱</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>首頁</td>
+              <!-- 連結放到a裡面就好 -->
+              <td><a href="mp_en.html">首頁</a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>教育研究與發展期刊首頁</td>
+              <!-- 連結放到a裡面就好 -->
+              <td><a href="mp_b_en.html">教育研究與發展期刊首頁</a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>編輯論叢首頁</td>
+              <!-- 連結放到a裡面就好 -->
+              <td><a href="mp_c_en.html">編輯論叢首頁</a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>教科書研究首頁</td>
+              <!-- 連結放到a裡面就好 -->
+              <td><a href="mp_d_en.html">教科書研究首頁</a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>網站地圖</td>
+              <td><a href="sitemap_en.html">網站地圖</a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>404 網站錯誤</td>
+              <td><a href="404_en.html">404 網站錯誤</a></td>
               <td></td>
             </tr>
           </tbody>

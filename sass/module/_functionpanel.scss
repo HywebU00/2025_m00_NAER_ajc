@@ -131,17 +131,27 @@ div.function {
 
       // 下載
       &.icon_download {
+        a {
+          min-width: 9em;
+          text-align: center;
+        }
         a:before {
           @extend %functionBefore;
           background: url(../images/icon_download.png) no-repeat center bottom;
           background-size: 18px;
+          display: none;
         }
       }
       &.icon_contribute {
+        a {
+          min-width: 9em;
+          text-align: center;
+        }
         a:before {
           @extend %functionBefore;
           background: url(../images/icon_contribute.png) no-repeat center bottom;
           background-size: 18px;
+          display: none;
         }
       }
     }
