@@ -6811,9 +6811,9 @@ img {
     border: none !important;
   }
   .tableList .sorttd .sort {
-    display: block;
+    display: inline-block;
     border: solid 1px #a0a0a0;
-    padding: 0.1em 0.3em;
+    padding: 0.1em 0.5em;
     color: #444444;
     margin: 0 auto;
     font-size: 1.125rem;
@@ -10460,12 +10460,12 @@ img {
     margin: 1em 0;
   }
   .spinfoBlock ul.infobtn li {
-    flex: 1 0 auto;
+    flex: 0 0 23%;
     margin: 0.5em 0.5em 0 0;
   }
   .spinfoBlock ul.infobtn li a {
     display: inline-block;
-    padding: 0.5em 2em;
+    padding: 0.5em;
     background: #1d2747;
     border-radius: 2em;
     color: #fff;
@@ -10476,6 +10476,11 @@ img {
   }
   .spinfoBlock ul.infobtn li a:hover {
     background: #8f0836;
+  }
+  @media screen and (max-width: 991px) {
+    .spinfoBlock ul.infobtn li {
+      flex: 1 0 45%;
+    }
   }
   .spinfoBlock .img-container {
     flex: 0 0 218px;
@@ -10648,7 +10653,13 @@ img {
     gap: 0.5em;
     margin-bottom: 1em;
     overflow-x: auto;
-    padding: 0.5em 0;
+    padding: 0.5em 3% 0.5em 0;
+    /* 隱藏 Webkit 瀏覽器（如 Chrome, Safari, Edge, Opera）的滾動條 */
+    /* 隱藏 Firefox 瀏覽器的滾動條 */
+    scrollbar-width: none;
+  }
+  .timeline::-webkit-scrollbar {
+    display: none;
   }
   .timeline .timeline-arrow {
     background: rgba(255, 255, 255, 0);
@@ -10671,6 +10682,12 @@ img {
     padding: 0;
     overflow-x: auto;
     scroll-behavior: smooth;
+    /* 隱藏 Webkit 瀏覽器（如 Chrome, Safari, Edge, Opera）的滾動條 */
+    /* 隱藏 Firefox 瀏覽器的滾動條 */
+    scrollbar-width: none;
+  }
+  .timeline .timeline-list::-webkit-scrollbar {
+    display: none;
   }
   .timeline .timeline-item button {
     background: transparent;

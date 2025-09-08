@@ -103,9 +103,9 @@ table {
     text-align: center;
     border: none !important;
     .sort {
-      display: block;
+      display: inline-block;
       border: solid 1px #a0a0a0;
-      padding: 0.1em 0.3em;
+      padding: 0.1em 0.5em;
       color: #444444;
       margin: 0 auto;
       font-size: rem(18);

@@ -494,13 +494,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (isLeftBtnValid) {
       leftBtn.addEventListener('click', () => {
-        timelineList.scrollBy({ left: -120, behavior: 'smooth' });
+        timelineList.scrollBy({ left: -360, behavior: 'smooth' });
       });
     }
 
     if (isRightBtnValid) {
       rightBtn.addEventListener('click', () => {
-        timelineList.scrollBy({ left: 120, behavior: 'smooth' });
+        timelineList.scrollBy({ left: 360, behavior: 'smooth' });
       });
     }
 
