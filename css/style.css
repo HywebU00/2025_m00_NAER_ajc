@@ -6834,6 +6834,7 @@ img {
   }
   .tableList .download_icon a img {
     width: 46px;
+    vertical-align: middle;
   }
   .fixThTable {
     margin: 1em 0;
