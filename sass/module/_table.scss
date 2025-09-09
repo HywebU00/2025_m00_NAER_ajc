@@ -120,12 +120,13 @@ table {
 
   .download_icon {
     text-align: center;
+    vertical-align: top;
     a {
       display: block;
-
       img {
         width: 46px;
-        vertical-align: middle;
+        vertical-align: top;
+        margin-top: 5px;
       }
     }
   }

@@ -152,6 +152,7 @@
     font-weight: 700;
     font-style: normal;
     letter-spacing: 2px;
+    line-height: 1.1;
   }
   .tab-btn[aria-selected='true'] {
     background: rgba(255, 255, 255, 0);
@@ -373,8 +374,7 @@
     background: transparent;
     border: 2px solid transparent;
     border-radius: 2em;
-    padding: 0.2em 1em;
-    font-size: 1em;
+    padding: 0.4em 1em;
     cursor: pointer;
     transition: background 0.2s, border 0.2s;
     color: #756b62;
@@ -384,9 +384,10 @@
   }
   .timeline-item[aria-current='true'] button,
   .timeline-item button[aria-pressed='true'] {
-    background: transparent;
+    background: #e9e7e7;
     color: $colorPrimary;
     border-color: transparent;
+    border-radius: 2em;
   }
   .timeline-item button:hover {
     color: darken(#756b62, 20);
@@ -399,8 +400,7 @@
     background: transparent;
     border: 2px solid transparent;
     border-radius: 5px;
-    padding: 0.2em;
-    font-size: 1em;
+    padding: 0em 0.5em;
     cursor: pointer;
     transition: background 0.2s, border 0.2s;
     color: #756b62;
