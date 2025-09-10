@@ -7,9 +7,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
         position: absolute;
-        width: auto;
+        width: 100%;
         gap: 10px;
         background: rgba(255, 255, 255, 0.9);
         padding: 1em;
@@ -17,9 +17,31 @@
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
         left: 0;
         right: 0;
+        @include screen('tablet') {
+          justify-content: flex-start;
+        }
 
         & > li {
           flex: 0 1 calc((100% - 50px) / 5);
+          padding: 0.6em 1.2em;
+          margin: 3px 0;
+          display: block;
+          font-weight: bold;
+          background: rgba(0, 0, 0, 0.8);
+          border-radius: 10px;
+          @include screen('tablet') {
+            flex: 0 1 calc((100% - 30px) / 3);
+          }
+
+          // &:focus-visible,
+          &:hover {
+            color: #fff;
+            background: $aHover;
+          }
+          a {
+            height: 100%;
+            color: #fff;
+          }
           // flex-grow: 1;
         }
         ul {

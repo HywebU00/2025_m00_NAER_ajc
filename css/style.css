@@ -4715,12 +4715,6 @@ img {
   .mainMenu.sticky > ul li a:hover, .mainMenu.sticky > ul li a:focus {
     color: #efede9;
   }
-  .mainMenu.sticky > ul li ul li a {
-    padding: 0.6em 1.2em;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 15px;
-  }
   .mainMenu.sticky > ul li.hasChild > a:after {
     content: "";
     width: 4px;
@@ -4894,23 +4888,6 @@ img {
     text-align: left;
     font-size: 1em;
   }
-  .mainMenu ul li ul li a {
-    padding: 0.6em 1.2em;
-    margin: 3px 0;
-    display: block;
-    color: #fff;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-  }
-  .mainMenu ul li ul li a:hover {
-    color: #fff;
-    background: rgb(128.7, 7.2, 48.6);
-  }
-  .mainMenu ul li ul li.active > a {
-    color: #fff;
-    background: rgb(128.7, 7.2, 48.6);
-  }
   .mainMenu ul li ul li.hasChild > ul {
     z-index: 999;
   }
@@ -5009,9 +4986,9 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     position: absolute;
-    width: auto;
+    width: 100%;
     gap: 10px;
     background: rgba(255, 255, 255, 0.9);
     padding: 1em;
@@ -5020,8 +4997,32 @@ img {
     left: 0;
     right: 0;
   }
+  @media screen and (max-width: 991px) {
+    .megaMenu > ul > li.active > ul {
+      justify-content: flex-start;
+    }
+  }
   .megaMenu > ul > li.active > ul > li {
     flex: 0 1 calc((100% - 50px) / 5);
+    padding: 0.6em 1.2em;
+    margin: 3px 0;
+    display: block;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+  }
+  @media screen and (max-width: 991px) {
+    .megaMenu > ul > li.active > ul > li {
+      flex: 0 1 calc((100% - 30px) / 3);
+    }
+  }
+  .megaMenu > ul > li.active > ul > li:hover {
+    color: #fff;
+    background: rgb(128.7, 7.2, 48.6);
+  }
+  .megaMenu > ul > li.active > ul > li a {
+    height: 100%;
+    color: #fff;
   }
   .megaMenu > ul > li.active > ul ul {
     display: block;
@@ -8739,7 +8740,7 @@ img {
   }
   .mpSlider .swiperDots {
     position: absolute;
-    z-index: 999;
+    z-index: 9;
     margin-bottom: 60px;
   }
   .mpSlider img {

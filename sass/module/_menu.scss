@@ -60,12 +60,12 @@
         }
         ul {
           li {
-            a {
-              padding: 0.6em 1.2em;
-              color: #fff;
-              background: rgba(0, 0, 0, 0.8);
-              border-radius: 15px;
-            }
+            // a {
+            //   padding: 0.6em 1.2em;
+            //   color: #fff;
+            //   background: rgba(0, 0, 0, 0.8);
+            //   border-radius: 15px;
+            // }
           }
         }
         &.hasChild {
@@ -288,26 +288,26 @@
         // transition: 0.3s $cubic;
         // 第二層選單樣式
         li {
-          a {
-            padding: 0.6em 1.2em;
-            margin: 3px 0;
-            display: block;
-            color: #fff;
-            font-weight: bold;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
+          // a {
+          //   padding: 0.6em 1.2em;
+          //   margin: 3px 0;
+          //   display: block;
+          //   color: #fff;
+          //   font-weight: bold;
+          //   background: rgba(0, 0, 0, 0.8);
+          //   border-radius: 10px;
 
-            // &:focus-visible,
-            &:hover {
-              color: #fff;
-              background: $aHover;
-            }
-          }
+          //   // &:focus-visible,
+          //   &:hover {
+          //     color: #fff;
+          //     background: $aHover;
+          //   }
+          // }
 
-          &.active > a {
-            color: #fff;
-            background: $aHover;
-          }
+          // &.active > a {
+          //   color: #fff;
+          //   background: $aHover;
+          // }
         }
 
         li.hasChild {
